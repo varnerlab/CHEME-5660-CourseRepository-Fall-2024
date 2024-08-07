@@ -10,12 +10,14 @@
 \contentsline {subsection}{\numberline {2.1}Risks of U.S. Treasury Securities}{10}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Zero-Coupon Treasury Bills}{11}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Sensitivity and Risk on Treasury Bills}{12}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Coupon-Bearing Treasury Notes and Bonds}{12}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Sensitivities and Risks of Notes and Bonds}{14}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Summary}{14}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.4}Coupon-Bearing Treasury Notes and Bonds}{13}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Yield to Maturity}{14}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Sensitivities and Risks of Notes and Bonds}{15}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Summary}{15}{subsection.2.7}%
 \contentsline {section}{\numberline {3}Interest Rates, STRIPS and the Yield Curve}{15}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Spot, Short and Forward Rates}{16}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}STRIPS and the Yield Curve}{17}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}STRIPS pricing}{17}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Estimating the Spot and Short Rates from STRIPS prices}{19}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Summary}{19}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Summary}{20}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Lattice Models of Interest Rates}{20}{section.4}%

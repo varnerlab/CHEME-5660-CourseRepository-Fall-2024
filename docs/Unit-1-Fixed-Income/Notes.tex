@@ -344,7 +344,9 @@ The discount factor $\mathcal{D}_{t,0}$ can be modeled as either a discrete or a
 Thus, IRR can thought of as a decision boundary of sorts; the IRR is the discount rate where the project manager or investor is indifferent to the project.
 
 \subsection{Summary}
-Fill me in
+In this section, we introduced the concept of an abstract asset, the time value of money, different discounting models, the net present value (NPV) and the internal rate of return (IRR).
+We'll use these ideas throughout the course. However, in this unit we'll use these concepts to develop a framework for pricing zero-coupon and multiple coupon Treasury securities, 
+and to understand the risks associated with these securities.
 
 \section{United States Treasury Securities}
 \href{https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities}{United States Marketable Treasury Securities}, 
@@ -502,6 +504,15 @@ Finally, the discounting for Treasury instruments uses a discrete compounding mo
 \end{equation}
 where $j$ denotes the period number, and $\bar{r}$ is the effective yield (constant).
 
+\subsection{Yield to Maturity}
+The Yield to Maturity (YTM) of a treasury note or bond is the internal rate of return (IRR) associated with buying and holding the security until its maturity date. 
+Thus, initially, the YTM and the effective market interest rate are the same when the note or bond is auctioned in the primary market. 
+However, treasury securities can be resold on the secondary treasury market, even after some coupon payments have been paid out. 
+In such cases, the YTM is not equal to the initial market interest rate at auction. Let's examine the yield to maturity of a 5-year treasury note. Assuming a discrete discounting model, 
+let's consider a scenario where we bought a 5-year treasury note with a face value of $V_{P}$ = 100 USD at auction for $V_{B}$ = 96.82 USD. 
+The note has an annual coupon rate of 6\%, with semi-annual coupons. We then sell the T-note on the secondary market for the same price we purchased it, 
+after holding it for $T^{\prime}$ years and receiving some coupon payments.
+
 \subsection{Sensitivities and Risks of Notes and Bonds}
 The price of a coupon-bearing Treasury security in many ways behaves similar to a T-bill.
 Previously, we explored the relationship between the yield (discount rate) and the price of a zero-coupon Treasury bill. 
@@ -514,8 +525,7 @@ In this module, we explored the pricing of coupon-bearing Treasury securities.
 In particular, we used the abstract asset framework to develop a mathematical model for the price of coupon-bearing United States Treasury notes and bonds.
 Notes and bonds are long-term debt instruments that provide a stable interest payment, called a coupon payment, every six months until maturity, and the face (par) value of the note (or bond) at maturity.
 These instruments are priced based on the present value of the future cash flows, where the yield (discount factor) and coupon rate for these securities is fixed when they are issued, i.e., at auction and remains constant over the lifetime of the security.
-In this module, we introduced the concept of an abstract asset, the time value of money, different discounting models, and the net present value (NPV).
-We used these ideas to develop a framework for pricing zero-coupon Treasury securities, in particular, zero-coupon Treasury bills.
+
 Treasury bills are short-term Treasury securities with a maturity of less than or equal to a year, and zero coupon payments.
 Treasury bills are sold at auction, and the price of the bill is the discounted face (par) value of the bill, such that the net present value (NPV) of the bill is zero.
 In the next module, we will extend this framework to price other types of Treasury securities, e.g., Treasury notes and bonds.
