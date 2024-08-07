@@ -1,4 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Cont-QuantFinance-2001}
+Cont R.
+\newblock Empirical properties of asset returns: stylized facts and statistical
+  issues.
+\newblock Quantitative Finance. 2001;1(2):223--236.
 
 \bibitem{COX1979229}
 Cox JC, Ross SA, Rubinstein M.
@@ -26,12 +32,6 @@ Mandelbrot B.
 \newblock The Variation of Some Other Speculative Prices.
 \newblock The Journal of Business. 1967;40(4):393--413.
 
-\bibitem{Cont-QuantFinance-2001}
-Cont R.
-\newblock Empirical properties of asset returns: stylized facts and statistical
-  issues.
-\newblock Quantitative Finance. 2001;1(2):223--236.
-
 \bibitem{ratliffcrain2023revisiting}
 Ratliff-Crain E, Oort CMV, Bagrow J, Koehler MTK, Tivnan BF. Revisiting
   Stylized Facts for Modern Stock Markets; 2023.
@@ -42,5 +42,21 @@ Glasserman P.
 \newblock New York: Springer; 2004.
 \newblock Available from:
   \url{http://www.loc.gov/catdir/enhancements/fy0813/2003050499-d.html}.
+
+\bibitem{MPT1952}
+Markowitz H.
+\newblock Portfolio Selection.
+\newblock The Journal of Finance. 1952;7(1):77--91.
+
+\bibitem{SHARPE1963}
+Sharpe WF.
+\newblock A Simplified Model for Portfolio Analysis.
+\newblock Management Science. 1963;9(2):277--293.
+\newblock doi:{10.1287/mnsc.9.2.277}.
+
+\bibitem{FB1973}
+Treynor JL, Black F.
+\newblock How to Use Security Analysis to Improve Portfolio Selection.
+\newblock The Journal of Business. 1973;46(1):66--86.
 
 \end{thebibliography}

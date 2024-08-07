@@ -1,0 +1,47 @@
+\contentsline {section}{\numberline {1}Introduction}{5}{section.1}%
+\contentsline {section}{\numberline {2}Stylized facts of Equity Returns}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Logarithmic and Fractional Return Distributions}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Computing Logarithmic Return}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Heavy-Tailed Distributions}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Autocorrelation of Returns}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Volatility Clustering of Returns}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Leverage Effect}{8}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}A Random Walk Model of Return}{8}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Summary}{8}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Lattice models of equity prices}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Analytical solution}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Models of $u$, $d$ and $p$}{10}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Real-world probability $p$}{10}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Risk-neutral probability $q$}{11}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Cox-Ross-Rubinstein (CRR) model}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Binomial lattice trade strategy}{13}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Summary}{14}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Single Asset Geometric Brownian Motion}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Analytical solution}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Estimating the drift parameter $\mu $}{16}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Estimating the volatility parameter $\sigma $}{17}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Stylized facts}{18}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Summary}{19}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Multiple Asset Geometric Brownian Motion Models}{19}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Drift and Covariance Estimation}{20}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Multiasset Portfolio Simulations}{20}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Computing the Net Present Value (NPV) of a portfolio $\mathcal {P}$}{21}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Summary}{23}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Other Equity Pricing Models}{23}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Discretization of Stochastic Pricing Models}{23}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Ornstein Uhlenbeck Model}{24}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Heston Model}{25}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Summary}{25}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Optimal Portfolio Allocation}{25}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Data-driven Portfolios}{26}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Model-Driven Portfolios}{28}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Derivation of Sharpe Single Index Model}{28}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Estimation of $\alpha _{i}$ and $\beta _{i}$}{29}{subsubsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.3}Single Factor Portfolio Problem}{29}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Summary}{30}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Dynamic Reallocation Problems}{30}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Portfolio Drift}{30}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Discrete Reallocation}{30}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Continuous Reallocation}{30}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Risk Manangement}{30}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Summary}{30}{subsection.8.5}%

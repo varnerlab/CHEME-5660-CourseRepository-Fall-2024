@@ -62,7 +62,7 @@
 
 \fancypagestyle{proposal}{\fancyhf{}%
 	\fancyhead[RO,LE]{\thepage}%
-	\fancyhead[LO,RE]{CHEME 5660 Equity and Equity Prices}%
+	\fancyhead[LO,RE]{CHEME 5660 Equity and Equity Pricing Models}%
 	\renewcommand\headrulewidth{1pt}}
 \pagestyle{proposal}
 
@@ -109,7 +109,8 @@
 \begin{document}
 
 %\begin{titlepage}
-{\par\centering\textbf{\Large Unit 2: Equity and Equity Pricing Models}}
+{\par\centering\textbf{\Large Unit 2: Equity, Equity Pricing Models and Portfolios}}\\
+{\par \centering \large{CHEME 5660: Equity Pricing Models and Portfolios}}
 \vspace{0.2in}
 {\par \centering \large{Jeffrey D. Varner}}
 \vspace{0.05in}
@@ -124,8 +125,149 @@
 
 \setcounter{page}{1}
 
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listofalgorithms
+\clearpage
+
 \section{Introduction}
-In this unit, we will introduce the concept of equity and equity pricing models. 
+Equity securities, or just equity or stock, represent ownership in a company and entitle shareholders to a fraction of the assets and earnings of the firm. 
+They are bought and sold on stock exchanges. When an investor buys equity securities, they acquire a proportional ownership stake in the company based on the number of shares relative to the total outstanding shares.
+Shareholders may also receive dividends, which are a portion of profits distributed periodically by the board of directors based on company performance.
+Equity securities offer the potential for capital appreciation, allowing shareholders to profit by selling their shares at a higher price than they initially paid.
+Further, shareholders of equity securities may vote on company decisions including board member elections and major corporate actions.
+However, investing in equity securities involves risk. If the company's performance deteriorates, the value of its shares can decrease, leading to potential financial losses for shareholders. 
+On the other hand, successful companies can provide substantial returns to shareholders.
+Equity securities are traded on stock exchanges (which may operate 24-hours a day), making them relatively liquid compared to other investments. 
+Investors can buy and sell these securities during trading hours (and sometimes after hours), enabling them to enter or exit their positions quickly.
+
+Common Stock is the most prevalent type of equity security. Common stockholders have voting rights and may receive dividends, although dividends are not guaranteed.
+On the other hand, preferred stockholders, who hold shares of preferred stock,  have a higher claim on company assets and dividends than common stockholders. 
+They often receive dividends before common stockholders and may have certain privileges but usually have limited or no voting rights.
+Finally, convertible securities are hybrid securities that can be converted into a specified number of common shares at a predetermined price within a specified timeframe.
+Equity securities are essential for corporate financing and investment. They allow companies to raise capital from the public, while investors can participate in growth and profitability. 
+However, It is important for investors to understand the risks and potential rewards of equity securities before investing.
+
+In this unit, we will first introduce equity security pricing models. This is a vast field, and we will only scratch the surface. 
+We will start with the simplest possible model, the binomial lattice model which we saw ealier for modeling interest rates, and then move on to more complex models such as single-assets and multi-asset Geometric Brownian Motion (GBM) models.
+Finally, we'll conclude the first section with a brief desciption of several other pricing models, including the Heston model, the \href{https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process}{Ornstein-Uhlenbeck model of mean reversion}, 
+and a more recent structured state space models of return. 
+Following the pricing models, we will explore the problem of portfolio optimization, 
+i.e., how to allocate capital across a set of equity securities (or a mixture of equity and risk-free instruments) to maximize the return of the portfolio while minimzing a risk measure, e.g., the portfolio variance.
+
+\section{Stylized facts of Equity Returns}
+Stylized facts are empirical observations about the behavior of asset returns that are widely used in quantitative finance \cite{Cont-QuantFinance-2001}.
+They serve as a benchmark for evaluating the performance of financial models and inform the development of new theories. 
+In the context of equity returns, stylized facts offer valuable insights into the characteristics and dynamics of stock markets.
+For example, equity returns are often not Normally distributed. Instead, they exhibit a leptokurtic distribution, e.g., a Laplace distribution, 
+which has fatter tails and higher kurtosis than a Normal distribution. 
+This suggests that extreme events (both positive and negative) are more likely to occur than predicted by a Normal distribution.
+Further, equity returns often exhibit periods of high volatility followed by periods of low volatility. 
+This phenomenon, called volatility clustering, suggests that volatility is not independent across time but rather follows a pattern.
+Volatility is also often negatively correlated with past returns. 
+This effect, known as the leverage effect, suggests that volatility tends to be higher following periods of negative returns and lower following positive returns.
+Finally, equity returns often exhibit low autocorrelation, i.e., the correlation of a signal with a delayed copy of itself over time is small.
+This suggests that the return at time $t$ is not correlated with the return at time $t-1$, and thus, the return is behaviing like a random wal
+
+\subsection{Logarithmic and Fractional Return Distributions}\label{sec:logarithmic-and-fractional-returns}
+Let's start our quantitative discussion of stylized facts by defining what we mean by a return.
+A return refers to the increase or decrease in the price of an asset, e.g., shares of a stock, over a specific period, e.g., minutes, days, weeks, or even years. 
+Assume the share price of a stock at time $t$ is given by $S(t)$. Then, if we assume continuous compounding, the price of the stock at time $t+\Delta{t}$ is given by:
+\begin{equation}
+    S(t+\Delta{t}) = S(t)\cdot\exp\left(\mu\cdot{\Delta{t}}\right)
+\end{equation}
+where $\mu$ denotes the instantenous growth rate (units: inverse years) of the share price over the time horizon $t\rightarrow{t+\Delta{t}}$. 
+The continuously compounded share price gives rise to the logarithmic return model (Defn. \ref{defn-log-return-1}):
+\begin{definition}[Logarithmic Return]\label{defn-log-return-1}
+Let $S_{i,t-1}$ denote the continuously compounding share price of ticker $i$ at time $t-1$. Then, at time $t$, the share price for ticker $i$, denoted as $S_{i,t}$,
+is given by:
+\begin{equation}
+    S_{i,t} = S_{i,t-1}\cdot\exp\left(\mu^{(i)}_{t,t-1}\cdot{\Delta{t}}\right)
+\end{equation}
+where $\mu^{(i)}_{t,t-1}$ denotes the instantenous growth rate (units: inverse years) of ticker $i$ over time horizon $(t-1)\rightarrow{t}$, 
+and $\Delta{t}$ is the time interval between $t-1$ and $t$ (units: years). The logarithmic return on asset $i$ over time horizon $(t-1)\rightarrow{t}$, 
+denoted by $r^{(i)}_{t,t-1}$, is defined as:
+\begin{equation}
+r^{(i)}_{t,t-1} \equiv \ln\left(\frac{S_{i,t}}{S_{i,t-1}}\right) = \mu^{(i)}_{t,t-1}\cdot{\Delta{t}}
+\end{equation} 
+\end{definition}
+Of course, one could also argue that the price of an asset, e.g., shares of a stock is not continuously compounded becuase the market does not operate continuously, 
+but rather compounded at discrete intervals, e.g., daily, weekly, or monthly.
+In this case, the price of the asset at time $t+\Delta{t}$ is given by:
+\begin{equation}
+    S(t+\Delta{t}) = S(t)\cdot\left(1+\bar{\mu}\cdot{\Delta{t}}\right)
+\end{equation}
+where $\bar{\mu}$ denotes an averaged growth rate (units: inverse years) of the share price over the time horizon $t\rightarrow{t+\Delta{t}}$ (units: years).
+From the discrete share price expression, we can define the fractional return model (Defn. \ref{defn-percentage-return-1}):
+\begin{definition}[Fractional Return]\label{defn-percentage-return-1}
+Let the price of asset $i$ at any time $t-1$ be given by $S_{i,t-1}$. Then, at time $t$, the share price for ticker $i$, denoted as $S_{i,t}$, is given by:
+\begin{equation}
+    S_{i,t} = S_{i,t-1}\cdot\left(1+\bar{\mu}^{(i)}_{t,t-1}\cdot{\Delta{t}}\right)
+\end{equation}
+where $\bar{\mu}^{(i)}_{t,t-1}$ denotes the averaged growth rate (units: inverse years) of ticker $i$ over time horizon $(t-1)\rightarrow{t}$, 
+and $\Delta{t}$ is the length of the time interval between $t-1$ and $t$ (units: years). The fractional return 
+on asset $i$ over time horizon $(t-1)\rightarrow{t}$ is defined as: 
+\begin{equation}
+\bar{r}^{(i)}_{t,t-1} \equiv \frac{S_{i,t} - S_{i,t-1}}{S_{i,t-1}} = \bar{\mu}^{(i)}_{t,t-1}\cdot{\Delta{t}}
+\end{equation}
+\end{definition}
+
+Which return model you use is a matter of context or preference. 
+The fractional return (an approximation of the continuous case) is more intuitive because it is the percentage change in the price of an asset over some time interval.
+Further, discrete compinding is used by convention for fixed-income securities, e.g., bonds.
+However, the logarithmic return is attractive because it is additive, i.e., the logarithmic return over some time is the sum of the logarithmic returns over sub-periods
+(which is not valid for fractional returns). 
+Thus, we will typically use the logarithmic return in this book and assume continuous compounding, except for fixed-income securities, e.g., bonds, 
+which uses discrete compounding by convention.
+
+\subsection{Computing Logarithmic Return}\label{subsec:log-return-distributions-equity}
+Let's develop an approach to compute the logarithmic return distribution of a collection of stocks (Algorithm \ref{algo-log-return-distributions-equity}). 
+\begin{algorithm}[h]
+    \caption{Logarithmic Excess Growth Rate}\label{algo-log-return-distributions-equity}
+    \begin{algorithmic}[1]
+
+        \Statex
+        \Require data set $\mathcal{D}_{i} = \left\{S_{i,t}\right\}_{t=1}^{N}\in\mathcal{D}$ where $S_{i,t}$ denotes the price of stock $i$ at time $t$, all stocks have the same time horizon $N\gg{2}$, 
+		and $\mathcal{D}$ denotes the data set of all stocks.
+        \Require The time interval $\Delta{t}$ between $t$ and $t-1$ (units: years), and a list of stocks $\mathcal{L} = \left\{i\right\}_{i=1}^{M}$ where $M = \dim\mathcal{L}$.
+        \Require The risk-free rate $r_{f}$ (units: inverse years).
+     
+        \Statex
+		\Procedure{log growth rate}{$\mathcal{D}$, $\mathcal{L}$, $\Delta{t}$, $r_{f}$}
+		\State{$N\leftarrow\text{length}(\mathcal{D})$}\Comment{Number of trading days for each stock $i\in\mathcal{L}$}
+        \For{$i\in\mathcal{L}$}
+			\State{$\mathcal{D}_{i} \gets \mathcal{D}[i]$}\Comment{Select the data for stock $i$ from the dataset collection $\mathcal{D}$}
+            \For{$t=2\rightarrow{N}$}
+                \State{$S_{i,t-1} \gets \mathcal{D}_{i}[t-1]$}\Comment{Select the price of stock $i$ at time $t-1$}
+                \State{$S_{i,t} \gets \mathcal{D}_{i}[t]$}\Comment{Select the price of stock $i$ at time $t$}
+                \State{$\mu^{(i)}_{t,t-1} \gets \left(1/\Delta{t}\right)\cdot\ln\left(S_{i,t}/{S_{i,t-1}}\right) - r_{f}$}\Comment{Set $r_{f} = 0$ for regular growth rate}
+            \EndFor
+        \EndFor
+        \Statex
+        \Return{$\mu^{(1)},\dots,\mu^{(\dim\mathcal{L})}$}\Comment{Return the logarithmic growth rate array for each stock $i\in\mathcal{L}$}
+		\EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Heavy-Tailed Distributions}\label{sec:heavy-tailed-distributions}
+Fill me in.
+
+\subsection{Autocorrelation of Returns}\label{sec:autocorrelation-of-returns}
+Fill me in.
+
+\subsection{Volatility Clustering of Returns}\label{sec:volatility-clustering-of-returns}
+Fill me in.
+
+\subsection{Leverage Effect}\label{sec:leverage-effect}
+Fill me in.
+
+\subsection{A Random Walk Model of Return}\label{sec:random-walk-model-of-return}
+Fill me in.
+
+\subsection{Summary}\label{sec:summary-stylized-facts}
+Fill me in.
 
 \section{Lattice models of equity prices}
 A lattice model discretizes the potential future states of the world into a finite number of options. 
@@ -215,34 +357,6 @@ We often use daily price data; thus, a single trading day is a natural time fram
 However, subsequently, it will be easier to use an annualized value for the $\mu$ parameter; thus, we let $\Delta{t} = 1/252$, 
 i.e., the fraction of an average trading year that occurs in a single trading day; thus, our base time will be years.
 We compute the growth rate for each trading day $i$ in a collection of datasets $\mathcal{D}$ using Algorithm \ref{algo-log-return-distributions-equity}.
-\begin{algorithm}[h]
-    \caption{Logarithmic excess growth rate}\label{algo-log-return-distributions-equity}
-    \begin{algorithmic}[1]
-        
-        \Require Collection of price datasets $\mathcal{D}$, where $\mathcal{D}_{j}\in\mathcal{D}$. All datasets have the same length $N$.	
-		\Require list of stocks $\mathcal{L}$, where $\dim\mathcal{L} = M$.
-        \Require time step size $\Delta{t}$ between $t$ and $t-1$ (units: years), 
-        \Require risk-free rate $r_{f}$ (units: inverse years).
-
-		\Statex
-		\State{$M\leftarrow\text{length}(\mathcal{D}_{1})$}\Comment{Number of trading days in the dataset $\mathcal{D}_{j}$}
-		\State{$N\leftarrow\text{length}(\mathcal{L})$}\Comment{Number of stocks in the dataset $\mathcal{D}$}
-		\State{$\mu\leftarrow\text{Array}(M-1,N)$}\Comment{Initialize empty array of growth rates}
-     
-        \Statex
-        \For{$i\in\mathcal{L}$}
-			\State{$\mathcal{D}_{i} \gets \mathcal{D}[i]$}\Comment{Get dataset for stock $i$}
-
-            \For{$t=2\rightarrow{N}$}
-				\State{$S_{1} \gets \text{VWAP}(\mathcal{D}_{i}[t-1])$}\Comment{Get volume weighted average price for stock $i$ at time $t-1$}
-				\State{$S_{2} \gets \text{VWAP}(\mathcal{D}_{i}[t])$}\Comment{Get volume weighted average price for stock $i$ at time $t$}
-                
-				\State{$\mu[t-1,i] \gets \left(\frac{1}{\Delta{t}}\right)\cdot\ln\left(\frac{S_{2}}{S_{1}}\right) - r_{f}$}\Comment{Set $r_{f} = 0$ for regular growth rate}
-            \EndFor
-        \EndFor
-	
-    \end{algorithmic}
-\end{algorithm}
 Then we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ from the growth rate array 
 generated using something like Algorithm \ref{algo-ud-estimation-equity}. 
 \begin{algorithm}[h]
@@ -580,32 +694,6 @@ r^{(i)}_{t,t-1} \equiv \ln\left(\frac{S_{i,t}}{S_{i,t-1}}\right) = \mu^{(i)}_{t,
 \end{definition}
 Given Defn. \ref{defn-log-return-1}, we compute the logarithmic return distribution using Algorithm \ref{algo-log-return-distributions-equity}.
 For each stock $i$, we compute the logarithmic return $\mu^{(i)}_{t,t-1}$ for each time interval $(t-1)\rightarrow{t}$, and then compute the mean and variance of the logarithmic return distribution.
-\begin{algorithm}[h]
-    \caption{Logarithmic Excess Growth Rate}\label{algo-log-return-distributions-equity}
-    \begin{algorithmic}[1]
-
-        \Statex
-        \Require data set $\mathcal{D}_{i} = \left\{S_{i,t}\right\}_{t=1}^{N}\in\mathcal{D}$ where $S_{i,t}$ denotes the price of stock $i$ at time $t$, all stocks have the same time horizon $N\gg{2}$, 
-		and $\mathcal{D}$ denotes the data set of all stocks.
-        \Require The time interval $\Delta{t}$ between $t$ and $t-1$ (units: years), and a list of stocks $\mathcal{L} = \left\{i\right\}_{i=1}^{M}$ where $M = \dim\mathcal{L}$.
-        \Require The risk-free rate $r_{f}$ (units: inverse years).
-     
-        \Statex
-		\Procedure{log growth rate}{$\mathcal{D}$, $\mathcal{L}$, $\Delta{t}$, $r_{f}$}
-		\State{$N\leftarrow\text{length}(\mathcal{D})$}\Comment{Number of trading days for each stock $i\in\mathcal{L}$}
-        \For{$i\in\mathcal{L}$}
-			\State{$\mathcal{D}_{i} \gets \mathcal{D}[i]$}\Comment{Select the data for stock $i$ from the dataset collection $\mathcal{D}$}
-            \For{$t=2\rightarrow{N}$}
-                \State{$S_{i,t-1} \gets \mathcal{D}_{i}[t-1]$}\Comment{Select the price of stock $i$ at time $t-1$}
-                \State{$S_{i,t} \gets \mathcal{D}_{i}[t]$}\Comment{Select the price of stock $i$ at time $t$}
-                \State{$\mu^{(i)}_{t,t-1} \gets \left(1/\Delta{t}\right)\cdot\ln\left(S_{i,t}/{S_{i,t-1}}\right) - r_{f}$}\Comment{Set $r_{f} = 0$ for regular growth rate}
-            \EndFor
-        \EndFor
-        \Statex
-        \Return{$\mu^{(1)},\dots,\mu^{(\dim\mathcal{L})}$}\Comment{Return the logarithmic growth rate array for each stock $i\in\mathcal{L}$}
-		\EndProcedure
-    \end{algorithmic}
-\end{algorithm}
 Once we estimated the logarithmic growth distribution for each stock, we can estimate the volatility parameter $\sigma$ by computing the standard deviation of the return distribution.
 Typically, we use the daily data, but we want the annualized standard deviation of the logarithmic return distribution, thus we multiply the daily standard deviation by $\sqrt{252}$, where $252$ is the average number of trading days in a year, 
 i.e, $\sigma\leftarrow \sqrt{252}\cdot\sigma$.
@@ -834,6 +922,279 @@ In this module, we have considered the multi-dimensional GBM model,
 which describes the share price of firms in a portfolio $\mathcal{P}$.
 We demonstrated how to estimate the drift vector $\mu$, the covariance matrix $\Sigma$, and the noise coefficients $a_{ij}$, and provided an algorithm to simulate the multi-dimensional GBM model. Finally, we introduced the concept of the Net Present Value (NPV) of a portfolio $\mathcal{P}$. We presented an algorithm to compute the NPV of a portfolio $\mathcal{P}$ at time $T$, 
 where we sampled the fraction of the total wealth $\omega_{i}$ invested in each firm $i\in\mathcal{P}$ from a Dirichlet distribution and the share price at $t=T$ from a LogNormal distribution. Later, we'll develop tools to compute optimal values of these fractions, i.e., the portfolio weights, but for now, we considered the case where the portfolio weights are chosen by the investor by some approach (perhaps even randomly).
+
+\section{Other Equity Pricing Models}
+
+\subsection{Discretization of Stochastic Pricing Models}
+In general, stochastic pricing models don't have a convient analytical solution to easily compute the share price. 
+In these cases, we must use a discretization technique such the \href{https://en.wikipedia.org/wiki/Euler%E2%80%93Maruyama_method}{Euler-Maruyama (EM) method},
+which is a numerical method for approximating the solution of stochastic differential equations. 
+Consider the general scalar stochastic differential equation with a Wiener noise process given by:
+\begin{equation}
+dX = a(X,t)dt + b(X,t)dW
+\end{equation}
+where $a(X,t)$ and $b(X,t)$ are deterministic functions of $X$ and $t$, and $dW$ denotes the Wiener noise process.
+The EM method gives the discrete approximate solution at time-step $k\rightarrow{k+1}$ is given by
+\begin{equation}\label{eq-EM-method-general-case}
+X_{k+1} = X_{k} + a(X_{k}, t_{k})h + \left(b(X_{k},t_{k})\sqrt{h}\right)\cdot{Z_{k}}\left(0,1\right)
+\end{equation}
+where the step size $h=t_{k+1} - t_{k}$ and $Z_{k}(0,1)$ denotes a standard normal random variable at time-step $k$.  
+While the EM method is straightforward to implement, it has a poor overall accuracy with error on order $\sqrt{h}$. 
+Thus, small step sizes are required to get accurate solutions.
+
+\subsection{Ornstein Uhlenbeck Model}
+The \href{https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process}{Ornstein-Uhlenbeck mean reversion model} is a type of Ordinary Brownian motion model with a modified mean-reverting drift term:
+\begin{equation}
+dX = \theta\left(\mu-X\right)dt + {\sigma}dW
+\end{equation}
+where $X$ denotes the share price, $\theta>0$ is the time-constant controlling the mean reversion, 
+$\mu$ is the long-term price target, $\sigma>0$ denotes the volatility parameter and $dW$ denotes a Wiener noise process.
+The \href{https://en.wikipedia.org/wiki/Euler%E2%80%93Maruyama_method}{Euler-Maruyama} discretization of the \href{https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process}{Ornstein-Uhlenbeck mean model} is given by:
+\begin{equation*}
+X_{k+1} = X_{k} + \theta\cdot\left(\mu-X_{k}\right)\cdot{h} + \left(\sigma\sqrt{h}\right)\cdot{Z(0,1)}
+\end{equation*}
+where $X_{k}$ denotes the share price at time index $k$, the term $Z(0,1)$ denotes a standard normally distributed random variable, 
+$h = t_{k+1} - t_{k}$ denotes a fixed time step size. 
+While we have represented the $(\mu,\theta,\sigma)$ parameters as constants, these can also (potentially) change with time.
+
+\subsection{Heston Model}
+Unlike \href{https://en.wikipedia.org/wiki/Geometric_Brownian_motion}{geometric Brownian motion}, where the drift and the volatility are constants, 
+in the \href{https://en.wikipedia.org/wiki/Heston_model}{Heston model}, the share price $X(t)$ and volatility $\nu$ are governed by 
+seperate differential equations. The \href{https://en.wikipedia.org/wiki/Heston_model}{Heston model} is a two-dimensional stochastic differential equation model given by:
+\begin{eqnarray*}
+dX & = & \mu\,{X}\,{dt} + \left(\sqrt{\nu}\right)\cdot{X}\cdot{dW}^{X} \\
+d\nu & = & \kappa\left(\theta - \nu\right)dt +\left(\xi\sqrt{\nu}\right)\cdot{dW^{\nu}}
+\end{eqnarray*}
+where $\mu$ is the long-term drift (return growth rate), $\kappa$ is the rate of mean reversion for the volatility,
+$\theta$ is the long-term volatility, and $\xi$ is the volatility of the volatility.
+Finally, each equation of the \ref{https://en.wikipedia.org/wiki/Heston_model}{Heston model} 
+is driven by a separate (potentially) correlated Weiner noise process, $dW^{X}$ (price) and $dW^{\nu}$ (volatility), respectively. 
+The \href{https://en.wikipedia.org/wiki/Euler%E2%80%93Maruyama_method}{Euler-Maruyama} discretization of the 
+\href{https://en.wikipedia.org/wiki/Heston_model}{Heston model} gives price and volatility equations of the form:
+\begin{eqnarray*}
+X_{k+1} & = & X_{k} + \mu\,{X_{k}}\,h + \left(\sqrt{\nu_{k}}\right)\cdot{X}_{k}\cdot\sqrt{h}\cdot{Z}^{X}(0,\Sigma)\\
+\nu_{k+1} & = & \nu_{k} + \kappa\left(\theta - \nu_{k}\right) + \xi\left(\sqrt{\nu_{k}}\right)\cdot\sqrt{h}\cdot{Z}^{\nu}(0,\Sigma)
+\end{eqnarray*}
+where the price and volatility noise processes $Z^{X}$ and $Z^{\nu}$ are samples 
+from a multivariate normal distribution with mean zero and a covariance matrix $\Sigma$, 
+and $h$ denotes the time-step size. Subscripts denote the time index.
+
+\subsection{Summary}
+Fill me in
+
+\section{Optimal Portfolio Allocation}
+The problem of optimal portfolio allocation is a fundamental problem in finance. 
+It has been an active area of research for over 50 years, since the pioneering work of Markowitz and later Sharpe in the 1950s and 1960s \cite{MPT1952, SHARPE1963}.
+The basis of portfolio theory is that investors are rational and risk-averse. 
+Thus, when presented with two portfolios that offer the same expected benefit, a risk averse investor will always 
+choose the less risky portfolio. Futher, when presented with two portfolios that offer the same risk, a rational investor will always 
+choose the portfolio with the largest reward. If an investor wants a higher reward, they must accept more risk.
+For a set of risky assets, e.g., equities or equity derivatives, and risk-free assets, e.g., 
+treasury debt securities, the Markowitz portfolio allocation problem estimates the weight $\omega_{a}$ of asset $a$ in portfolio $\mathcal{P}$ 
+for $\forall{a}\in\mathcal{P}$ that minimizes the risk for a user-specified return.
+
+\subsection{Data-driven Portfolios}\label{sec:the-min-var-portfolio-problem}
+
+\subsubsection*{Risky Assets Only}\label{subsec:risky-assets-only}
+Risky assets, e.g., equities or derivatives can be arranged into a portfolio $\mathcal{P}$. 
+The expected return of portfolio $\mathcal{P}$ denoted by $\mathbb{E}\left(r_{\mathcal{P}}\right)$ is given by:
+\begin{equation*}
+\mathbb{E}\left(r_{\mathcal{P}}\right) = \sum_{i\in\mathcal{P}}\omega_{i}\cdot\mathbb{E}\left(r_{i}\right)
+\end{equation*}
+where $\omega_{i}$ denotes the dollar fraction of asset $i$ in the portfolio $\mathcal{P}$, and 
+$\mathbb{E}\left(r_{i}\right)$ denotes the expected return of asset $i$ on time basis $\mathcal{B}$, e.g., minutes, days, weeks or even years.
+Finally, the fractions $\omega_{i}$ sum to one: $\sum_{i\in\mathcal{P}}\omega_{i} = 1$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./figs/Fig-MinVar-Risky-Allocation.pdf}
+    \caption{Asbtract asset schematic of coupon-bearing Treasury note (bond). The lender (you) gives the United States Treasury 
+    the price $V_{B}$ of the note (bond) at auction. In return, the Treasury pays semi-annual coupon paymemts to holder (you) 
+    over the life of the note (bond). At maturity, the lender (you) receives the final coupon payment
+    and the par value of the note (bond). Schematic written from the note (bond) holders perspective.}\label{fig:risky-assets-schematic-minvar}
+\end{figure}
+The variance of the return of portfolio $\mathcal{P}$ is given by:
+\begin{equation*}
+\sigma_{\mathcal{P}}^2 = 
+\sum_{i\in\mathcal{P}}\sum_{j\in\mathcal{P}}\omega_{i}\omega_{j}
+\text{cov}\left(r_{i},r_{j}\right)
+\end{equation*}
+where $\omega_{\star}$ denotes the fraction of asset $\star$ in the portfolio $\mathcal{P}$, and 
+$\text{cov}\left(r_{i},r_{j}\right)$ denotes the covariance between the return of assets $i$ and $j$.
+The $\text{cov}\left(r_{i},r_{j}\right)$, which quantifies the relationship between assets $i$ and $j$, 
+is given by:
+\begin{equation*}
+\text{cov}\left(r_{i},r_{j}\right) = \sigma_{i}\sigma_{j}\rho_{ij}
+\end{equation*}
+where $\sigma_{\star}$ denote the standard deviation of the return of asset $\star$, 
+and $\rho_{ij}$ denotes the correlation between assets $i$ and $j$.
+
+The Minimum-Variance (Markowitz) portfolio allocation problem for a portfolio $\mathcal{P}$ 
+composed of only risky assets, e.g., equities or derivatives is given by:
+\begin{eqnarray*}
+\text{minimize}~\sigma_{\mathcal{P}}^2 &=& \sum_{i\in\mathcal{P}}\sum_{j\in\mathcal{P}}\omega_{i}\omega_{j}
+\text{cov}\left(r_{i},r_{j}\right) \\
+\text{subject to}~\mathbb{E}(r_{\mathcal{P}})& = & \sum_{i\in\mathcal{P}}\omega_{i}\cdot\mathbb{E}(r_{i})\geq{R^{*}} \\
+\sum_{i\in\mathcal{P}}\omega_{i} & = & 1 \\
+\text{and}~\omega_{i}&\geq&{0}\qquad{\forall{i}\in\mathcal{P}}
+\end{eqnarray*}
+The term $R^{*}$ is the minimum required return for $\mathcal{P}$ (specified by the investor). 
+The $\omega_{i}\geq{0}~\forall{i}\in\mathcal{P}$ and the summation to unity constraints forbid short selling (borrowing); 
+If short selling (borrowing) is allowed, these constraints can be relaxed.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf}
+    \caption{Asbtract asset schematic of coupon-bearing Treasury note (bond). The lender (you) gives the United States Treasury 
+    the price $V_{B}$ of the note (bond) at auction. In return, the Treasury pays semi-annual coupon paymemts to holder (you) 
+    over the life of the note (bond). At maturity, the lender (you) receives the final coupon payment
+    and the par value of the note (bond). Schematic written from the note (bond) holders perspective.}\label{fig:risky-assets-schematic-minvar}
+\end{figure}
+
+\subsubsection*{Risky and Risk-free Assets}\label{subsec:risky-and-risk-free-assets}
+The Minimum-Variance (Markowitz) portfolio allocation problem for a portfolio composed of risk-free and risky assets $\mathcal{P}$ 
+minimizes the variance of the portfolio $\sigma_{\mathcal{P}}^2$ 
+subject to a minimal required return and non-negativity constraints: 
+\begin{eqnarray*}
+\text{minimize}~\sigma_{\mathcal{P}}^2 &=& \sum_{i\in\mathcal{P}}\sum_{j\in\mathcal{P}}\omega_{i}\omega_{j}
+\text{cov}\left(r_{i},r_{j}\right) \\
+\text{subject to}~\mathbb{E}(r_{\mathcal{P}})& = & \left(\omega_{f}r_{f}+\sum_{i\in\mathcal{P}}\omega_{i}\cdot\mathbb{E}(r_{i})\right)\geq{R^{*}}\\
+\omega_{f}+\sum_{i\in\mathcal{P}}\omega_{i} & = & 1 \\
+\text{and}~\omega_{i}&\geq&{0}\qquad{\forall{i}\in\mathcal{P}}
+\end{eqnarray*}
+The terms $\omega_{i}\geq{0}$ denote the fraction of risky asset $i\in\mathcal{P}$, 
+the quantity $\omega_{f}$ denotes the fraction of risk-free assets in the portfolio, 
+$r_{f}$ denotes the risk free rate or return, and $R^{*}$ is the minimum required rate of return 
+for overall portfolio $\mathcal{P}$.
+
+\subsection{Model-Driven Portfolios}\label{sec:factor-model-portfolio-problems}
+The application of models to construct risky portfolios was originally proposed by Treynor and Black \cite{FB1973}. 
+Factor (also called index) models describe the risk and the return of an asset relative to a risk-free alternative investment, 
+e.g., U.S. Treasury debt and other market factors. The advantage of factor models is that they reduce the dimensionality of the problem, i.e., 
+the number of calculations required to estimate the risk and return of a portfolio, especially when the number of assets is large. Further,
+factor models provide a mechanism to rationalize market behavior, e.g., the relationship between the return of a firm and the return of the market.
+
+\subsubsection{Derivation of Sharpe Single Index Model}\label{subsec:derivation-single-factor-model}
+One of the simplest (yet still widely used) factor models is the single index model developed by Sharpe \cite{SHARPE1963}.
+The single index model describes the \textbf{excess return}, i.e., the return of a firm in excess of a risk-free
+alternative, as a function of firm specific and benchmarks factors. Let $R_{i}(t)\equiv\left(r_{i}\left(t\right) - r_{f}\right)$ 
+and $R_{m}(t)\equiv\left(r_{m}\left(t\right)-r_{f}\right)$ denote the firm-specific and market \textbf{excess returns}, 
+where $r_{f}$ denotes the risk-free rate of return. Further, let $\epsilon_{i}\left(t\right)$ denote stationary normally distributed random noise
+with mean zero and standard deviation $\sigma_{i}$. Then, the single index model of Sharpe is given by:
+\begin{equation*}
+R_{i}\left(t\right) = \alpha_{i}+\beta_{i}\cdot{R}_{m}\left(t\right)+\epsilon_{i}
+\left(t\right)\qquad{t=1,2,\dots,T}
+\end{equation*}
+where $\alpha_{i}$ and $\beta_{i}$ are (unknown) model parameters. 
+The parameter $\alpha_{i}$ describes the firm-specific return not explained by the market; thus, $\alpha_{i}$ is the idiosyncratic return of firm $i$.
+On the other hand, the parameter $\beta_{i}$ has two interpretations. First, it measures the relationship between the excess return of firm $i$ and the excess return of the market. 
+A large $\beta_{i}$ suggests that the market returns (or losses) are amplified for firm $i$, while a small $\beta_{i}$ suggests that the market returns (or losses) are damped for firm $i$. 
+Second, it represents the relative risk of investing in a firm $i$ relative to the overall market.
+
+% In the Sharpe factor model, the excess return of a ticker $i$, i.e., the return in excess of a risk-free alternative, 
+% is modeled as a linear combination of the return of a market, i.e., benchmark portfolio $r_{m}$, and a firm-specific return $\alpha_{i}$:
+% \begin{equation}\label{eq:single-index-model}
+% r_{i}\left(t\right) - r_{f} = \alpha_{i}+\beta_{i}\left(r_{m}\left(t\right)-r_{f}\right)+\epsilon_{i}
+% \left(t\right)\qquad{t=1,2,\dots,T}
+% \end{equation} 
+% where $r_{i}\left(t\right)$ denotes the return of firm $i$ at time $t$, $\alpha_{i}$ denotes the firm-specific return, 
+% and $\beta_{i}$ denotes the sensitivity of the excess return of firm $i$ to the excess return of the market (or benchmark portfolio).
+% Finally, $\epsilon_{i}\left(t\right)$ denotes the firm-specific error term, which is assumed to be normally distributed with mean zero 
+% and standard deviation $\sigma_{i}$.
+
+
+\paragraph*{Reward interpretation of $\beta_{i}$.} Taking the expectation of the firm excess return $R_{i}$ gives:
+\begin{equation*}
+\mathbb{E}\left(R_{i}\right) = \alpha_{i}+\beta_{i}\cdot\mathbb{E}\left(R_{m}\right)
+\end{equation*}
+where $\mathbb{E}\left(\epsilon_{i}\left(t\right)\right) = 0$. Solving for $\beta_{i}$ gives:
+\begin{equation*}
+\beta_{i} = \frac{\mathbb{E}\left(R_{i}\right) - \alpha_{i}}{\mathbb{E}\left(R_{m}\right)}
+\end{equation*}
+Thus, $\beta_{i}$ is a ratio of expected returns which gives insight into the relative return of investing in firm $i$ 
+compared to the overall market. If $\beta_{i}>1$ the expected excess return of firm $i$ is greater than the market return,
+while $\beta_{i}\sim{1}$ suggets firm $i$ will perform similar to the overall market, 
+and $\beta_{i}<1$ suggests the expected excess return of firm $i$ will be less than the market return.
+
+\paragraph*{Risk interpretation of $\beta_{i}$.} The $\beta_{i}$ for asset $i$ can also be considered a measure of the risk of asset $i$ relative to the overall market. 
+For example, we can show that:
+\begin{equation*}
+\beta_{i} = \frac{\text{cov}(R_{i}, R_{m})}{\text{var}(R_{m})}
+\end{equation*}
+where $\text{cov}(R_{i}, R_{m})$ denotes the covariance between the excess return of firm $i$ and the market, 
+and $\text{var}(R_{m})$ denotes the variance of the market excess return. 
+Thus, in the context of risk, $\beta_{i}>1$ suggests firm $i$ has greater risk than the overall market,
+$\beta_{i}\sim{1}$ suggests that firm $i$ has the same risk as the overall market on average, and 
+$\beta_{i}<1$ suggests firm $i$ has less risk compared to overall market.
+
+\subsubsection{Estimation of $\alpha_{i}$ and $\beta_{i}$}\label{subsec:estimation-of-alpha-beta}
+Fill me in
+
+\subsection{Single Factor Portfolio Problem}\label{subsec:single-factor-model-portfolios}
+The expected portfolio return $\mathbb{E}(R_{\mathcal{P}})$ for a single factor portfolio $\mathcal{P}$
+Substituting the expected excess return for firm $i$ computed using the single index model into the portfolio return expression gives:
+\begin{equation*}
+\mathbb{E}(R_{\mathcal{P}}) = \sum_{i\in\mathcal{P}}\omega_{i}\cdot\Bigl[\alpha_{i}+\beta_{i}\cdot\mathbb{E}(R_{m})\Bigr]
+\end{equation*}
+Carrying through the multiplication gives:
+\begin{equation*}
+\mathbb{E}(r_{\mathcal{P}}) = \alpha_{\mathcal{P}}+\beta_{\mathcal{P}}\cdot\mathbb{E}(R_{m})
+\end{equation*}
+where the portfolio unexplained return $\alpha_{\mathcal{P}}$ and the portfolio $\beta_{\mathcal{P}}$ are given by:
+\begin{eqnarray*}
+    \alpha_{\mathcal{P}} & = & \sum_{i\in\mathcal{P}}\omega_{i}\cdot\alpha_{i}\\
+    \beta_{\mathcal{P}} & = & \sum_{i\in\mathcal{P}}\omega_{i}\cdot\beta_{i}
+\end{eqnarray*}
+Variance of Portfolio Return $\sigma_{\mathcal{P}}^2$
+The variance of the excess return of portfolio $\mathcal{P}$ is given by:
+\begin{equation*}
+\sigma_{\mathcal{P}}^2 = 
+\sum_{i\in\mathcal{P}}\sum_{j\in\mathcal{P}}\omega_{i}\omega_{j}
+\text{cov}\left(R_{i},R_{j}\right)
+\end{equation*}
+where $\omega_{\star}$ denotes the fraction of asset $\star$ in the portfolio $\mathcal{P}$, and 
+$\text{cov}\left(R_{i},R_{j}\right)$ denotes the covariance between the excess return of assets $i$ and $j$. 
+Substituting the single index model for the excess return of asset $i$ and $j$ into the covariance expression 
+(and simplifing) gives:
+\begin{equation*}
+\text{cov}(R_{i}, R_{j}) = \begin{cases}
+\beta_{i}^{2}\sigma_{m}^{2}+\sigma_{\epsilon_{i}}^{2} & i = j \\
+\beta_{i}\beta_{j}\sigma_{m}^2 & i \neq j
+\end{cases}
+\end{equation*}
+where $\sigma_{m}^2$ denotes the variance of the excess return of the market, 
+and $\sigma_{\epsilon_{i}}^{2}$ denotes the variance of the firm-specific error model.
+
+The risky portfolio allocation problem for a portfolio $\mathcal{P}$ using the single index model is:
+\begin{eqnarray*}
+\text{minimize}~\sigma_{\mathcal{P}}^2 &=& \sum_{i\in\mathcal{P}}\sum_{j\in\mathcal{P}}\omega_{i}\omega_{j}
+\text{cov}\left(R_{i},R_{j}\right) \\
+\text{subject to}~\mathbb{E}(r_{\mathcal{P}})& = & \alpha_{\mathcal{P}}+\beta_{\mathcal{P}}\cdot\mathbb{E}(R_{m})\geq{R^{*}} \\
+\alpha_{\mathcal{P}} & = & \sum_{i\in\mathcal{P}}\omega_{i}\cdot\alpha_{i}\\
+\beta_{\mathcal{P}} & = & \sum_{i\in\mathcal{P}}\omega_{i}\cdot\beta_{i} \\
+\sum_{i\in\mathcal{P}}\omega_{i} & = & 1 \\
+\text{and}~\omega_{i}&\geq&{0}\qquad{\forall{i}\in\mathcal{P}}
+\end{eqnarray*}
+where the covariance between asset $i$ and asset $j$ is given by:
+\begin{equation*}
+\text{cov}(R_{i}, R_{j}) = \begin{cases}
+\beta_{i}^{2}\sigma_{m}^{2}+\sigma_{\epsilon_{i}}^{2} & i = j \\
+\beta_{i}\beta_{j}\sigma_{m}^2 & i \neq j
+\end{cases}
+\end{equation*}
+
+\subsection{Summary}
+Fill me in.
+
+\section{Dynamic Reallocation Problems}\label{sec:dynamic-reallocation-problems-portfolios}
+\subsection{Portfolio Drift}\label{subsec:portfolio-drift}
+\subsection{Discrete Reallocation}\label{subsec:discrete-time-reallocation-min-var-portfolio}
+\subsection{Continuous Reallocation}\label{subsec:continuous-time-reallocation-min-var-portfolio}
+\subsection{Risk Manangement}\label{sec:risk-management-portfolios}
+\subsection{Summary}\label{sec:summary-min-var-portfolio}
+
+
+\clearpage
 
 \bibliography{References_v1}
 

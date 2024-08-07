@@ -4,75 +4,135 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{plos2015}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Lattice models of equity prices}{1}{section.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Binomial lattice model schematic. At each node, the share price can either go \texttt  {up} by $u$ or \texttt  {down} by $d$. The probability of going \texttt  {up} is $p$, and the likelihood of going \texttt  {down} is $1-p$. \textbf  {A}: Single time-step lookahead. \textbf  {B}: Two time-step lookahead. \textbf  {C}: Three time-step lookahead. At the tree $l$ level, the potential share price can take on $l+1$ values. }}{1}{figure.caption.1}\protected@file@percent }
+\citation{Cont-QuantFinance-2001}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{5}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Stylized facts of Equity Returns}{5}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Logarithmic and Fractional Return Distributions}{6}{subsection.2.1}\protected@file@percent }
+\newlabel{sec:logarithmic-and-fractional-returns}{{2.1}{6}{Logarithmic and Fractional Return Distributions}{subsection.2.1}{}}
+\newlabel{defn-log-return-1}{{1}{6}{Logarithmic and Fractional Return Distributions}{definition.1}{}}
+\newlabel{defn-percentage-return-1}{{2}{7}{Logarithmic and Fractional Return Distributions}{definition.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Computing Logarithmic Return}{7}{subsection.2.2}\protected@file@percent }
+\newlabel{subsec:log-return-distributions-equity}{{2.2}{7}{Computing Logarithmic Return}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Heavy-Tailed Distributions}{7}{subsection.2.3}\protected@file@percent }
+\newlabel{sec:heavy-tailed-distributions}{{2.3}{7}{Heavy-Tailed Distributions}{subsection.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Autocorrelation of Returns}{7}{subsection.2.4}\protected@file@percent }
+\newlabel{sec:autocorrelation-of-returns}{{2.4}{7}{Autocorrelation of Returns}{subsection.2.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Volatility Clustering of Returns}{7}{subsection.2.5}\protected@file@percent }
+\newlabel{sec:volatility-clustering-of-returns}{{2.5}{7}{Volatility Clustering of Returns}{subsection.2.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Logarithmic Excess Growth Rate}}{8}{algorithm.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:binomial-lattice-schematic}{{1}{1}{Binomial lattice model schematic. At each node, the share price can either go \texttt {up} by $u$ or \texttt {down} by $d$. The probability of going \texttt {up} is $p$, and the likelihood of going \texttt {down} is $1-p$. \textbf {A}: Single time-step lookahead. \textbf {B}: Two time-step lookahead. \textbf {C}: Three time-step lookahead. At the tree $l$ level, the potential share price can take on $l+1$ values}{figure.caption.1}{}}
+\newlabel{algo-log-return-distributions-equity}{{1}{8}{Logarithmic Excess Growth Rate}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Leverage Effect}{8}{subsection.2.6}\protected@file@percent }
+\newlabel{sec:leverage-effect}{{2.6}{8}{Leverage Effect}{subsection.2.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}A Random Walk Model of Return}{8}{subsection.2.7}\protected@file@percent }
+\newlabel{sec:random-walk-model-of-return}{{2.7}{8}{A Random Walk Model of Return}{subsection.2.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8}Summary}{8}{subsection.2.8}\protected@file@percent }
+\newlabel{sec:summary-stylized-facts}{{2.8}{8}{Summary}{subsection.2.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Lattice models of equity prices}{8}{section.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Binomial lattice model schematic. At each node, the share price can either go \texttt  {up} by $u$ or \texttt  {down} by $d$. The probability of going \texttt  {up} is $p$, and the likelihood of going \texttt  {down} is $1-p$. \textbf  {A}: Single time-step lookahead. \textbf  {B}: Two time-step lookahead. \textbf  {C}: Three time-step lookahead. At the tree $l$ level, the potential share price can take on $l+1$ values. }}{9}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:binomial-lattice-schematic}{{1}{9}{Binomial lattice model schematic. At each node, the share price can either go \texttt {up} by $u$ or \texttt {down} by $d$. The probability of going \texttt {up} is $p$, and the likelihood of going \texttt {down} is $1-p$. \textbf {A}: Single time-step lookahead. \textbf {B}: Two time-step lookahead. \textbf {C}: Three time-step lookahead. At the tree $l$ level, the potential share price can take on $l+1$ values}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Analytical solution}{9}{subsection.3.1}\protected@file@percent }
 \citation{COX1979229}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Analytical solution}{2}{subsection.2.1}\protected@file@percent }
-\newlabel{defn-binomial-distribution}{{1}{2}{Analytical solution}{definition.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Models of $u$, $d$ and $p$}{2}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Real-world probability $p$}{2}{subsubsection.2.2.1}\protected@file@percent }
-\newlabel{eqn:share-price-growth-rate}{{2}{3}{Real-world probability $p$}{equation.2.2}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Logarithmic excess growth rate}}{3}{algorithm.1}\protected@file@percent }
-\newlabel{algo-log-return-distributions-equity}{{1}{3}{Logarithmic excess growth rate}{algorithm.1}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Estimating $u$, $d$ and $p$ from the $\mu $-array}}{4}{algorithm.2}\protected@file@percent }
-\newlabel{algo-ud-estimation-equity}{{2}{4}{Estimating $u$, $d$ and $p$ from the $\mu $-array}{algorithm.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Risk-neutral probability $q$}{4}{subsubsection.2.2.2}\protected@file@percent }
-\newlabel{eqn:share-price-growth-rate-2}{{4}{5}{Risk-neutral probability $q$}{equation.2.4}{}}
-\newlabel{eqn:expectation-operator-risk-neutral}{{5}{5}{Risk-neutral probability $q$}{equation.2.5}{}}
-\newlabel{eqn:risk-neutral-probability}{{6}{5}{Risk-neutral probability $q$}{equation.2.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Cox-Ross-Rubinstein (CRR) model}{5}{subsection.2.3}\protected@file@percent }
-\newlabel{eqn:variance-of-log-return}{{7}{5}{Cox-Ross-Rubinstein (CRR) model}{equation.2.7}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Risk-neutral estimate of $u$, $d$ and $q$}}{6}{algorithm.3}\protected@file@percent }
-\newlabel{algo-risk-neutral-ud-estimation-equity}{{3}{6}{Risk-neutral estimate of $u$, $d$ and $q$}{algorithm.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Binomial lattice trade strategy}{6}{subsection.2.4}\protected@file@percent }
+\newlabel{defn-binomial-distribution}{{3}{10}{Analytical solution}{definition.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Models of $u$, $d$ and $p$}{10}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Real-world probability $p$}{10}{subsubsection.3.2.1}\protected@file@percent }
+\newlabel{eqn:share-price-growth-rate}{{8}{10}{Real-world probability $p$}{equation.3.8}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Estimating $u$, $d$ and $p$ from the $\mu $-array}}{11}{algorithm.2}\protected@file@percent }
+\newlabel{algo-ud-estimation-equity}{{2}{11}{Estimating $u$, $d$ and $p$ from the $\mu $-array}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Risk-neutral probability $q$}{11}{subsubsection.3.2.2}\protected@file@percent }
+\newlabel{eqn:share-price-growth-rate-2}{{10}{12}{Risk-neutral probability $q$}{equation.3.10}{}}
+\newlabel{eqn:expectation-operator-risk-neutral}{{11}{12}{Risk-neutral probability $q$}{equation.3.11}{}}
+\newlabel{eqn:risk-neutral-probability}{{12}{12}{Risk-neutral probability $q$}{equation.3.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Cox-Ross-Rubinstein (CRR) model}{12}{subsection.3.3}\protected@file@percent }
+\newlabel{eqn:variance-of-log-return}{{13}{12}{Cox-Ross-Rubinstein (CRR) model}{equation.3.13}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Risk-neutral estimate of $u$, $d$ and $q$}}{13}{algorithm.3}\protected@file@percent }
+\newlabel{algo-risk-neutral-ud-estimation-equity}{{3}{13}{Risk-neutral estimate of $u$, $d$ and $q$}{algorithm.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Binomial lattice trade strategy}{13}{subsection.3.4}\protected@file@percent }
+\newlabel{eqn:roi-fractional-return}{{17}{14}{Binomial lattice trade strategy}{equation.3.17}{}}
+\newlabel{eqn:roi-fractional-return-2}{{19}{14}{Binomial lattice trade strategy}{equation.3.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Summary}{14}{subsection.3.5}\protected@file@percent }
 \citation{Merton2006}
 \citation{BlackScholes1973}
-\newlabel{eqn:roi-fractional-return}{{11}{7}{Binomial lattice trade strategy}{equation.2.11}{}}
-\newlabel{eqn:roi-fractional-return-2}{{13}{7}{Binomial lattice trade strategy}{equation.2.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Summary}{7}{subsection.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Single Asset Geometric Brownian Motion}{8}{section.3}\protected@file@percent }
-\newlabel{eqn:GBM}{{14}{8}{Single Asset Geometric Brownian Motion}{equation.3.14}{}}
-\newlabel{defn-wiener-process}{{2}{8}{Single Asset Geometric Brownian Motion}{definition.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Analytical solution}{8}{subsection.3.1}\protected@file@percent }
-\newlabel{eqn:analytical-soln-GBM}{{15}{9}{Analytical solution}{equation.3.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Estimating the drift parameter $\mu $}{9}{subsection.3.2}\protected@file@percent }
-\newlabel{eqn:log-share-price-linear-model}{{16}{9}{Estimating the drift parameter $\mu $}{equation.3.16}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Estimating the volatility parameter $\sigma $}{10}{subsection.3.3}\protected@file@percent }
-\newlabel{defn-log-return-1}{{3}{10}{Estimating the volatility parameter $\sigma $}{definition.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Single Asset Geometric Brownian Motion}{15}{section.4}\protected@file@percent }
+\newlabel{eqn:GBM}{{20}{15}{Single Asset Geometric Brownian Motion}{equation.4.20}{}}
+\newlabel{defn-wiener-process}{{4}{15}{Single Asset Geometric Brownian Motion}{definition.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Analytical solution}{15}{subsection.4.1}\protected@file@percent }
+\newlabel{eqn:analytical-soln-GBM}{{21}{16}{Analytical solution}{equation.4.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Estimating the drift parameter $\mu $}{16}{subsection.4.2}\protected@file@percent }
+\newlabel{eqn:log-share-price-linear-model}{{22}{17}{Estimating the drift parameter $\mu $}{equation.4.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Estimating the volatility parameter $\sigma $}{17}{subsection.4.3}\protected@file@percent }
+\newlabel{defn-log-return-1}{{5}{17}{Estimating the volatility parameter $\sigma $}{definition.5}{}}
 \citation{Mandelbrot-1963,Mandelbrot-1967}
 \citation{Cont-QuantFinance-2001}
 \citation{ratliffcrain2023revisiting}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Logarithmic Excess Growth Rate}}{11}{algorithm.4}\protected@file@percent }
-\newlabel{algo-log-return-distributions-equity}{{4}{11}{Logarithmic Excess Growth Rate}{algorithm.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Stylized facts}{11}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Stylized facts}{18}{subsection.4.4}\protected@file@percent }
 \citation{Merton2006}
 \citation{BlackScholes1973}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Summary}{12}{subsection.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Multiple Asset Geometric Brownian Motion Models}{12}{section.4}\protected@file@percent }
 \citation{Glasserman:2004ua}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Drift and Covariance Estimation}{13}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Multiasset Portfolio Simulations}{14}{subsection.4.2}\protected@file@percent }
-\newlabel{defn-log-normal-distribution-price}{{4}{14}{Multiasset Portfolio Simulations}{definition.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Computing the Net Present Value (NPV) of a portfolio $\mathcal  {P}$}{14}{subsection.4.3}\protected@file@percent }
-\newlabel{eqn:npv-mv-gbm}{{20}{14}{Computing the Net Present Value (NPV) of a portfolio $\mathcal {P}$}{equation.4.20}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Multiasset Geometric Brownian Motion}}{15}{algorithm.5}\protected@file@percent }
-\newlabel{algo-multi-asset-gbm-simulation}{{5}{15}{Multiasset Geometric Brownian Motion}{algorithm.5}{}}
-\newlabel{eqn:portfolio-weights-derivation}{{21}{16}{Computing the Net Present Value (NPV) of a portfolio $\mathcal {P}$}{equation.4.21}{}}
-\newlabel{concept:properties-of-omega}{{1}{16}{Computing the Net Present Value (NPV) of a portfolio $\mathcal {P}$}{concept.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Summary}{16}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Summary}{19}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Multiple Asset Geometric Brownian Motion Models}{19}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Drift and Covariance Estimation}{20}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Multiasset Portfolio Simulations}{20}{subsection.5.2}\protected@file@percent }
+\newlabel{defn-log-normal-distribution-price}{{6}{20}{Multiasset Portfolio Simulations}{definition.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Computing the Net Present Value (NPV) of a portfolio $\mathcal  {P}$}{21}{subsection.5.3}\protected@file@percent }
+\newlabel{eqn:npv-mv-gbm}{{26}{21}{Computing the Net Present Value (NPV) of a portfolio $\mathcal {P}$}{equation.5.26}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Multiasset Geometric Brownian Motion}}{22}{algorithm.4}\protected@file@percent }
+\newlabel{algo-multi-asset-gbm-simulation}{{4}{22}{Multiasset Geometric Brownian Motion}{algorithm.4}{}}
+\newlabel{eqn:portfolio-weights-derivation}{{27}{22}{Computing the Net Present Value (NPV) of a portfolio $\mathcal {P}$}{equation.5.27}{}}
+\newlabel{concept:properties-of-omega}{{1}{23}{Computing the Net Present Value (NPV) of a portfolio $\mathcal {P}$}{concept.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Summary}{23}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Other Equity Pricing Models}{23}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Discretization of Stochastic Pricing Models}{23}{subsection.6.1}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Monte-Carlo Portfolio Net Present Value}}{24}{algorithm.5}\protected@file@percent }
+\newlabel{algo-npv-monte-carlo-portfolios}{{5}{24}{Monte-Carlo Portfolio Net Present Value}{algorithm.5}{}}
+\newlabel{eq-EM-method-general-case}{{29}{24}{Discretization of Stochastic Pricing Models}{equation.6.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Ornstein Uhlenbeck Model}{24}{subsection.6.2}\protected@file@percent }
+\citation{MPT1952,SHARPE1963}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Heston Model}{25}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Summary}{25}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Optimal Portfolio Allocation}{25}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Data-driven Portfolios}{26}{subsection.7.1}\protected@file@percent }
+\newlabel{sec:the-min-var-portfolio-problem}{{7.1}{26}{Data-driven Portfolios}{subsection.7.1}{}}
+\newlabel{subsec:risky-assets-only}{{7.1}{26}{Risky Assets Only}{section*.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Asbtract asset schematic of coupon-bearing Treasury note (bond). The lender (you) gives the United States Treasury the price $V_{B}$ of the note (bond) at auction. In return, the Treasury pays semi-annual coupon paymemts to holder (you) over the life of the note (bond). At maturity, the lender (you) receives the final coupon payment and the par value of the note (bond). Schematic written from the note (bond) holders perspective.}}{26}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:risky-assets-schematic-minvar}{{2}{26}{Asbtract asset schematic of coupon-bearing Treasury note (bond). The lender (you) gives the United States Treasury the price $V_{B}$ of the note (bond) at auction. In return, the Treasury pays semi-annual coupon paymemts to holder (you) over the life of the note (bond). At maturity, the lender (you) receives the final coupon payment and the par value of the note (bond). Schematic written from the note (bond) holders perspective}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Asbtract asset schematic of coupon-bearing Treasury note (bond). The lender (you) gives the United States Treasury the price $V_{B}$ of the note (bond) at auction. In return, the Treasury pays semi-annual coupon paymemts to holder (you) over the life of the note (bond). At maturity, the lender (you) receives the final coupon payment and the par value of the note (bond). Schematic written from the note (bond) holders perspective.}}{27}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:risky-assets-schematic-minvar}{{3}{27}{Asbtract asset schematic of coupon-bearing Treasury note (bond). The lender (you) gives the United States Treasury the price $V_{B}$ of the note (bond) at auction. In return, the Treasury pays semi-annual coupon paymemts to holder (you) over the life of the note (bond). At maturity, the lender (you) receives the final coupon payment and the par value of the note (bond). Schematic written from the note (bond) holders perspective}{figure.caption.7}{}}
+\newlabel{subsec:risky-and-risk-free-assets}{{7.1}{27}{Risky and Risk-free Assets}{section*.8}{}}
+\citation{FB1973}
+\citation{SHARPE1963}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Model-Driven Portfolios}{28}{subsection.7.2}\protected@file@percent }
+\newlabel{sec:factor-model-portfolio-problems}{{7.2}{28}{Model-Driven Portfolios}{subsection.7.2}{}}
+\newlabel{subsec:derivation-single-factor-model}{{7.2.1}{28}{Derivation of Sharpe Single Index Model}{subsubsection.7.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}Derivation of Sharpe Single Index Model}{28}{subsubsection.7.2.1}\protected@file@percent }
+\newlabel{subsec:estimation-of-alpha-beta}{{7.2.2}{29}{Estimation of $\alpha _{i}$ and $\beta _{i}$}{subsubsection.7.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2}Estimation of $\alpha _{i}$ and $\beta _{i}$}{29}{subsubsection.7.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Single Factor Portfolio Problem}{29}{subsection.7.3}\protected@file@percent }
+\newlabel{subsec:single-factor-model-portfolios}{{7.3}{29}{Single Factor Portfolio Problem}{subsection.7.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Summary}{30}{subsection.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Dynamic Reallocation Problems}{30}{section.8}\protected@file@percent }
+\newlabel{sec:dynamic-reallocation-problems-portfolios}{{8}{30}{Dynamic Reallocation Problems}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Portfolio Drift}{30}{subsection.8.1}\protected@file@percent }
+\newlabel{subsec:portfolio-drift}{{8.1}{30}{Portfolio Drift}{subsection.8.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Discrete Reallocation}{30}{subsection.8.2}\protected@file@percent }
+\newlabel{subsec:discrete-time-reallocation-min-var-portfolio}{{8.2}{30}{Discrete Reallocation}{subsection.8.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Continuous Reallocation}{30}{subsection.8.3}\protected@file@percent }
+\newlabel{subsec:continuous-time-reallocation-min-var-portfolio}{{8.3}{30}{Continuous Reallocation}{subsection.8.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Risk Manangement}{30}{subsection.8.4}\protected@file@percent }
+\newlabel{sec:risk-management-portfolios}{{8.4}{30}{Risk Manangement}{subsection.8.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Summary}{30}{subsection.8.5}\protected@file@percent }
+\newlabel{sec:summary-min-var-portfolio}{{8.5}{30}{Summary}{subsection.8.5}{}}
 \bibdata{References_v1}
-\bibcite{COX1979229}{{1}{}{{}}{{}}}
-\bibcite{Merton2006}{{2}{}{{}}{{}}}
-\bibcite{BlackScholes1973}{{3}{}{{}}{{}}}
-\bibcite{Mandelbrot-1963}{{4}{}{{}}{{}}}
-\bibcite{Mandelbrot-1967}{{5}{}{{}}{{}}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces Monte-Carlo Portfolio Net Present Value}}{17}{algorithm.6}\protected@file@percent }
-\newlabel{algo-npv-monte-carlo-portfolios}{{6}{17}{Monte-Carlo Portfolio Net Present Value}{algorithm.6}{}}
-\bibcite{Cont-QuantFinance-2001}{{6}{}{{}}{{}}}
+\bibcite{Cont-QuantFinance-2001}{{1}{}{{}}{{}}}
+\bibcite{COX1979229}{{2}{}{{}}{{}}}
+\bibcite{Merton2006}{{3}{}{{}}{{}}}
+\bibcite{BlackScholes1973}{{4}{}{{}}{{}}}
+\bibcite{Mandelbrot-1963}{{5}{}{{}}{{}}}
+\bibcite{Mandelbrot-1967}{{6}{}{{}}{{}}}
 \bibcite{ratliffcrain2023revisiting}{{7}{}{{}}{{}}}
 \bibcite{Glasserman:2004ua}{{8}{}{{}}{{}}}
+\bibcite{MPT1952}{{9}{}{{}}{{}}}
+\bibcite{SHARPE1963}{{10}{}{{}}{{}}}
+\bibcite{FB1973}{{11}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{18}
+\gdef \@abspage@last{31}
