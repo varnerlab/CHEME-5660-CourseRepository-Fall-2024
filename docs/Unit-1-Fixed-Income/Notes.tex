@@ -124,25 +124,14 @@
 
 \setcounter{page}{1}
 
-\section{Introduction}
-\href{https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities}{United States Marketable Treasury Securities}, 
-are issued by the U.S. Department of the Treasury to fund its operations and meet financial obligations. 
-These debt securities are structured loan agreements between a borrower, i.e., the U.S. government, and a lender (you) 
-that allows the government to fund its operations and obligations (Fig. \ref{fig:govt-debt-schematic}).
-The debt holder and the U.S. Treasury have a marketable repayment agreement, which can be held by the lender (you) until the completion of the contract or resold on a secondary market. Although there are various types of U.S. government debt securities, they all share a few common characteristics. 
-First, U.S. Treasury debt securities have a predetermined term length; thus, the contract duration between the borrower and lender is fixed.
-Second, U.S. Treasury debt securities have a par value, representing the instrument's face value, a price (which may differ from the par value), and an interest rate paid to the lender. Next, some U.S. Treasury debt securities have interest payments commonly called coupons. These payments give the lender fixed cashflows on a predetermined schedule throughout the debt instrument's term. Finally, income from interest on U.S. Treasury debt securities is free of state and local income taxes but subject to federal income taxes.
-You can purchase U.S. Treasury debt directly from the \href{https://www.treasurydirect.gov/indiv/products/prod_tbonds_glance.htm}{United States Treasury via TreasuryDirect} 
-or through a bank or broker to lend money to the U.S. government.
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listofalgorithms
+\clearpage
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.85\textwidth]{./figs/Fig-Govt-Debt-Schematic.pdf}
-    \caption{Schematic of U.S. Government Debt Securities. You lend money to the United States Treasury by purchasing a treasury security.
-	The Treasury pays you back in different fix ways, dependent upon the security.}\label{fig:govt-debt-schematic}
-\end{figure}
-
-\section{Background}
+\section{Preliminaries}
 Throughout all the courses, we'll make use of a few concepts and approaches from finance, mathematics, statistics, and computer science.
 Let's begin this module by reviewing some of these concepts, in particular the concept of an abstract asset and the time value of money.
 These two foundational concepts are essential for understanding the pricing of zero-coupon Treasury securities (and other financial instruments).
@@ -191,7 +180,7 @@ and are considered one of the safest investments in the world.
 Thus, we can use the yield on US Treasury debt securities as a proxy for the risk-free rate of return $i$. 
 This is the first reason why we are interested in these securities.
 
-\subsection{Exchange rate model}
+\subsection{Discrete exchange rate model}
 Now that we have established money’s present value is higher than its future value, we need a way to compare cash from different periods. 
 A useful mental model for the time value of money is to think of money from different periods 
 as being in other currencies (e.g., dollars versus euros) that must be exchanged. 
@@ -253,7 +242,7 @@ where $\bar{r}$ is the discount rate, and $\lambda$ is the number of discounting
 	The term in the brackets is the \textit{multi-period effective discrete discount factor}, which we represent as the function $\mathcal{D}_{t,0}(\bar{r})$.
 \end{definition}
 
-\subsection{A different perspective.}
+\subsection{Continuous exchange rate model}
 In the exchange rate model, we converted cash flows from the future to the present (and vice-versa) using a period-dependent discount rate $r_{t+1,t}$, 
 or an effective discount rate $\bar{r}$, and a discount factor $\mathcal{D}_{t,0}(r)$. These acted like exchange rates between different currencies.
 However, this approach is often seen as confusing. For example, its not clear what discount rate to use, what a discount factor actually means practically, etc.
@@ -340,10 +329,70 @@ However, the connection of the NPV with a zero-coupon bond is not.
 As we will see, the NPV of a project or investment with a zero NPV is equivalent to the price of a zero-coupon bond with the same time-to-maturity 
 and discount rate. Thus, a rational investor would be indifferent between investing in a NPV = 0 project or investing in a zero-coupon bond.
 
-\section{Zero-Coupon Treasury Bills}\label{sec:treasury-bills}
-Finally, let's focus on our first example of a U.S. Treasury security, the \href{https://treasurydirect.gov/marketable-securities/treasury-bills/}{Treasury Bill}.
-\href{https://treasurydirect.gov/marketable-securities/treasury-bills/}{United States Treasury Bills}, \texttt{T-bills} or just \texttt{Zeros} are Treasury debt instruments with short-term maturity periods T = 4, 8, 13, 26, and 52 weeks 
-and zero coupon payments, i.e., no seperate semiannual interest payments to the lender (you).
+\subsection{Internal Rate of Return (IRR)}
+The NPV decision rule above relies on computing the sum of discounted future cash flows. 
+However, in these calculations, what discount rate should we use? This question is difficult; the correct discount rate varies between applications and industries.  
+The special discount rate where the net present value is zero is called the Internal Rate of Return (Defn. \ref{defn:internal-rate-of-return}):
+
+\begin{definition}[Internal Rate of Return (IRR)]\label{defn:internal-rate-of-return}
+Assume the discount rate is constant between time periods. Then, the internal rate of rerturn (IRR) is the discount rate that makes the net present value equal to zero:
+\begin{equation}\label{eq:internal-rate-of-return}
+\sum_{t=0}^{T}{\mathcal{D}_{t,0}^{-1}}\cdot\bar{c}_{t} = 0
+\end{equation}
+The discount factor $\mathcal{D}_{t,0}$ can be modeled as either a discrete or a continuous discount factor. Discount rates greater than the IRR favor the alternative investment.
+\end{definition}
+Thus, IRR can thought of as a decision boundary of sorts; the IRR is the discount rate where the project manager or investor is indifferent to the project.
+
+\subsection{Summary}
+Fill me in
+
+\section{United States Treasury Securities}
+\href{https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities}{United States Marketable Treasury Securities}, 
+are issued by the U.S. Department of the Treasury to fund its operations and meet financial obligations. 
+These debt securities are structured loan agreements between a borrower, i.e., the U.S. government, and a lender (you) 
+that allows the government to fund its operations and obligations (Fig. \ref{fig:govt-debt-schematic}).
+The debt holder and the U.S. Treasury have a marketable repayment agreement, which can be held by the lender (you) until the completion of the contract or resold on a secondary market. Although there are various types of U.S. government debt securities, they all share a few common characteristics. 
+First, U.S. Treasury debt securities have a predetermined term length; thus, the contract duration between the borrower and lender is fixed.
+Second, U.S. Treasury debt securities have a par value, representing the instrument's face value, a price (which may differ from the par value), and an interest rate paid to the lender. Next, some U.S. Treasury debt securities have interest payments commonly called coupons. These payments give the lender fixed cashflows on a predetermined schedule throughout the debt instrument's term. Finally, income from interest on U.S. Treasury debt securities is free of state and local income taxes but subject to federal income taxes.
+You can purchase U.S. Treasury debt directly from the \href{https://www.treasurydirect.gov/indiv/products/prod_tbonds_glance.htm}{United States Treasury via TreasuryDirect} 
+or through a bank or broker to lend money to the U.S. government.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./figs/Fig-Govt-Debt-Schematic.pdf}
+    \caption{Schematic of U.S. Government Debt Securities. You lend money to the United States Treasury by purchasing a treasury security.
+	The Treasury pays you back in different fix ways, dependent upon the security.}\label{fig:govt-debt-schematic}
+\end{figure}
+
+\subsection{Risks of U.S. Treasury Securities}
+While United States Treasury securities are considered to be risk-free, they are not without risk. The most obvious risk is the risk of default, i.e., the United States government could default on its obligations and not repay the debt holders (you).
+This risk is considered to be very low, and the United States government has never, at least in recent memory, defaulted on its debt obligations (in the absence of technical issues). Other risks are associated with Treasury securities, including inflation and liquidity risks.
+However, interest rate risk is the most significant non-default risk associated with Treasury securities.
+The price of coupon-bearing Treasury securities is a function of the face (par) value of the security, the coupon rate, the yield (discount rate), and the number of coupon payments per year.
+Thus, as these parameters change, e.g., the yield (discount rate), you would expect the price of the Treasury security to change (Concept \ref{concept:malkiel-theorems}):
+
+\begin{concept}[Malkiel's Theorems]\label{concept:malkiel-theorems}
+	Malkiel explored the question of bond pricing and proposed five theorems that relate the price of a coupon-bearing Treasury security to changes in these parameters \citep{Malkiel-Bonds-1962}:
+\begin{itemize}[leftmargin=*]
+\item{\textbf{Theorem 1}: Bond prices move inversely to bond yields.}
+\item{\textbf{Theorem 2}: For a given change in yield from the nominal yield, changes in bond prices are greater the longer the term to maturity. }
+\item{\textbf{Theorem 3}: The percentage price changes described in Theorem 2 increase at a diminishing rate as N increases. }
+\item{\textbf{Theorem 4}: Price movements resulting from equal absolute increases and decreases in yield are asymmetric; i.e., decreasing yields raise bond prices more than the same increase in yields lowers prices. }
+\item{\textbf{Theorem 5}: The higher the coupon carried by the bond, the smaller the percentage price fluctuation for a given change in yield, except for one-year securities.}
+\end{itemize}
+\vspace{0.01in}
+\noindent{\textit{Notation}}: when Malkiel refers to the yield, he is referring to the effective annual discount rate, $\bar{r}$. The coupon rate $\bar{c}$ in our bond (note) pricing model is the interest rate.
+\end{concept}
+
+
+\subsection{Zero-Coupon Treasury Bills}\label{sec:treasury-bills}
+Let's focus on our first example of a U.S. Treasury security, the \href{https://treasurydirect.gov/marketable-securities/treasury-bills/}{Treasury Bill}.
+\href{https://treasurydirect.gov/marketable-securities/treasury-bills/}{United States Treasury Bills}, \texttt{T-bills} or just \texttt{Zeros} are Treasury debt instruments with short-term maturity periods 
+of T = 4, 8, 13, 26, and 52 weeks and zero coupon payments, i.e., no seperate semiannual interest payments to the lender (you).
+Perfectly priced T-bills are sold at a discount to their face value, and the difference between the purchase price and the face value is the return to the lender (you).
+Treasury bills have a Net Present Value (NPV) of zero, i.e., the price of the T-bill is equal to the face value of the T-bill at maturity 
+escalted by the risk-free for the duration of the T-bill.
+
 In the context of the abstract asset framework, T-bills have two cashflow events, namely when the lender (you) buys the T-bill at auction 
 and when the borrower (United States Treasury) pays the lender (you) the face (par) value of the T-bill at maturity (Fig. \ref{fig:t-bill-schematic}).
 \begin{figure}[h]
@@ -369,6 +418,7 @@ Theorectically, the discount factor $\mathcal{D}_{T,0}^{-1}(\bar{r})$ can be com
 However, in the case of treasury securities, the discount factor is computed on a discrete basis, assuming $\lambda$ compounding events per year, 
 where typcially $\lambda = 2$, i.e., semi-annual compounding.
 
+\subsubsection*{Discrete discounting model}
 The algorithm for computing the price of a zero-coupon Treasury bill is given in Algorithm \ref{algo:zero-coupon-treasury-bill-price}.
 First, we compute the discount factor $\mathcal{D}_{T,0}(\bar{r})$, typcially assuming a effective discrete discounting model.
 Then, we compute the price of the zero-coupon Treasury bill $V_{B}$ using Eqn. \eqref{eq:zero-coupon-treasury-bill-price}.
@@ -383,6 +433,7 @@ Then, we compute the price of the zero-coupon Treasury bill $V_{B}$ using Eqn. \
 	\end{algorithmic}
 \end{algorithm}
 
+\subsubsection*{Continuous discounting model}
 If we assume a continuous discounting model, then the price of a zero-coupon Treasury bill can be computed using Algorithm \ref{algo:zero-coupon-treasury-bill-price-continout-discounting}:
 \begin{algorithm}[h]
     \caption{Zero-coupon Treasury bill price continuous discounting}\label{algo:zero-coupon-treasury-bill-price-continout-discounting}
@@ -396,14 +447,10 @@ If we assume a continuous discounting model, then the price of a zero-coupon Tre
 \end{algorithm}
 This is the same procedure as Algorithm \ref{algo:zero-coupon-treasury-bill-price}, except we use the continuous discount factor.
 
-\subsection{Summary}
-In this module, we introduced the concept of an abstract asset, the time value of money, different discounting models, and the net present value (NPV).
-We used these ideas to develop a framework for pricing zero-coupon Treasury securities, in particular, zero-coupon Treasury bills.
-Treasury bills are short-term Treasury securities with a maturity of less than or equal to a year, and zero coupon payments.
-Treasury bills are sold at auction, and the price of the bill is the discounted face (par) value of the bill, such that the net present value (NPV) of the bill is zero.
-In the next module, we will extend this framework to price other types of Treasury securities, e.g., Treasury notes and bonds.
+\subsection{Sensitivity and Risk on Treasury Bills}
+Fill me in
 
-\section{Coupon-Bearing Treasury Securities}
+\subsection{Coupon-Bearing Treasury Notes and Bonds}
 Previously, we introduced the concept of the time value of money and developed the abstract asset framework to compute the present value of future cash flows.
 We used this approach to compute the price of a zero-coupon Treasury bills at auction, 
 i.e., the price of a T-bill at the time of purchase that makes the net present value (NPV) equal to zero.
@@ -411,10 +458,7 @@ In this module, we expand on the time value of money and develop an approach to 
 Unlike T-bills, coupon-bearing Treasury securities pay the holder periodic interest in the form of coupon payments every six months until maturity and the face (par) value of the security at maturity.
 Thus, coupon-bearing Treasury securities have multiple cash flow events and can serve as an income stream for the holder.
 Further, we explore the relationship between the yield and price of a coupon-bearing Treasury security and conclude with a discussion of potential sources of 
-risk associated with these securities.
-
-\subsection{Treasury Notes and Bonds}
-Previously, we explored United States Treasury Bills or T-bills. Treasury bills are short-term debt instruments with zero coupon payments, 
+risk associated with these securities. Previously, we explored United States Treasury Bills or T-bills. Treasury bills are short-term debt instruments with zero coupon payments, 
 i.e., there are only two cash flow events with a T-bill: you pay the price of the T-bill at auction, and you receive the face (par) value of the T-bill at maturity. 
 In contrast, coupon-bearing Treasury securities are long-term debt instruments that provide a stable interest payment, called a coupon payment, every six months until maturity.
 At maturity, the lender also receives the instrument's face (par) value and a final coupon payment.
@@ -437,7 +481,7 @@ The coupon rate (interest rate) and the yield (discount factor) for these securi
 At maturity, the lender receives the bond's par value (or note) and a final coupon payment. 
 Like Treasury bills, the pricing of notes and bonds is based on the present value of the future cash flows. 
 
-\subsection{Pricing}
+\subsubsection*{Pricing}
 We will use the abstract asset framework to develop a mathematical model for the price of coupon-bearing Treasury securities.
 A \texttt{T}-year Treasury note (bond) with face value $V_{P}$, an effective annual discount rate $\bar{r}$, and $\lambda$ coupon payments per year, costs $V_{B}$ at auction.
 The note (bond) price is the sum of discounted future coupon payments and face value, making the net present value (NPV) equal to zero:
@@ -458,26 +502,7 @@ Finally, the discounting for Treasury instruments uses a discrete compounding mo
 \end{equation}
 where $j$ denotes the period number, and $\bar{r}$ is the effective yield (constant).
 
-\subsection{Sensitivities and Risks}
-While United States Treasury securities are considered to be risk-free, they are not without risk. The most obvious risk is the risk of default, i.e., the United States government could default on its obligations and not repay the debt holders (you).
-This risk is considered to be very low, and the United States government has never, at least in recent memory, defaulted on its debt obligations (in the absence of technical issues). Other risks are associated with Treasury securities, including inflation and liquidity risks.
-However, interest rate risk is the most significant non-default risk associated with Treasury securities.
-The price of coupon-bearing Treasury securities is a function of the face (par) value of the security, the coupon rate, the yield (discount rate), and the number of coupon payments per year.
-Thus, as these parameters change, e.g., the yield (discount rate), you would expect the price of the Treasury security to change (Concept \ref{concept:malkiel-theorems}):
-
-\begin{concept}[Malkiel's Theorems]\label{concept:malkiel-theorems}
-	Malkiel explored the question of bond pricing and proposed five theorems that relate the price of a coupon-bearing Treasury security to changes in these parameters \citep{Malkiel-Bonds-1962}:
-\begin{itemize}[leftmargin=*]
-\item{\textbf{Theorem 1}: Bond prices move inversely to bond yields.}
-\item{\textbf{Theorem 2}: For a given change in yield from the nominal yield, changes in bond prices are greater the longer the term to maturity. }
-\item{\textbf{Theorem 3}: The percentage price changes described in Theorem 2 increase at a diminishing rate as N increases. }
-\item{\textbf{Theorem 4}: Price movements resulting from equal absolute increases and decreases in yield are asymmetric; i.e., decreasing yields raise bond prices more than the same increase in yields lowers prices. }
-\item{\textbf{Theorem 5}: The higher the coupon carried by the bond, the smaller the percentage price fluctuation for a given change in yield, except for one-year securities.}
-\end{itemize}
-\vspace{0.01in}
-\noindent{\textit{Notation}}: when Malkiel refers to the yield, he is referring to the effective annual discount rate, $\bar{r}$. The coupon rate $\bar{c}$ in our bond (note) pricing model is the interest rate.
-\end{concept}
-
+\subsection{Sensitivities and Risks of Notes and Bonds}
 The price of a coupon-bearing Treasury security in many ways behaves similar to a T-bill.
 Previously, we explored the relationship between the yield (discount rate) and the price of a zero-coupon Treasury bill. 
 Theorem 1 tells us that the relationship between the yield and price of a coupon-bearing Treasury security is similar to that of a T-bill, i.e., the cost of the security is inversely related to the yield.
@@ -489,6 +514,11 @@ In this module, we explored the pricing of coupon-bearing Treasury securities.
 In particular, we used the abstract asset framework to develop a mathematical model for the price of coupon-bearing United States Treasury notes and bonds.
 Notes and bonds are long-term debt instruments that provide a stable interest payment, called a coupon payment, every six months until maturity, and the face (par) value of the note (or bond) at maturity.
 These instruments are priced based on the present value of the future cash flows, where the yield (discount factor) and coupon rate for these securities is fixed when they are issued, i.e., at auction and remains constant over the lifetime of the security.
+In this module, we introduced the concept of an abstract asset, the time value of money, different discounting models, and the net present value (NPV).
+We used these ideas to develop a framework for pricing zero-coupon Treasury securities, in particular, zero-coupon Treasury bills.
+Treasury bills are short-term Treasury securities with a maturity of less than or equal to a year, and zero coupon payments.
+Treasury bills are sold at auction, and the price of the bill is the discounted face (par) value of the bill, such that the net present value (NPV) of the bill is zero.
+In the next module, we will extend this framework to price other types of Treasury securities, e.g., Treasury notes and bonds.
 
 \section{Interest Rates, STRIPS and the Yield Curve}
 \href{https://en.wikipedia.org/wiki/United_States_Treasury_security#STRIPS}{Registered Interest and Principal of Securities (STRIPS) bonds} are a 
@@ -621,6 +651,9 @@ and then transform these back to linear coordinates for each period: $r_{i,i-1} 
 \subsection{Summary}
 In this module, we've explored the mathematics of STRIPS bonds and how they can be used to understand the term structure of interest rates, i.e., how we can use STRIPS to compute the spot rates, short rates, and the yield curve for zero-coupon instruments of increasing maturity. 
 We've also explored three hypothetical pricing schemes that a brokerage might employ to price the zero-coupon instruments and how these pricing schemes affect the spot rate. These schemes replicate the observed yield curve shapes: normal, inverted, and flat. 
+
+\section{Lattice Models of Interest Rates}
+
 
 
 \clearpage

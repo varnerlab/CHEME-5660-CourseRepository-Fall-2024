@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Preliminaries}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Abstract Assets}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Time Value of Money}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Discrete exchange rate model}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Continuous exchange rate model}{7}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Net Present Value (NPV)}{8}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Internal Rate of Return (IRR)}{9}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Summary}{9}{subsection.1.7}%
+\contentsline {section}{\numberline {2}United States Treasury Securities}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Risks of U.S. Treasury Securities}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Zero-Coupon Treasury Bills}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Sensitivity and Risk on Treasury Bills}{12}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Coupon-Bearing Treasury Notes and Bonds}{12}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Sensitivities and Risks of Notes and Bonds}{14}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Summary}{14}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Interest Rates, STRIPS and the Yield Curve}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Spot, Short and Forward Rates}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}STRIPS and the Yield Curve}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}STRIPS pricing}{17}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Estimating the Spot and Short Rates from STRIPS prices}{19}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Summary}{19}{subsection.3.5}%
