@@ -1,0 +1,46 @@
+\begin{thebibliography}{1}
+
+\bibitem{COX1979229}
+Cox JC, Ross SA, Rubinstein M.
+\newblock Option pricing: A simplified approach.
+\newblock Journal of Financial Economics. 1979;7(3):229--263.
+\newblock doi:{https://doi.org/10.1016/0304-405X(79)90015-1}.
+
+\bibitem{Merton2006}
+Merton RC.
+\newblock Paul Samuelson And Financial Economics.
+\newblock The American Economist. 2006;50(2):9--31.
+
+\bibitem{BlackScholes1973}
+Black F, Scholes M.
+\newblock The Pricing of Options and Corporate Liabilities.
+\newblock Journal of Political Economy. 1973;81(3):637--654.
+
+\bibitem{Mandelbrot-1963}
+Mandelbrot B.
+\newblock The Variation of Certain Speculative Prices.
+\newblock The Journal of Business. 1963;36(4):394--419.
+
+\bibitem{Mandelbrot-1967}
+Mandelbrot B.
+\newblock The Variation of Some Other Speculative Prices.
+\newblock The Journal of Business. 1967;40(4):393--413.
+
+\bibitem{Cont-QuantFinance-2001}
+Cont R.
+\newblock Empirical properties of asset returns: stylized facts and statistical
+  issues.
+\newblock Quantitative Finance. 2001;1(2):223--236.
+
+\bibitem{ratliffcrain2023revisiting}
+Ratliff-Crain E, Oort CMV, Bagrow J, Koehler MTK, Tivnan BF. Revisiting
+  Stylized Facts for Modern Stock Markets; 2023.
+
+\bibitem{Glasserman:2004ua}
+Glasserman P.
+\newblock Monte Carlo methods in financial engineering. vol.~53.
+\newblock New York: Springer; 2004.
+\newblock Available from:
+  \url{http://www.loc.gov/catdir/enhancements/fy0813/2003050499-d.html}.
+
+\end{thebibliography}
