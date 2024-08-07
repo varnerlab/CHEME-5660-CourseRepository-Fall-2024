@@ -124,7 +124,7 @@
 
 \setcounter{page}{1}
 
-\section*{Introduction}
+\section{Introduction}
 \href{https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities}{United States Marketable Treasury Securities}, 
 are issued by the U.S. Department of the Treasury to fund its operations and meet financial obligations. 
 These debt securities are structured loan agreements between a borrower, i.e., the U.S. government, and a lender (you) 
@@ -142,13 +142,13 @@ or through a bank or broker to lend money to the U.S. government.
 	The Treasury pays you back in different fix ways, dependent upon the security.}\label{fig:govt-debt-schematic}
 \end{figure}
 
-\section*{Background}
+\section{Background}
 Throughout all the courses, we'll make use of a few concepts and approaches from finance, mathematics, statistics, and computer science.
 Let's begin this module by reviewing some of these concepts, in particular the concept of an abstract asset and the time value of money.
 These two foundational concepts are essential for understanding the pricing of zero-coupon Treasury securities (and other financial instruments).
 They also provide a useful framework for financial decision-making.
 
-\subsection*{Abstract Assets}
+\subsection{Abstract Assets}
 The traditional view of an \href{https://en.wikipedia.org/wiki/Asset}{asset} is perhaps a physical resource with economic value that an individual, corporation, or country owns or controls with the expectation that it will provide a future benefit.
 For example, a car, house, or land are all assets.
 However, in a more general sense, we can also think of an asset as a sequence of current and future cash flows demarcated in some currency, for example, Euros, Dollars, Yuan, or cryptocurrencies such as Bitcoin.
@@ -161,7 +161,7 @@ We can think of these cash flows as being in different currencies, e.g., dollars
 Thus, we formulate the equivalent of an exchange rate to compare cash from different periods.
 This is the concept of the time value of money, discount factors, and discount rates, which we will discuss next.
 
-\subsection*{Time Value of Money}
+\subsection{Time Value of Money}
 At first glance, the idea that money has a time value seems counterintuitive. 
 If I put a dollar in my pocket today, it is still a dollar tomorrow, next week, or next year. 
 However, the value of a dollar today, e.g., the Utility it brings to you by purchasing a good or service, is not the same as the value of a dollar tomorrow.
@@ -191,7 +191,7 @@ and are considered one of the safest investments in the world.
 Thus, we can use the yield on US Treasury debt securities as a proxy for the risk-free rate of return $i$. 
 This is the first reason why we are interested in these securities.
 
-\subsubsection*{Exchange rate model.}
+\subsection{Exchange rate model}
 Now that we have established money’s present value is higher than its future value, we need a way to compare cash from different periods. 
 A useful mental model for the time value of money is to think of money from different periods 
 as being in other currencies (e.g., dollars versus euros) that must be exchanged. 
@@ -253,7 +253,7 @@ where $\bar{r}$ is the discount rate, and $\lambda$ is the number of discounting
 	The term in the brackets is the \textit{multi-period effective discrete discount factor}, which we represent as the function $\mathcal{D}_{t,0}(\bar{r})$.
 \end{definition}
 
-\subsubsection*{A different perspective.}
+\subsection{A different perspective.}
 In the exchange rate model, we converted cash flows from the future to the present (and vice-versa) using a period-dependent discount rate $r_{t+1,t}$, 
 or an effective discount rate $\bar{r}$, and a discount factor $\mathcal{D}_{t,0}(r)$. These acted like exchange rates between different currencies.
 However, this approach is often seen as confusing. For example, its not clear what discount rate to use, what a discount factor actually means practically, etc.
@@ -301,7 +301,7 @@ The quantity $\exp\left(rm\right)$ is the \textit{continuous compounding (discou
 which we also represent (with a slight abuse of notiion) as $\mathcal{D}_{m,0}(r)$.
 \end{definition}
 
-\subsection*{Net Present Value (NPV)}
+\subsection{Net Present Value (NPV)}
 Now that we have tools to account for the time value of money, we can return to the question of how to value an asset. 
 The most intuitive approach is to compute the net cash flow at every time point. Imagine at node $t=k$ we have $\mathcal{S}^{t=k}$ cash streams,
 denoted as $\dot{c}_{s}$, entering (or exiting) the asset node. 
@@ -340,7 +340,7 @@ However, the connection of the NPV with a zero-coupon bond is not.
 As we will see, the NPV of a project or investment with a zero NPV is equivalent to the price of a zero-coupon bond with the same time-to-maturity 
 and discount rate. Thus, a rational investor would be indifferent between investing in a NPV = 0 project or investing in a zero-coupon bond.
 
-\section*{Zero-Coupon Treasury Bills}\label{sec:treasury-bills}
+\section{Zero-Coupon Treasury Bills}\label{sec:treasury-bills}
 Finally, let's focus on our first example of a U.S. Treasury security, the \href{https://treasurydirect.gov/marketable-securities/treasury-bills/}{Treasury Bill}.
 \href{https://treasurydirect.gov/marketable-securities/treasury-bills/}{United States Treasury Bills}, \texttt{T-bills} or just \texttt{Zeros} are Treasury debt instruments with short-term maturity periods T = 4, 8, 13, 26, and 52 weeks 
 and zero coupon payments, i.e., no seperate semiannual interest payments to the lender (you).
@@ -396,14 +396,14 @@ If we assume a continuous discounting model, then the price of a zero-coupon Tre
 \end{algorithm}
 This is the same procedure as Algorithm \ref{algo:zero-coupon-treasury-bill-price}, except we use the continuous discount factor.
 
-\subsection*{Summary}
+\subsection{Summary}
 In this module, we introduced the concept of an abstract asset, the time value of money, different discounting models, and the net present value (NPV).
 We used these ideas to develop a framework for pricing zero-coupon Treasury securities, in particular, zero-coupon Treasury bills.
 Treasury bills are short-term Treasury securities with a maturity of less than or equal to a year, and zero coupon payments.
 Treasury bills are sold at auction, and the price of the bill is the discounted face (par) value of the bill, such that the net present value (NPV) of the bill is zero.
 In the next module, we will extend this framework to price other types of Treasury securities, e.g., Treasury notes and bonds.
 
-\section*{Coupon-Bearing Treasury Securities}
+\section{Coupon-Bearing Treasury Securities}
 Previously, we introduced the concept of the time value of money and developed the abstract asset framework to compute the present value of future cash flows.
 We used this approach to compute the price of a zero-coupon Treasury bills at auction, 
 i.e., the price of a T-bill at the time of purchase that makes the net present value (NPV) equal to zero.
@@ -413,7 +413,7 @@ Thus, coupon-bearing Treasury securities have multiple cash flow events and can 
 Further, we explore the relationship between the yield and price of a coupon-bearing Treasury security and conclude with a discussion of potential sources of 
 risk associated with these securities.
 
-\subsection*{Treasury Notes and Bonds}
+\subsection{Treasury Notes and Bonds}
 Previously, we explored United States Treasury Bills or T-bills. Treasury bills are short-term debt instruments with zero coupon payments, 
 i.e., there are only two cash flow events with a T-bill: you pay the price of the T-bill at auction, and you receive the face (par) value of the T-bill at maturity. 
 In contrast, coupon-bearing Treasury securities are long-term debt instruments that provide a stable interest payment, called a coupon payment, every six months until maturity.
@@ -437,7 +437,7 @@ The coupon rate (interest rate) and the yield (discount factor) for these securi
 At maturity, the lender receives the bond's par value (or note) and a final coupon payment. 
 Like Treasury bills, the pricing of notes and bonds is based on the present value of the future cash flows. 
 
-\subsection*{Pricing}
+\subsection{Pricing}
 We will use the abstract asset framework to develop a mathematical model for the price of coupon-bearing Treasury securities.
 A \texttt{T}-year Treasury note (bond) with face value $V_{P}$, an effective annual discount rate $\bar{r}$, and $\lambda$ coupon payments per year, costs $V_{B}$ at auction.
 The note (bond) price is the sum of discounted future coupon payments and face value, making the net present value (NPV) equal to zero:
@@ -458,7 +458,7 @@ Finally, the discounting for Treasury instruments uses a discrete compounding mo
 \end{equation}
 where $j$ denotes the period number, and $\bar{r}$ is the effective yield (constant).
 
-\subsection*{Sensitivities and Risks}
+\subsection{Sensitivities and Risks}
 While United States Treasury securities are considered to be risk-free, they are not without risk. The most obvious risk is the risk of default, i.e., the United States government could default on its obligations and not repay the debt holders (you).
 This risk is considered to be very low, and the United States government has never, at least in recent memory, defaulted on its debt obligations (in the absence of technical issues). Other risks are associated with Treasury securities, including inflation and liquidity risks.
 However, interest rate risk is the most significant non-default risk associated with Treasury securities.
@@ -484,13 +484,13 @@ Theorem 1 tells us that the relationship between the yield and price of a coupon
 Further, Theorem 2 tells us that the longer the term to maturity, the greater the price change for a given change in yield, which we also saw previously for T-bills.
 However, the relationship between the yield and price of a coupon-bearing Treasury security may be more complex than that of a T-bill. For example, Theorem 4 tells us that the price of a coupon-bearing Treasury security is more sensitive to a decrease in yield than an increase in yield. Moreover, Theorem 5 suggests the coupon rate (interest rate) may act as a buffer to changes in the price resulting from changes in the yield. We'll explore these ideas in this module's worked example and project.
 
-\subsection*{Summary}
+\subsection{Summary}
 In this module, we explored the pricing of coupon-bearing Treasury securities.
 In particular, we used the abstract asset framework to develop a mathematical model for the price of coupon-bearing United States Treasury notes and bonds.
 Notes and bonds are long-term debt instruments that provide a stable interest payment, called a coupon payment, every six months until maturity, and the face (par) value of the note (or bond) at maturity.
 These instruments are priced based on the present value of the future cash flows, where the yield (discount factor) and coupon rate for these securities is fixed when they are issued, i.e., at auction and remains constant over the lifetime of the security.
 
-\section*{Term Structure of Interest Rates, STRIPS and the Yield Curve}
+\section{Interest Rates, STRIPS and the Yield Curve}
 \href{https://en.wikipedia.org/wiki/United_States_Treasury_security#STRIPS}{Registered Interest and Principal of Securities (STRIPS) bonds} are a 
 unique type of fixed-income investment instrument that provides investors with an alternative way to access the coupon payments of 
 Treasury securities. STRIPS bonds are created by separating a Treasury securities coupon and principal components and trading them as individual 
@@ -515,7 +515,7 @@ and the yield on those securities.
 
 In this module, we'll explore the mathematics of STRIPS bonds and how they can be used to understand the term structure of interest rates, i.e., how we can use STRIPS to compute the short rates and the yield curve.
 
-\subsection*{Spot, Short and Forward Rates}
+\subsection{Spot, Short and Forward Rates}
 A spot rate is the annual interest rate used to discount the cash flows that occur on that date, i.e., now. Alternatively, the spot rate is the rate of return on a zero coupon bond purchased today and maturing at some future date. Suppose a bond with a face value of $V_{P}$ (future USD) and a maturity of $T$ years is purchased today for $V_{B}$ (USD). The spot rate, $\bar{r}$, is the interest rate that makes the future face value of the bond equal to the purchase price, i.e.,
 \begin{equation}
 V_{B}\cdot(1+\bar{r})^{T} = V_{P}
@@ -541,7 +541,7 @@ The forward rate between period $j-1\rightarrow{j}$ is denoted by $f_{t,t-1}$ an
 	f_{t,t-1} = \mathbb{E}_{t}\left[r_{t,t-1}\right]
 \end{equation}
 
-\subsection*{Term Structure of Interest Rates, STRIPS and the Yield Curve}
+\subsection{STRIPS and the Yield Curve}
 The yield curve plots the yields (vertical axis) on debt securities as a function of the security's maturity (horizontal axis). 
 There are three primary yield curve shapes: normal, inverted, and flat (Fig. \ref{fig:yield-curve-schematic}).
 The yield curve is helpful for fixed-income investors, providing a snapshot of the market's expectations for future interest rates and, by extension, inflation rates. It is also used as a benchmark for other interest rates, such as mortgage or bank lending rates. The yield curve is typically constructed from observed prices and spot rates, but these quantities can be described as functions of the short rates. 
@@ -558,7 +558,7 @@ Typically, the yield on longer-term securities is higher than on shorter-term se
 	}\label{fig:yield-curve-schematic}
 \end{figure}
 
-\subsection*{STRIPS pricing}
+\subsection{STRIPS pricing}
 STRIPS are sold at a discount compared to their face value. However, it's essential to understand that the secondary seller, i.e., the brokerage splitting the original note or bond, determines the discount in the secondary treasury market by setting the price of the zero-coupon instrument. Let's imagine we have a set of STRIPS zero-coupon bonds with maturities $T_{1}, T_{2},\ldots, T_{N}$ years. 
 We can use the prices of these STRIPS to estimate the short rates, $r_{j+1,j}$, between periods $j\rightarrow{j+1}$.
 Alternatively, we can use the spot or short rates to price the STRIPS products. 
@@ -601,7 +601,7 @@ Suppose we are the brokerage and the yield we are willing to sell each STRIPS bo
 where $i$ denotes the STRIPS index (which is a proxy for maturity), 
 $\theta_{1}>0$ denotes the interest rate for the shortest term bond in the collection, i.e., the zero-coupon bond with maturity of six months that is generated from the first coupon payment, $\theta_{2}\geq{0}$ governs how fast the rate escalates for each new STRIPS product, i.e., for each bond of longer maturity that we sell, and $\beta$ is a sensitivity parameter. Because $\theta_{1}>{0}$ and $\theta_{2}\geq{0}$, this scheme will give an expected yield curve $\bar{r}_{i}\leq\bar{r}_{i+1}$, i.e., longer maturity instruments will have a higher-yield compared to shorter-term bonds.
 
-\subsection*{Estimating the Spot and Short Rates from STRIPS prices}
+\subsection{Estimating the Spot and Short Rates from STRIPS prices}
 For the moment, let's assume that we have a set of STRIPS zero-coupon bonds with maturities $T_{1}, T_{2},\ldots, T_{N}$ years, 
 and have the priced these STRIPS, denoted as $V_{B, i}$, using one of the three pricing schemes described above.
 We can estimate the short rates, which represent the market rate of interest between periods $j-1\rightarrow{j}$, denoted as $r_{j+1,j}$, by analyzing the prices of the various STRIPS zero coupon products based on their maturity. Using a discrete discounting model, the short rates are calculated according to the following relationship:
@@ -618,7 +618,7 @@ where $V_{P, i}$ and $V_{B, i}$ denote the face (par) value and price of the $i^
 where $x_{i} = \log\left(1+r_{i,i-1}\right)$, $b_{i} = \log\left(V_{P,i}/V_{B,i}\right)$ and $\mathbf{A}$ is a lower-triangular matrix of 1's. We solve for the log-transformed short rates using back/forward substitution
 and then transform these back to linear coordinates for each period: $r_{i,i-1} = 10^{x_{i}} - 1$.
 
-\subsection*{Summary}
+\subsection{Summary}
 In this module, we've explored the mathematics of STRIPS bonds and how they can be used to understand the term structure of interest rates, i.e., how we can use STRIPS to compute the spot rates, short rates, and the yield curve for zero-coupon instruments of increasing maturity. 
 We've also explored three hypothetical pricing schemes that a brokerage might employ to price the zero-coupon instruments and how these pricing schemes affect the spot rate. These schemes replicate the observed yield curve shapes: normal, inverted, and flat. 
 

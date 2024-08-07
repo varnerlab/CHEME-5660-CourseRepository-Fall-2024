@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  7 AUG 2024 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  7 AUG 2024 12:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -926,7 +926,7 @@ Package rerunfilecheck Info: File `Notes.out' has not changed.
 Here is how much of TeX's memory you used:
  14041 strings out of 474116
  225266 string characters out of 5743682
- 1951187 words of memory out of 5000000
+ 1950187 words of memory out of 5000000
  36088 multiletter control sequences out of 15000+600000
  591257 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -948,7 +948,7 @@ xlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 024/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2024/te
 xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dis
 t/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (18 pages, 302651 bytes).
+Output written on Notes.pdf (18 pages, 302952 bytes).
 PDF statistics:
  404 PDF objects out of 1000 (max. 8388607)
  333 compressed objects within 4 object streams

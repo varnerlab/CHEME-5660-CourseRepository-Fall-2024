@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  7 AUG 2024 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  7 AUG 2024 13:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,7 +545,16 @@ LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-) (./Notes.aux)
+) (./Notes.aux
+
+LaTeX Warning: Label `fig:call-payoff-profit-breakeven-diagram' multiply define
+d.
+
+
+LaTeX Warning: Label `fig:put-payoff-profit-breakeven-diagram' multiply defined
+.
+
+)
 \openout1 = `Notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
@@ -566,8 +575,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
 LaTeX Font Info:    ... okay on input line 109.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
 LaTeX Font Info:    ... okay on input line 109.
-
-(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count314
 \scratchdimen=\dimen169
@@ -598,28 +606,19 @@ Package hyperref Info: Link coloring OFF on input line 109.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<./figs/Fig-Govt-Debt-Schematic.pdf, id=87, 1079.03125pt x 497.86pt>
-File: ./figs/Fig-Govt-Debt-Schematic.pdf Graphic file (type pdf)
-<use ./figs/Fig-Govt-Debt-Schematic.pdf>
-Package pdftex.def Info: ./figs/Fig-Govt-Debt-Schematic.pdf  used on input line
- 140.
-(pdftex.def)             Requested size: 399.29463pt x 184.2357pt.
- [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./figs/Fig-Govt-Debt-S
-chematic.pdf>]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 155.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 169.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 172.
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+<./figs/Fig-Options-Table-Schematic.pdf, id=89, 1204.5pt x 783.92876pt>
+File: ./figs/Fig-Options-Table-Schematic.pdf Graphic file (type pdf)
+<use ./figs/Fig-Options-Table-Schematic.pdf>
+Package pdftex.def Info: ./figs/Fig-Options-Table-Schematic.pdf  used on input 
+line 164.
+(pdftex.def)             Requested size: 399.29463pt x 259.86954pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 175
 .
-
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -628,7 +627,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 175
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) [1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -637,7 +639,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[2]
+[2 <./figs/Fig-Options-Table-Schematic.pdf>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 196.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 204.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 212.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 212.
+<./figs/Fig-Example-Call-K80-62DTE.pdf, id=128, 602.25pt x 401.5pt>
+File: ./figs/Fig-Example-Call-K80-62DTE.pdf Graphic file (type pdf)
+<use ./figs/Fig-Example-Call-K80-62DTE.pdf>
+Package pdftex.def Info: ./figs/Fig-Example-Call-K80-62DTE.pdf  used on input l
+ine 234.
+(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -647,18 +666,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 219.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 226.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 246.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 254.
+<./figs/Fig-Example-Put-K75-62DTE.pdf, id=142, 602.25pt x 401.5pt>
+File: ./figs/Fig-Example-Put-K75-62DTE.pdf Graphic file (type pdf)
+<use ./figs/Fig-Example-Put-K75-62DTE.pdf>
+Package pdftex.def Info: ./figs/Fig-Example-Put-K75-62DTE.pdf  used on input li
+ne 272.
+(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -668,13 +681,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4]
+[4 <./figs/Fig-Example-Call-K80-62DTE.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 289.
+(mdframed)              on input line 312.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 302.
+(mdframed)              on input line 324.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -684,18 +697,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5]
+[5 <./figs/Fig-Example-Put-K75-62DTE.pdf>]
+Package mdframed Info: Not enough space on this page on input line 324.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 316.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 3
-25.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
+(mdframed)              on input line 326.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 330.
+(mdframed)              on input line 339.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 349.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 352.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -706,13 +721,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [6]
-<./figs/Fig-Bill-Asset-Timeline-Schematic.pdf, id=235, 412.54124pt x 335.2525pt
->
-File: ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
-<use ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf>
-Package pdftex.def Info: ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf  used on 
-input line 351.
-(pdftex.def)             Requested size: 234.8775pt x 190.87593pt.
+Package mdframed Info: Not enough space on this page on input line 352.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -722,9 +731,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7 <./figs/Fig-Bill-Asset-Timeline-Schematic.pdf>]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 376.
+[7]
+File: ./figs/Fig-Example-Call-K80-62DTE.pdf Graphic file (type pdf)
+<use ./figs/Fig-Example-Call-K80-62DTE.pdf>
+Package pdftex.def Info: ./figs/Fig-Example-Call-K80-62DTE.pdf  used on input l
+ine 393.
+(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
+File: ./figs/Fig-Example-Put-K75-62DTE.pdf Graphic file (type pdf)
+<use ./figs/Fig-Example-Put-K75-62DTE.pdf>
+Package pdftex.def Info: ./figs/Fig-Example-Put-K75-62DTE.pdf  used on input li
+ne 421.
+(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -735,14 +752,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
-<./figs/Fig-Bond-Asset-Timeline-Schematic.pdf, id=268, 719.68875pt x 335.2525pt
->
-File: ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
-<use ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf>
-Package pdftex.def Info: ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf  used on 
-input line 424.
-(pdftex.def)             Requested size: 399.29463pt x 186.01106pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -751,18 +760,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9 <./figs/Fig-Bond-Asset-Timeline-Schematic.pdf>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 468.
-
-
-Package natbib Warning: Citation `Malkiel-Bonds-1962' on page 10 undefined on i
-nput line 469.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 479.
+[9]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 4
+85.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -772,21 +775,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[11]
-<./figs/Fig-STRIPS-Schematic.pdf, id=308, 890.32625pt x 472.76625pt>
-File: ./figs/Fig-STRIPS-Schematic.pdf Graphic file (type pdf)
-<use ./figs/Fig-STRIPS-Schematic.pdf>
-Package pdftex.def Info: ./figs/Fig-STRIPS-Schematic.pdf  used on input line 50
-2.
-(pdftex.def)             Requested size: 399.29463pt x 212.02867pt.
+<./figs/Fig-AMD-Profit-Short-Straddle.pdf, id=216, 602.25pt x 401.5pt>
+File: ./figs/Fig-AMD-Profit-Short-Straddle.pdf Graphic file (type pdf)
+<use ./figs/Fig-AMD-Profit-Short-Straddle.pdf>
+Package pdftex.def Info: ./figs/Fig-AMD-Profit-Short-Straddle.pdf  used on inpu
+t line 519.
+(pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -796,13 +790,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12 <./figs/Fig-STRIPS-Schematic.pdf>]
-<./figs/Fig-YieldCurve-Schematic.pdf, id=338, 2660.94125pt x 660.4675pt>
-File: ./figs/Fig-YieldCurve-Schematic.pdf Graphic file (type pdf)
-<use ./figs/Fig-YieldCurve-Schematic.pdf>
-Package pdftex.def Info: ./figs/Fig-YieldCurve-Schematic.pdf  used on input lin
-e 553.
-(pdftex.def)             Requested size: 446.26582pt x 110.7663pt.
+[11 <./figs/Fig-AMD-Profit-Short-Straddle.pdf>]
+<./figs/Fig-AMD-Profit-Short-Strangle.pdf, id=228, 602.25pt x 401.5pt>
+File: ./figs/Fig-AMD-Profit-Short-Strangle.pdf Graphic file (type pdf)
+<use ./figs/Fig-AMD-Profit-Short-Strangle.pdf>
+Package pdftex.def Info: ./figs/Fig-AMD-Profit-Short-Strangle.pdf  used on inpu
+t line 566.
+(pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -815,9 +809,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[13]
-LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 573.
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[13 <./figs/Fig-AMD-Profit-Short-Strangle.pdf>]
+<./figs/Fig-MU-Profit-IronCondor.pdf, id=255, 602.25pt x 401.5pt>
+File: ./figs/Fig-MU-Profit-IronCondor.pdf Graphic file (type pdf)
+<use ./figs/Fig-MU-Profit-IronCondor.pdf>
+Package pdftex.def Info: ./figs/Fig-MU-Profit-IronCondor.pdf  used on input lin
+e 625.
+(pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -827,7 +834,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14 <./figs/Fig-YieldCurve-Schematic.pdf>]
+[14 <./figs/Fig-MU-Profit-IronCondor.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -845,51 +852,71 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[16] (./Notes.ind [17
+[16]
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-])
+[17]
 
-Package natbib Warning: There were undefined citations.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(./Notes.aux)
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[18] (./Notes.bbl)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[19] (./Notes.ind) (./Notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: B0959E0540291957BBDA378569422EAC;3326.
+(rerunfilecheck)             Checksum: 66D9306E1AD7223B9A91E8859D2396B7;4013.
  ) 
 Here is how much of TeX's memory you used:
- 14013 strings out of 474116
- 225562 string characters out of 5743682
- 1943187 words of memory out of 5000000
- 36062 multiletter control sequences out of 15000+600000
- 585933 words of font info for 92 fonts, out of 8000000 for 9000
+ 14010 strings out of 474116
+ 225397 string characters out of 5743682
+ 1945187 words of memory out of 5000000
+ 36037 multiletter control sequences out of 15000+600000
+ 582340 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,752b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
-ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
-live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
-ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
-/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/tex
-live/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
-24/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2024/tex
-mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist
-/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (17 pages, 325810 bytes).
+ 79i,12n,93p,973b,619s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/20
+24/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texm
+f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on Notes.pdf (19 pages, 390250 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 364 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 335 compressed objects within 4 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 
