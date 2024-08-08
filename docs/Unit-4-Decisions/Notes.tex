@@ -132,19 +132,38 @@
 \clearpage
 
 \section{Introduction}
-Fill me in
+Decision making in random systems, particularly in financial contexts, involves navigating environments where outcomes are influenced by both predictable and unpredictable factors. 
+Random systems are characterized by their reliance on probability distributions to describe the behavior of various elements. 
+In finance, this could involve modeling the price movements of assets, interest rates, or other economic indicators. 
+The goal is to understand and predict these movements to make informed decisions.
+Techniques such as Monte Carlo simulations, which use random sampling to estimate the probability of different outcomes, which we have already discussed, are commonly employed to assess the impact of uncertainty on investment strategies.
+In this unit, we will explore the use of Markov decision processes (MDPs) to model and solve decision-making problems in financial contexts.
+MDPs are a powerful tool for modeling sequential decision-making problems where outcomes are influenced by both random and controlled factors.
+However, MDPs require a detailed understanding of the underlying system dynamics and the ability to model these dynamics accurately.
+Thus, we will also explore model-free approaches, such as reinforcement learning, which learn by interacting with the environment and do not require explicit knowledge of the system dynamics.
+Let's start by exploring the fundamental concepts of Markov chains and Markov decision processes
+in Section \ref{sec:markov-decision-processes}.
+We'll then move on to model-free approaches such as Bandit problems in Section \ref{sec:bandit-problems} 
+and reinforcement learning in Section \ref{sec:reinforcement-learning}.
 
-\section{Finite Markov Decision Processes}
-In this section we explore the fundamental concepts of Markov chains and Markov decision processes.
+\section{Markov Decision Processes}\label{sec:markov-decision-processes}
 Markov chains, Markov models, and Markov decision processes are bedrock concepts in the field of stochastic processes, which are essential for understanding a wide range of applications in mathematics, economics, computer science, and beyond. 
 These concepts provide a framework for modeling systems that undergo transitions from one state to another in a probabilistic manner.
 Let's start by looking Markov chains, and work our way up to Markov decision processes.
 
-\subsection{Markov Chains}
+\subsection{Markov Chains and Markov Models}
 A Markov chain is a type of stochastic process where the future state of the system depends only on the present state and not on the sequence of events that preceded it. 
 This property is known as the Markov property. 
 Markov chains are characterized by a set of states and transition probabilities between these states, 
 which can be represented using a transition matrix. They are used to model various phenomena such as population dynamics, queueing systems, and random walks (which is the application we are most interested in).
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./figs/Fig-Discrete-MarkovChain-Schematic.pdf}
+    \caption{Schematic of a discrete two-state time-invariant Markov model; 
+    $p_{ij}$ denotes the time-invariant transition probability between state $i$ and $j$.}\label{fig-discrete-markov-model}
+\end{figure}
 
 \subsubsection*{Discrete-Time Markov Chains}
 A discrete-time Markov chain is a sequence of random variables $X_{1},\dotsc, X_{n}$ with 
@@ -177,10 +196,66 @@ converges to a rank-one matrix in which each row is the stationary distribution 
 \end{equation} 
 where $\mathbf{1}$ is a column vector of all 1s and $\otimes$ denotes the outer product.
 
-\subsection{Markov Models}
+\subsubsection*{Hidden Markov Models.}
 Markov models extend the concept of Markov chains by incorporating additional complexities such as potentially continuous state spaces, time parameters or observable versus hidden states. 
 These models are widely used in fields like economics and finance to predict future states of a system based on current observations. 
 They can also be employed in machine learning for tasks like sequence prediction and natural language processing. 
+
+One common example of a Markov model (which we will use) is the hidden Markov model (HMM).
+A Hidden Markov Model (HMM) is a statistical model used to represent systems where the underlying processes are not directly observable, but can be inferred through observable sequences. 
+The model is based on the concept of a latent Markov process, where the hidden states influence the observable outputs. 
+In HMMs, the relationship between the hidden states and observations is defined through two sets of probabilities: 
+transition probabilities, which describe the likelihood of moving from one hidden state to another, and emission probabilities, 
+which describe the likelihood of an observation given a hidden state (see Definition \ref{defn-hidden-markov-model}). 
+
+\begin{definition}[Hidden Markov Model]\label{defn-hidden-markov-model}
+A hidden Markov model is defined by the tuple: $\mathcal{M} = (\mathcal{S},\mathcal{O},\mathbf{P},\mathbf{E})$. 
+\begin{itemize}
+\item{The state space $\mathcal{S}$ is the set of all possible \textit{hidden} states $s$ that the model $\mathcal{M}$ contains}
+\item{The observation space $\mathcal{O}$ is the set of all possible \textit{observable} states $o$ that the model $\mathcal{M}$ can emit}
+\item{The transition matrix $\mathbf{P}$ encodes the probability of moving from one hidden state to another hidden state at the next time step where $p_{ij} = P(X_{n+1} = j | X_{n} = i)$ must satisfy:
+\begin{equation}
+\sum_{j\in\mathcal{S}} p_{ij} = 1\qquad\forall{i\in\mathcal{S}}
+\end{equation}}
+\item{The emission matrix $\mathbf{E}$ encodes the probability of emitting an observable state
+$o\in\mathcal{O}$ from a hidden state $s\in\mathcal{S}$ where the elements $e_{ij} = P(Y = j\,| X = i)$ must satisfy:
+\begin{equation}
+\sum_{j\in\mathcal{O}} e_{ij} = 1\qquad\forall{i\in\mathcal{S}}
+\end{equation}}
+\end{itemize}   
+\end{definition}
+ 
+Let's consider the following pseudocode implementation for a hidden Markov model simulation (Algorithm \ref{algo-hidden-markov-model}).
+\begin{algorithm}[H]
+    \caption{Hidden Markov Model}\label{algo-hidden-markov-model}
+    \begin{algorithmic}[1]
+        \Procedure{markov-simulation}{$\mathbf{A},\mathbf{E},\bar{\pi}, n$}
+
+            \State{$\dim\mathcal{S},\,\dim\mathcal{O}\gets\texttt{size}(\mathbf{E})$}\Comment{Dimension of the emission matrix $\mathbf{E}$ using $\texttt{size}$}
+            \Statex
+            \For{$s=1$ to $\dim\mathcal{S}$}
+                \State{$d_{H}(s)\gets\texttt{Categorical}(\mathbf{A}[s,\dots])$}\Comment{Construct a categorical distribution $d_{H}$}
+                \State{$d_{O}(s)\gets\texttt{Categorical}(\mathbf{E}[s,\dots])$}\Comment{Construct a categorical distribution $d_{O}$}
+            \EndFor
+            \Statex
+            \State{$s\gets\texttt{rand}(\bar{\pi})$}\Comment{Generate initial state $s$ from $\bar{\pi}$ using $\texttt{rand}$ function}
+            \For{$i=1$ to $n$}
+                \State{$s^{\prime}\gets\texttt{rand}\circ{d_{H}}(s)$}\Comment{Generate next state $s^{\prime}$ by sampling $d_{H}$ distribution}
+                \State{$o\gets\texttt{rand}\circ{d_{O}}(s^{\prime})$}\Comment{Generate observation $o$ by sampling $d_{O}$ distribution}
+                \State{$s\gets{s^{\prime}}$}\Comment{Update state $s$ to $s^{\prime}$}
+            \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+The stationary distribution $\bar{\pi}$ is a probability distribution over the state space $\mathcal{S}$, where each state $s\in\mathcal{S}$ occurs with probability $\bar{\pi}_{s}$. The stationary distribution $\bar{\pi}$ describes the steady-state behavior of the Markov chain.
+We model the rows of $\mathbf{P}$, $\mathbf{E}$ and the stationary distribution $\bar{\pi}$ using \href{https://en.wikipedia.org/wiki/Categorical_distribution}{Categorical distributions}. 
+Categorical distributions are discrete probability distributions modeling the probability of a random variable taking a particular outcome $k\in\mathcal{K}$:
+\begin{equation}
+P(X = k) = \pi_{k}\qquad\text{where}\qquad\sum_{k\in\mathcal{K}}\pi_{k} = 1
+\end{equation}
+Sampling from a categorical distribution constructed from the rows of $\mathbf{P}$ (or $\mathbf{E}$)
+will return the next state $s^{\prime}$ (or observation $o$).
 
 \subsection{Markov Decision Processes}
 A Markov decision process (MDP) provides a mathematical framework for modeling decision-making in situations 
@@ -254,7 +329,7 @@ and the policy $\pi(s)$ is:
 \subsection{Summary}
 Fill me in
 
-\section{Bandit Problems}
+\section{Bandit Problems}\label{sec:bandit-problems}
 The \href{https://en.wikipedia.org/wiki/Multi-armed_bandit}{multi-armed bandit problem} is a fundamental problem in machine learning and decision-making. 
 It refers to a scenario where an agent must repeatedly choose between multiple actions, each with an unknown reward distribution. 
 Each action can be considered a slot machine, or a one-armed bandit with potentially different payout distributions. 
@@ -316,7 +391,7 @@ A pseudocode implementation of $\epsilon$-Greedy Thompson Sampling is provided i
 
 \subsection{Applications of Multi-Armed Bandits}\label{sec:applications-of-multi-armed-bandits}
 
-\section{Model Free Reinforcement Learning}
+\section{Model Free Reinforcement Learning}\label{sec:reinforcement-learning}
 \subsection{Q-Learning in Discrete Spaces}\label{sec:q-learning}
 \subsection{Q-Learning in Continuous Spaces}\label{sec:q-learning-continuous}
 \subsection{Applications of Q-Learning}\label{sec:applications-of-q-learning}
