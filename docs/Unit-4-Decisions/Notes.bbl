@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{Thompson-1933}
+Thompson WR.
+\newblock On the Likelihood that One Unknown Probability Exceeds Another in
+  View of the Evidence of Two Samples.
+\newblock Biometrika. 1933;25(3/4):285--294.
+
+\bibitem{Russo-Thompson-Sampling}
+Russo D, Roy BV, Kazerouni A, Osband I, Wen Z. A Tutorial on Thompson Sampling;
+  2020.
+\newblock Available from: \url{https://arxiv.org/abs/1707.02038}.
+
+\bibitem{Agrawal-2012}
+Agrawal S, Goyal N. Analysis of Thompson Sampling for the multi-armed bandit
+  problem; 2012.
+\newblock Available from: \url{https://arxiv.org/abs/1111.1797}.
+
+\end{thebibliography}
