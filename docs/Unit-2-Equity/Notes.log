@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  7 AUG 2024 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  8 AUG 2024 19:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -547,9 +547,6 @@ LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 ) (./Notes.aux
 
-LaTeX Warning: Label `defn-log-return-1' multiply defined.
-
-
 LaTeX Warning: Label `fig:risky-assets-schematic-minvar' multiply defined.
 
 )
@@ -699,7 +696,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 215.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 228.
+put line 224.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -713,12 +710,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [7]
-<./figs/Fig-Binomial-LatticeModels-Schematic.pdf, id=330, 788.9475pt x 429.605p
+<./figs/Fig-Binomial-LatticeModels-Schematic.pdf, id=323, 788.9475pt x 429.605p
 t>
 File: ./figs/Fig-Binomial-LatticeModels-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Binomial-LatticeModels-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-Binomial-LatticeModels-Schematic.pdf  used 
-on input line 280.
+on input line 276.
 (pdftex.def)             Requested size: 399.29463pt x 217.42406pt.
 
 
@@ -735,10 +732,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 314.
+(mdframed)              on input line 310.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 326.
+(mdframed)              on input line 322.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -749,43 +746,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [9 <./figs/Fig-Binomial-LatticeModels-Schematic.pdf>]
-Package mdframed Info: Not enough space on this page on input line 326.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 328.
+(hyperref)                removing `math shift' on input line 324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 328.
+(hyperref)                removing `math shift' on input line 324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 328.
+(hyperref)                removing `math shift' on input line 324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 328.
+(hyperref)                removing `math shift' on input line 324.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 328.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 328.
+(hyperref)                removing `math shift' on input line 324.
 
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 335.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 331.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 335.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 331.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 335.
+(hyperref)                removing `math shift' on input line 331.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 335.
+(hyperref)                removing `math shift' on input line 331.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -798,11 +796,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 415.
+(hyperref)                removing `math shift' on input line 411.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 415.
+(hyperref)                removing `math shift' on input line 411.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -845,15 +843,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [14]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 587.
+(mdframed)              on input line 580.
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 5
-91.
+84.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 595.
+(mdframed)              on input line 588.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -866,15 +864,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 639.
+(hyperref)                removing `math shift' on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 639.
+(hyperref)                removing `\mu' on input line 632.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 639.
+(hyperref)                removing `math shift' on input line 632.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -887,22 +885,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 671.
+(hyperref)                removing `math shift' on input line 664.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 671.
+(hyperref)                removing `\sigma' on input line 664.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 671.
+(hyperref)                removing `math shift' on input line 664.
 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 682.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 694.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -932,10 +924,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [19]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 788.
+(mdframed)              on input line 761.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 794.
+(mdframed)              on input line 767.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 821.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 821.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -947,17 +950,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [20]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 848.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 848.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -966,21 +958,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [21]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[22]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 877.
+(mdframed)              on input line 850.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 884.
+(mdframed)              on input line 857.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -993,7 +976,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
 [23]
+
+LaTeX Warning: Reference `https://en.wikipedia.org/wiki/Heston_model' on page 2
+4 undefined on input line 943.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1003,9 +999,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [24]
+<./figs/Fig-MinVar-Risky-Allocation.pdf, id=533, 706.64pt x 503.8825pt>
+File: ./figs/Fig-MinVar-Risky-Allocation.pdf Graphic file (type pdf)
+<use ./figs/Fig-MinVar-Risky-Allocation.pdf>
+Package pdftex.def Info: ./figs/Fig-MinVar-Risky-Allocation.pdf  used on input 
+line 983.
+(pdftex.def)             Requested size: 352.31625pt x 251.22559pt.
 
-LaTeX Warning: Reference `https://en.wikipedia.org/wiki/Heston_model' on page 2
-5 undefined on input line 970.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1016,12 +1018,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [25]
-<./figs/Fig-MinVar-Risky-Allocation.pdf, id=552, 706.64pt x 503.8825pt>
-File: ./figs/Fig-MinVar-Risky-Allocation.pdf Graphic file (type pdf)
-<use ./figs/Fig-MinVar-Risky-Allocation.pdf>
-Package pdftex.def Info: ./figs/Fig-MinVar-Risky-Allocation.pdf  used on input 
-line 1010.
-(pdftex.def)             Requested size: 352.31625pt x 251.22559pt.
+<./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf, id=543, 706.64pt x 500.87
+125pt>
+File: ./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf Graphic file (type pd
+f)
+<use ./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf>
+Package pdftex.def Info: ./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf  u
+sed on input line 1020.
+(pdftex.def)             Requested size: 352.31625pt x 249.72423pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1032,15 +1039,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [26 <./figs/Fig-MinVar-Risky-Allocation.pdf>]
-<./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf, id=587, 706.64pt x 500.87
-125pt>
-File: ./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf Graphic file (type pd
-f)
-<use ./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf>
-Package pdftex.def Info: ./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf  u
-sed on input line 1047.
-(pdftex.def)             Requested size: 352.31625pt x 249.72423pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1051,6 +1049,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [27 <./figs/Fig-MinVar-Risky-and-RiskFree-Allocation.pdf>]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\alpha' on input line 1104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\beta' on input line 1104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1104.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1059,38 +1089,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [28]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 1131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 1131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1131.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1131.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1138,16 +1136,16 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 56C667998382A940696C8490D6C8198F;8745.
+(rerunfilecheck)             Checksum: EEE3337EB4D8603050E751524E954B18;8541.
  ) 
 Here is how much of TeX's memory you used:
- 14207 strings out of 474116
- 228572 string characters out of 5743682
+ 14200 strings out of 474116
+ 228451 string characters out of 5743682
  1951187 words of memory out of 5000000
- 36181 multiletter control sequences out of 15000+600000
+ 36179 multiletter control sequences out of 15000+600000
  592184 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,896b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,93p,896b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -1167,10 +1165,10 @@ e/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/
 texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2024/texmf-
 dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (31 pages, 405786 bytes).
+Output written on Notes.pdf (31 pages, 403595 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 640 compressed objects within 7 object streams
- 143 named destinations out of 1000 (max. 500000)
- 392 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 628 compressed objects within 7 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 384 words of extra memory for PDF output out of 10000 (max. 10000000)
 

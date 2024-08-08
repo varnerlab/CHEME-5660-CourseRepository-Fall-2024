@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  7 AUG 2024 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  8 AUG 2024 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -611,26 +611,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-<./figs/Fig-Options-Table-Schematic.pdf, id=89, 1204.5pt x 783.92876pt>
-File: ./figs/Fig-Options-Table-Schematic.pdf Graphic file (type pdf)
-<use ./figs/Fig-Options-Table-Schematic.pdf>
-Package pdftex.def Info: ./figs/Fig-Options-Table-Schematic.pdf  used on input 
-line 164.
-(pdftex.def)             Requested size: 399.29463pt x 259.86954pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 175
-.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+(./Notes.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 175
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+))
+\tf@toc=\write5
+\openout5 = `Notes.toc'.
+
+ [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+al/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./Notes.lof
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -639,89 +636,80 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[2 <./figs/Fig-Options-Table-Schematic.pdf>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 196.
+[2
+
+])
+\tf@lof=\write6
+\openout6 = `Notes.lof'.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3] (./Notes.loa)
+\tf@loa=\write7
+\openout7 = `Notes.loa'.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4
+
+]
+<./figs/Fig-Options-Table-Schematic.pdf, id=200, 1204.5pt x 783.92876pt>
+File: ./figs/Fig-Options-Table-Schematic.pdf Graphic file (type pdf)
+<use ./figs/Fig-Options-Table-Schematic.pdf>
+Package pdftex.def Info: ./figs/Fig-Options-Table-Schematic.pdf  used on input 
+line 171.
+(pdftex.def)             Requested size: 399.29463pt x 259.86954pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6 <./figs/Fig-Options-Table-Schematic.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 204.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 212.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 212.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 220.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 212.
-<./figs/Fig-Example-Call-K80-62DTE.pdf, id=128, 602.25pt x 401.5pt>
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 220.
+<./figs/Fig-Example-Call-K80-62DTE.pdf, id=232, 602.25pt x 401.5pt>
 File: ./figs/Fig-Example-Call-K80-62DTE.pdf Graphic file (type pdf)
 <use ./figs/Fig-Example-Call-K80-62DTE.pdf>
 Package pdftex.def Info: ./figs/Fig-Example-Call-K80-62DTE.pdf  used on input l
-ine 234.
+ine 242.
 (pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[3]
-<./figs/Fig-Example-Put-K75-62DTE.pdf, id=142, 602.25pt x 401.5pt>
-File: ./figs/Fig-Example-Put-K75-62DTE.pdf Graphic file (type pdf)
-<use ./figs/Fig-Example-Put-K75-62DTE.pdf>
-Package pdftex.def Info: ./figs/Fig-Example-Put-K75-62DTE.pdf  used on input li
-ne 272.
-(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[4 <./figs/Fig-Example-Call-K80-62DTE.pdf>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 312.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 324.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[5 <./figs/Fig-Example-Put-K75-62DTE.pdf>]
-Package mdframed Info: Not enough space on this page on input line 324.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 326.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 339.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 349.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 352.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[6]
-Package mdframed Info: Not enough space on this page on input line 352.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -732,15 +720,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [7]
-File: ./figs/Fig-Example-Call-K80-62DTE.pdf Graphic file (type pdf)
-<use ./figs/Fig-Example-Call-K80-62DTE.pdf>
-Package pdftex.def Info: ./figs/Fig-Example-Call-K80-62DTE.pdf  used on input l
-ine 393.
-(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
+<./figs/Fig-Example-Put-K75-62DTE.pdf, id=247, 602.25pt x 401.5pt>
 File: ./figs/Fig-Example-Put-K75-62DTE.pdf Graphic file (type pdf)
 <use ./figs/Fig-Example-Put-K75-62DTE.pdf>
 Package pdftex.def Info: ./figs/Fig-Example-Put-K75-62DTE.pdf  used on input li
-ne 421.
+ne 280.
 (pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
 
 
@@ -751,7 +735,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8]
+[8 <./figs/Fig-Example-Call-K80-62DTE.pdf>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 320.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 332.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -760,12 +751,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9]
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 4
-85.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
+[9 <./figs/Fig-Example-Put-K75-62DTE.pdf>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 334.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 347.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 357.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 360.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -775,12 +774,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
-<./figs/Fig-AMD-Profit-Short-Straddle.pdf, id=216, 602.25pt x 401.5pt>
-File: ./figs/Fig-AMD-Profit-Short-Straddle.pdf Graphic file (type pdf)
-<use ./figs/Fig-AMD-Profit-Short-Straddle.pdf>
-Package pdftex.def Info: ./figs/Fig-AMD-Profit-Short-Straddle.pdf  used on inpu
-t line 519.
-(pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
+File: ./figs/Fig-Example-Call-K80-62DTE.pdf Graphic file (type pdf)
+<use ./figs/Fig-Example-Call-K80-62DTE.pdf>
+Package pdftex.def Info: ./figs/Fig-Example-Call-K80-62DTE.pdf  used on input l
+ine 401.
+(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -790,16 +788,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11 <./figs/Fig-AMD-Profit-Short-Straddle.pdf>]
-<./figs/Fig-AMD-Profit-Short-Strangle.pdf, id=228, 602.25pt x 401.5pt>
-File: ./figs/Fig-AMD-Profit-Short-Strangle.pdf Graphic file (type pdf)
-<use ./figs/Fig-AMD-Profit-Short-Strangle.pdf>
-Package pdftex.def Info: ./figs/Fig-AMD-Profit-Short-Strangle.pdf  used on inpu
-t line 566.
-(pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+[11]
+File: ./figs/Fig-Example-Put-K75-62DTE.pdf Graphic file (type pdf)
+<use ./figs/Fig-Example-Put-K75-62DTE.pdf>
+Package pdftex.def Info: ./figs/Fig-Example-Put-K75-62DTE.pdf  used on input li
+ne 429.
+(pdftex.def)             Requested size: 305.33789pt x 203.56764pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -818,12 +812,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[13 <./figs/Fig-AMD-Profit-Short-Strangle.pdf>]
-<./figs/Fig-MU-Profit-IronCondor.pdf, id=255, 602.25pt x 401.5pt>
-File: ./figs/Fig-MU-Profit-IronCondor.pdf Graphic file (type pdf)
-<use ./figs/Fig-MU-Profit-IronCondor.pdf>
-Package pdftex.def Info: ./figs/Fig-MU-Profit-IronCondor.pdf  used on input lin
-e 625.
+[13]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 4
+93.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[14]
+<./figs/Fig-AMD-Profit-Short-Straddle.pdf, id=317, 602.25pt x 401.5pt>
+File: ./figs/Fig-AMD-Profit-Short-Straddle.pdf Graphic file (type pdf)
+<use ./figs/Fig-AMD-Profit-Short-Straddle.pdf>
+Package pdftex.def Info: ./figs/Fig-AMD-Profit-Short-Straddle.pdf  used on inpu
+t line 527.
 (pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
 
 
@@ -834,16 +842,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14 <./figs/Fig-MU-Profit-IronCondor.pdf>]
+[15 <./figs/Fig-AMD-Profit-Short-Straddle.pdf>]
+<./figs/Fig-AMD-Profit-Short-Strangle.pdf, id=328, 602.25pt x 401.5pt>
+File: ./figs/Fig-AMD-Profit-Short-Strangle.pdf Graphic file (type pdf)
+<use ./figs/Fig-AMD-Profit-Short-Strangle.pdf>
+Package pdftex.def Info: ./figs/Fig-AMD-Profit-Short-Strangle.pdf  used on inpu
+t line 574.
+(pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -861,7 +870,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[17]
+[17 <./figs/Fig-AMD-Profit-Short-Strangle.pdf>]
+<./figs/Fig-MU-Profit-IronCondor.pdf, id=353, 602.25pt x 401.5pt>
+File: ./figs/Fig-MU-Profit-IronCondor.pdf Graphic file (type pdf)
+<use ./figs/Fig-MU-Profit-IronCondor.pdf>
+Package pdftex.def Info: ./figs/Fig-MU-Profit-IronCondor.pdf  used on input lin
+e 633.
+(pdftex.def)             Requested size: 352.31625pt x 234.88573pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -870,7 +886,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[18] (./Notes.bbl)
+[18 <./figs/Fig-MU-Profit-IronCondor.pdf>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -879,7 +895,54 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[19] (./Notes.ind) (./Notes.aux)
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[20]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[23] (./Notes.bbl)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[24
+
+] (./Notes.ind) (./Notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -889,16 +952,16 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 66D9306E1AD7223B9A91E8859D2396B7;4013.
+(rerunfilecheck)             Checksum: B79CECA84DC3F8664D205B4F27C095F2;3987.
  ) 
 Here is how much of TeX's memory you used:
- 14010 strings out of 474116
- 225397 string characters out of 5743682
- 1945187 words of memory out of 5000000
- 36037 multiletter control sequences out of 15000+600000
+ 14042 strings out of 474116
+ 225752 string characters out of 5743682
+ 1950187 words of memory out of 5000000
+ 36051 multiletter control sequences out of 15000+600000
  582340 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,973b,619s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,93p,973b,635s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
@@ -913,10 +976,10 @@ al/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texl
 ive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texm
 f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (19 pages, 390250 bytes).
+Output written on Notes.pdf (24 pages, 398459 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 335 compressed objects within 4 object streams
- 112 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 504 PDF objects out of 1000 (max. 8388607)
+ 431 compressed objects within 5 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

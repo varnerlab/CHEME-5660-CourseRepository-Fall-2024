@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Introduction}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Call}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Put}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Payoff and Profit Diagrams for Long Contracts}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}European Contracts Premiums}{8}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Summary}{11}{subsection.1.5}%
+\contentsline {section}{\numberline {2}American Style Options Contracts}{11}{section.2}%
+\contentsline {subsection}{\numberline {2.1}American Call Options}{11}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}American Put Options}{12}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Summary}{12}{subsection.2.3}%
+\contentsline {section}{\numberline {3}American-Style Composite Contracts at Expiration}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}General Composite Contract Formulation}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Defined-Risk Directional Composite Contracts}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Neutral Composite Contracts}{15}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Summary}{19}{subsection.3.4}%
+\contentsline {section}{\numberline {4}American-Style Contract Pricing}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Cox-Ross-Rubinstein (CRR) Model Revisted}{19}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Risk-neutral pricing and the Implied Volatility?}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Intrinsic and Extrinsic Value}{21}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}The Greeks}{21}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Hedged Portfolios using the Greeks}{23}{subsection.4.5}%

@@ -213,17 +213,13 @@ on asset $i$ over time horizon $(t-1)\rightarrow{t}$ is defined as:
 \bar{r}^{(i)}_{t,t-1} \equiv \frac{S_{i,t} - S_{i,t-1}}{S_{i,t-1}} = \bar{\mu}^{(i)}_{t,t-1}\cdot{\Delta{t}}
 \end{equation}
 \end{definition}
-
 Which return model you use is a matter of context or preference. 
 The fractional return (an approximation of the continuous case) is more intuitive because it is the percentage change in the price of an asset over some time interval.
-Further, discrete compinding is used by convention for fixed-income securities, e.g., bonds.
+Further, discrete compinding is used by convention for fixed-income securities, e.g., bills, notes and bonds.
 However, the logarithmic return is attractive because it is additive, i.e., the logarithmic return over some time is the sum of the logarithmic returns over sub-periods
 (which is not valid for fractional returns). 
 Thus, we will typically use the logarithmic return in this book and assume continuous compounding, except for fixed-income securities, e.g., bonds, 
 which uses discrete compounding by convention.
-
-\subsection{Computing Logarithmic Return}\label{subsec:log-return-distributions-equity}
-Let's develop an approach to compute the logarithmic return distribution of a collection of stocks (Algorithm \ref{algo-log-return-distributions-equity}). 
 \begin{algorithm}[h]
     \caption{Logarithmic Excess Growth Rate}\label{algo-log-return-distributions-equity}
     \begin{algorithmic}[1]
@@ -451,8 +447,6 @@ can be estimated using Algorithm \ref{algo-risk-neutral-ud-estimation-equity}.
 	\caption{Risk-neutral estimate of $u$, $d$ and $q$}\label{algo-risk-neutral-ud-estimation-equity}
 	\begin{algorithmic}[1]
 
-		
-
 		\Require Growth-rate $\mu$-array from Algorithm \ref{algo-log-return-distributions-equity}.
 		\Require Effective risk-free rate $\bar{r}$ (units: inverse years).
 		\Require time step size $\Delta{t}$ between $t$ and $t-1$ (units: years) of the price data
@@ -511,7 +505,6 @@ Equation \eqref{eqn:variance-of-log-return} is a quadratic equation in $u$, whic
     u = \exp(\sigma\cdot\sqrt{\Delta{t}})
 \end{equation*} 
 In the CRR approach, the \texttt{up} and \texttt{down} factors are related by $ud=1$, i.e., the lattice is symmetric.
-
 To use the CRR model, we must first specify the volatility $\sigma$ of the return of the underlying asset, e.g., shares of stock.
 We can estimate this from data by first computing the return (or the growth) and the estimatinf the volatility of the return, which is a backward-looking approach, 
 or we can use the implied volatility from the options market, which is a forward-looking approach (the market's estimate of future price movements).
@@ -671,32 +664,12 @@ and then fitting a normal distribution to the residuals, using some technique su
 \subsection{Estimating the volatility parameter $\sigma$}
 Generally, methods to estimate the volatility parameter can be classified into two categories - historical volatility estimates based on past return data and future volatility 
 estimates based on the \href{https://en.wikipedia.org/wiki/Implied_volatility}{Implied Volatility (IV)} of \href{https://en.wikipedia.org/wiki/Option_(finance)}{options contracts}. 
-Here, we estimate the volatility $\sigma$ from historical data, i.e., from the past returns of the share price.
-A return refers to the increase or decrease in the price of an asset, e.g., shares of a stock, over a specific period, e.g., minutes, days, weeks, or even years. 
-Assume the share price of a stock at time $t$ is given by $S(t)$. Then, if we assume continuous compounding, the price of the stock at time $t+\Delta{t}$ is given by:
-\begin{equation}
-    S(t+\Delta{t}) = S(t)\cdot\exp\left(\mu\cdot{\Delta{t}}\right)
-\end{equation}
-where $\mu$ denotes the instantenous growth rate (units: inverse years) of the share price over the time horizon $t\rightarrow{t+\Delta{t}}$. 
-The continuously compounded share price gives rise to the logarithmic return model (Defn. \ref{defn-log-return-1}):
-\begin{definition}[Logarithmic Return]\label{defn-log-return-1}
-Let $S_{i,t-1}$ denote the continuously compounding share price of ticker $i$ at time $t-1$. Then, at time $t$, the share price for ticker $i$, denoted as $S_{i,t}$,
-is given by:
-\begin{equation}
-    S_{i,t} = S_{i,t-1}\cdot\exp\left(\mu^{(i)}_{t,t-1}\cdot{\Delta{t}}\right)
-\end{equation}
-where $\mu^{(i)}_{t,t-1}$ denotes the instantenous growth rate (units: inverse years) of ticker $i$ over time horizon $(t-1)\rightarrow{t}$, 
-and $\Delta{t}$ is the time interval between $t-1$ and $t$ (units: years). The logarithmic return on asset $i$ over time horizon $(t-1)\rightarrow{t}$, 
-denoted by $r^{(i)}_{t,t-1}$, is defined as:
-\begin{equation}
-r^{(i)}_{t,t-1} \equiv \ln\left(\frac{S_{i,t}}{S_{i,t-1}}\right) = \mu^{(i)}_{t,t-1}\cdot{\Delta{t}}
-\end{equation} 
-\end{definition}
-Given Defn. \ref{defn-log-return-1}, we compute the logarithmic return distribution using Algorithm \ref{algo-log-return-distributions-equity}.
+Here, we estimate the volatility $\sigma$ from historical data, i.e., from the past returns of the share price, e.g., using the logarithmic return model (Defn. \ref{defn-log-return-1}).
+We compute the logarithmic return distribution using Algorithm \ref{algo-log-return-distributions-equity}.
 For each stock $i$, we compute the logarithmic return $\mu^{(i)}_{t,t-1}$ for each time interval $(t-1)\rightarrow{t}$, and then compute the mean and variance of the logarithmic return distribution.
 Once we estimated the logarithmic growth distribution for each stock, we can estimate the volatility parameter $\sigma$ by computing the standard deviation of the return distribution.
-Typically, we use the daily data, but we want the annualized standard deviation of the logarithmic return distribution, thus we multiply the daily standard deviation by $\sqrt{252}$, where $252$ is the average number of trading days in a year, 
-i.e, $\sigma\leftarrow \sqrt{252}\cdot\sigma$.
+Typically, we use the daily data, but we want the annualized standard deviation of the logarithmic return distribution, thus we multiply the daily standard deviation by $\sqrt{252}$, 
+where $252$ is the average number of trading days in a year, i.e, $\sigma\leftarrow \sqrt{252}\cdot\sigma$.
 
 \subsection{Stylized facts}
 Geometric Brownian motion is a widely used as a pricing model. 
