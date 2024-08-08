@@ -7,9 +7,9 @@
 \contentsline {section}{\numberline {3}Bandit Problems}{9}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Binary Bernoulli Bandits}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Thompson Sampling}{9}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Applications of Multi-Armed Bandits}{10}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Model Free Reinforcement Learning}{10}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Q-Learning in Discrete Spaces}{10}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Q-Learning in Continuous Spaces}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Applications of Q-Learning}{10}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Summary}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {3.3}Summary}{10}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Model Free Reinforcement Learning}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Q-Learning in Discrete Spaces}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Q-Learning in Continuous Spaces}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Applications of Q-Learning}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Summary}{11}{subsection.4.4}%

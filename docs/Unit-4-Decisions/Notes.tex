@@ -389,7 +389,16 @@ A pseudocode implementation of $\epsilon$-Greedy Thompson Sampling is provided i
     \end{algorithmic}
 \end{algorithm}
 
-\subsection{Applications of Multi-Armed Bandits}\label{sec:applications-of-multi-armed-bandits}
+\subsubsection*{Why a $\text{Beta}$ distribution?}\label{sec:beta-distribution}
+Our implementation of Thompson Sampling uses a $\text{Beta}$ distribution to model the success probabilities of each action, i.e., 
+$\text{Beta}(\alpha,\beta)$ distributions is are the \texttt{brain} of the agent that learn the best action $a\in\mathcal{A}$ to take over
+the horizon of the training run.
+
+\subsection{Summary}
+Bandit problems, particularly the multi-armed bandit (MAB) problem, are classic examples of sequential decision-making challenges that involve balancing exploration and exploitation. 
+In these problems, a decision-maker must choose between multiple options (or "arms"), each with an unknown probability distribution of rewards, with the goal of maximizing cumulative rewards over time. 
+This setup is analogous to a gambler deciding which slot machine to play in a casino to maximize their winnings. 
+The challenge lies in determining the best strategy to gather information about the reward distributions while also capitalizing on known information to maximize returns.
 
 \section{Model Free Reinforcement Learning}\label{sec:reinforcement-learning}
 \subsection{Q-Learning in Discrete Spaces}\label{sec:q-learning}

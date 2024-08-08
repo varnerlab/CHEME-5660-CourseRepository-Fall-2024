@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  8 AUG 2024 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  8 AUG 2024 15:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -652,7 +652,7 @@ File: ./figs/Fig-Discrete-MarkovChain-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Discrete-MarkovChain-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-Discrete-MarkovChain-Schematic.pdf  used on
  input line 163.
-(pdftex.def)             Requested size: 399.29463pt x 108.82826pt.
+(pdftex.def)             Requested size: 352.31625pt x 96.0228pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -753,6 +753,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [9]
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 393.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <6> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 393.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -761,7 +766,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10] (./Notes.bbl)
+[10]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -770,7 +775,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11
+[11] (./Notes.bbl)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12
 
 ] (./Notes.aux)
  ***********
@@ -778,14 +792,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: AA3C9F92FC85765B5DDF5ABDBD3D04CD;2617.
+(rerunfilecheck)             Checksum: AC88AD25034B1516B6091ADFE0469517;2468.
  ) 
 Here is how much of TeX's memory you used:
- 13989 strings out of 474116
- 224129 string characters out of 5743682
+ 13995 strings out of 474116
+ 224184 string characters out of 5743682
  1944187 words of memory out of 5000000
- 36057 multiletter control sequences out of 15000+600000
- 587011 words of font info for 94 fonts, out of 8000000 for 9000
+ 36061 multiletter control sequences out of 15000+600000
+ 588209 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,12n,93p,542b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -804,10 +818,10 @@ e/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2024/
 texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2024/texmf-
 dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist/fo
 nts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (11 pages, 205198 bytes).
+Output written on Notes.pdf (12 pages, 206950 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 306 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
  126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
