@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  7 AUG 2024 15:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  8 AUG 2024 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -777,21 +777,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10 <./figs/Fig-Govt-Debt-Schematic.pdf>]
 Package mdframed Info: Not enough space on this page on input line 387.
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 399.
 <./figs/Fig-Bill-Asset-Timeline-Schematic.pdf, id=327, 412.54124pt x 335.2525pt
 >
 File: ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf  used on 
-input line 402.
+input line 403.
 (pdftex.def)             Requested size: 234.8775pt x 190.87593pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 424.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 428.
+put line 429.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -801,12 +801,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [11]
-<./figs/Fig-Bond-Asset-Timeline-Schematic.pdf, id=339, 719.68875pt x 335.2525pt
+<./figs/Fig-Bond-Asset-Timeline-Schematic.pdf, id=341, 719.68875pt x 335.2525pt
 >
 File: ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf  used on 
-input line 470.
+input line 471.
 (pdftex.def)             Requested size: 399.29463pt x 186.01106pt.
 
 
@@ -836,11 +836,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [14]
-<./figs/Fig-STRIPS-Schematic.pdf, id=393, 890.32625pt x 472.76625pt>
+<./figs/Fig-STRIPS-Schematic.pdf, id=394, 890.32625pt x 472.76625pt>
 File: ./figs/Fig-STRIPS-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-STRIPS-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-STRIPS-Schematic.pdf  used on input line 54
-2.
+3.
 (pdftex.def)             Requested size: 399.29463pt x 212.02867pt.
 
 
@@ -864,11 +864,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [16 <./figs/Fig-STRIPS-Schematic.pdf>]
-<./figs/Fig-YieldCurve-Schematic.pdf, id=427, 2660.94125pt x 660.4675pt>
+<./figs/Fig-YieldCurve-Schematic.pdf, id=428, 2660.94125pt x 660.4675pt>
 File: ./figs/Fig-YieldCurve-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-YieldCurve-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-YieldCurve-Schematic.pdf  used on input lin
-e 593.
+e 594.
 (pdftex.def)             Requested size: 446.26582pt x 110.7663pt.
 
 
@@ -926,8 +926,8 @@ Package rerunfilecheck Info: File `Notes.out' has not changed.
 (rerunfilecheck)             Checksum: DCC995DD7ACC9A93F276D13CCEB236BB;4506.
  ) 
 Here is how much of TeX's memory you used:
- 14055 strings out of 474116
- 226096 string characters out of 5743682
+ 14056 strings out of 474116
+ 226107 string characters out of 5743682
  1944187 words of memory out of 5000000
  36080 multiletter control sequences out of 15000+600000
  585933 words of font info for 92 fonts, out of 8000000 for 9000
@@ -950,10 +950,10 @@ live/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2024/tex
 mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist
 /fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (21 pages, 335130 bytes).
+Output written on Notes.pdf (21 pages, 335197 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 449 compressed objects within 5 object streams
- 104 named destinations out of 1000 (max. 500000)
+ 575 PDF objects out of 1000 (max. 8388607)
+ 450 compressed objects within 5 object streams
+ 105 named destinations out of 1000 (max. 500000)
  210 words of extra memory for PDF output out of 10000 (max. 10000000)
 

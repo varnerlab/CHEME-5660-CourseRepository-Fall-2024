@@ -395,6 +395,7 @@ Perfectly priced T-bills are sold at a discount to their face value, and the dif
 Treasury bills have a Net Present Value (NPV) of zero, i.e., the price of the T-bill is equal to the face value of the T-bill at maturity 
 escalted by the risk-free for the duration of the T-bill.
 
+\subsubsection*{Pricing.}
 In the context of the abstract asset framework, T-bills have two cashflow events, namely when the lender (you) buys the T-bill at auction 
 and when the borrower (United States Treasury) pays the lender (you) the face (par) value of the T-bill at maturity (Fig. \ref{fig:t-bill-schematic}).
 \begin{figure}[h]
@@ -420,7 +421,7 @@ Theorectically, the discount factor $\mathcal{D}_{T,0}^{-1}(\bar{r})$ can be com
 However, in the case of treasury securities, the discount factor is computed on a discrete basis, assuming $\lambda$ compounding events per year, 
 where typcially $\lambda = 2$, i.e., semi-annual compounding.
 
-\subsubsection*{Discrete discounting model}
+\subsubsection*{Discrete discounting model.}
 The algorithm for computing the price of a zero-coupon Treasury bill is given in Algorithm \ref{algo:zero-coupon-treasury-bill-price}.
 First, we compute the discount factor $\mathcal{D}_{T,0}(\bar{r})$, typcially assuming a effective discrete discounting model.
 Then, we compute the price of the zero-coupon Treasury bill $V_{B}$ using Eqn. \eqref{eq:zero-coupon-treasury-bill-price}.
@@ -435,7 +436,7 @@ Then, we compute the price of the zero-coupon Treasury bill $V_{B}$ using Eqn. \
 	\end{algorithmic}
 \end{algorithm}
 
-\subsubsection*{Continuous discounting model}
+\subsubsection*{Continuous discounting model.}
 If we assume a continuous discounting model, then the price of a zero-coupon Treasury bill can be computed using Algorithm \ref{algo:zero-coupon-treasury-bill-price-continout-discounting}:
 \begin{algorithm}[h]
     \caption{Zero-coupon Treasury bill price continuous discounting}\label{algo:zero-coupon-treasury-bill-price-continout-discounting}
@@ -477,13 +478,13 @@ Let's explore two types of coupon-bearing Treasury securities: Treasury notes an
 \href{https://treasurydirect.gov/marketable-securities/treasury-notes/}{United States Treasury Notes or T-notes}, 
 are debt instruments that provide a stable interest payment every six months until maturity, called a coupon payment, and the face (par) value of the note at maturity (Fig. \ref{fig:govt-note-bond-schematic}).
 Treasury notes are offered in terms of T = 2, 3, 5, 7, and 10 years and can be bought for more or less than their face (par) value at auction.
- On the other hand,  \href{https://treasurydirect.gov/marketable-securities/treasury-bonds/}{United States Treasury Bonds or T-bonds} 
+On the other hand,  \href{https://treasurydirect.gov/marketable-securities/treasury-bonds/}{United States Treasury Bonds or T-bonds} 
 are coupon debt instruments with more than ten years of maturity, e.g., 20 or 30 years. Similar to notes, bonds are purchased for more or less than their face (par) value and pay interest in the form of coupon payments every six months until maturity.
 The coupon rate (interest rate) and the yield (discount factor) for these securities are fixed when they are issued, i.e., at auction, and remain constant over the lifetime of the security.
 At maturity, the lender receives the bond's par value (or note) and a final coupon payment. 
 Like Treasury bills, the pricing of notes and bonds is based on the present value of the future cash flows. 
 
-\subsubsection*{Pricing}
+\subsubsection*{Pricing.}
 We will use the abstract asset framework to develop a mathematical model for the price of coupon-bearing Treasury securities.
 A \texttt{T}-year Treasury note (bond) with face value $V_{P}$, an effective annual discount rate $\bar{r}$, and $\lambda$ coupon payments per year, costs $V_{B}$ at auction.
 The note (bond) price is the sum of discounted future coupon payments and face value, making the net present value (NPV) equal to zero:
