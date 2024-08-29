@@ -28,6 +28,6 @@ To download and install VSCode, follow the instructions [here](https://code.visu
 ### IJulia
 The `IJulia` package must be installed globally so that Jupyter can use `Julia` as a kernel, i.e., we can write `Julia` code in Jupyter notebooks. To install the `IJulia` package, follow these steps:
 1. Open the VSCode editor and start a new terminal by selecting the `New Terminal` option from the `Terminal` menu.
-1. In the terminal window (zsh for macOS, not sure for Windows) in VSCode, type the command: `julia`
-2. Once `Julia` starts, enter package mode by typing the `]` key, and enter the command: add IJulia
+1. In the terminal window (zsh for macOS, and PowerShell for Windows) in VSCode, type the command: `julia`
+2. Once `Julia` starts, enter package mode by typing the `]` key, and enter the command: `add IJulia`
 
