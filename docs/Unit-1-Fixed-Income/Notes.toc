@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {2.6}Sensitivities and Risks of Notes and Bonds}{15}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Summary}{15}{subsection.2.7}%
 \contentsline {section}{\numberline {3}Interest Rates, STRIPS and the Yield Curve}{15}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Spot, Short and Forward Rates}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Spot, Short, and Forward Rates}{16}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}STRIPS and the Yield Curve}{17}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}STRIPS pricing}{17}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Estimating the Spot and Short Rates from STRIPS prices}{19}{subsection.3.4}%
