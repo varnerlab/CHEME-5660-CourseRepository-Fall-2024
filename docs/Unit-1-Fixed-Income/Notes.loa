@@ -1,2 +1,3 @@
 \contentsline {algorithm}{\numberline {1}{\ignorespaces Compute price of zero-coupon Treasury bill}}{12}{algorithm.1}%
 \contentsline {algorithm}{\numberline {2}{\ignorespaces Zero-coupon Treasury bill price continuous discounting}}{12}{algorithm.2}%
+\contentsline {algorithm}{\numberline {3}{\ignorespaces Estimating $u$, $d$ and $p$ from the $\mu $-array}}{23}{algorithm.3}%

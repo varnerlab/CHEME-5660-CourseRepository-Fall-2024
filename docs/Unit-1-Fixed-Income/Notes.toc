@@ -20,3 +20,4 @@
 \contentsline {subsection}{\numberline {3.4}Estimating the Spot and Short Rates from STRIPS prices}{19}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Summary}{20}{subsection.3.5}%
 \contentsline {section}{\numberline {4}Lattice Models of Interest Rates}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Single-period binomial model}{21}{subsection.4.1}%

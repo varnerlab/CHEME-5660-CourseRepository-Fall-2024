@@ -736,7 +736,96 @@ We've also explored three hypothetical pricing schemes that a brokerage might em
 Lattice-based models, often referred to as lattice models, are a category of mathematical models used to evaluate and predict the behavior of complex systems over time. 
 These models are widely applied in various fields, including finance, physics, and computer science. 
 At their core, lattice models represent the underlying system as a discrete set of states or nodes connected by branches. 
-In finance, binomial trees are commonly employed as the lattice structure to model asset prices, interest rates, and other financial variables.
+In finance, binomial trees are commonly employed as the lattice structure to model asset prices, and other financial variables.
+Here, we'll explore the application of lattice models to simulate interest rate dynamics. 
+
+\subsection{Single-period binomial model}
+Consider a single-period binomial model which goes from an initial time $0$ to a final time $1$ (Fig. \ref{fig:example-oneste-binomial-lattice-schematic}).
+The current rate at time $0$ is the root of the tree, has a value of $r_{0}$.
+During the transition from time 0 $\rightarrow$ 1 the world moves 
+from the current state to either an \texttt{up} state with probability $p$ or a \texttt{down} state with probability $(1-p)$.
+In the \texttt{up} state, the interest rate is $r_{1}^{u} = u\cdot{r_{0}}$, 
+and in the \texttt{down} state, the interest rate is $r_{1}^{d} = d\cdot{r_{0}}$.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.30\textwidth]{./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf}
+    \caption{Schematic of a single-period binomial lattice model. 
+	In the future, the world can probabilistically move to the \texttt{up} state with probability $p$ or to the \texttt{down} state with probability $(1-p)$. 
+	}\label{fig:example-oneste-binomial-lattice-schematic}
+\end{figure}
+The \texttt{up} and \texttt{down} factors $u$ and $d$, and the probability $p$ can be defined in various ways.  
+Let's consider two approaches for computing the tuple $(u,d,p)$: real-world probabilities, which can be estimated from historical data, and risk-neutral probabilities, 
+which are hypothetical probabilities that allow us to price assets as if investors are risk-neutral. 
+
+\subsubsection*{Real-world probabilities}
+We'll estimate values for $(u,d,p)$ lattice parameters by analyzing the reported interest rate data. 
+Suppose the interest rates were continuously compounded such that:
+\begin{equation}
+r_{j} = r_{i-1}\cdot\exp\left(\mu_{j,j-1}\cdot\Delta{t}\right)
+\end{equation}
+where $r_{\star}$ denotes the rate at time index $\star$, $\mu_{j,j-1}$ denotes the annual growth rate of $r$ between time index 
+$j-1\rightarrow{j}$, and $\Delta{t}$ denotes the time difference between time index $j - 1\rightarrow{j}$ (units: years). 
+We can rearrange and estimate the growth rate values from the reported interest rate values:
+\begin{equation}
+\mu_{j,j-1} = \left(\frac{1}{\Delta{t}}\right)\cdot\log\left(\frac{r_{j}}{r_{i-1}}\right)
+\end{equation}
+for each time interval $j - 1\rightarrow{j}$ in the data. Assuming we have $N$ observations, we can estimate the average growth rate $N-1$ values for the 
+growth rate $\mu$, from which we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$.
+
+\begin{concept}[Real-world Rate probabilities]\label{concept:real-world-interest-rate-probabilities}
+We can estimate the real world probability $p$ by counting the number of times $\mu_{j,j-1}>0$ and 
+dividing by the total number of observations. Similarly, we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ 
+by computing the average $\mu_{j,j-1}\cdot{\Delta{t}}$ when the rate increases or and decreased, respectively.
+\end{concept}
+Then we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ from the growth rate array 
+generated using something like Algorithm \ref{algo-ud-estimation-rates}. 
+\begin{algorithm}[h]
+	\caption{Estimating $u$, $d$ and $p$ from the $\mu$-array}\label{algo-ud-estimation-rates}
+	\begin{algorithmic}[1]
+
+		\Require Growth-rate $\mu$-array from Algorithm.
+		\Require Effective risk-free rate $\bar{r}$ (units: inverse years).
+		\Require time step size $\Delta{t}$ between $t$ and $t-1$ (units: years) of the price data
+		\Require \texttt{mean} function, \texttt{find} function, \texttt{length} function, and \texttt{push} function.
+
+		\Statex
+		\Procedure{real world probability}{$\mu$, $\bar{r}$, $\Delta{t}$}
+		\State
+		\State{\textit{Initialize}:}
+		\State{$N\leftarrow\text{length}(\mu)$}\Comment{Number of growth rates}
+		\State{$\text{up}\leftarrow\text{Array}()$}\Comment{Initialize empty array of \texttt{up} factors}
+		\State{$\text{down}\leftarrow\text{Array}()$}\Comment{Initialize empty array of \texttt{down} factors}
+		
+		\Statex
+		\State \textit{Compute $u$:}
+   	 	\State{$i_{+}\leftarrow \text{find}(\mu>0)$}\Comment{Find the indices of all \texttt{positive} growth rates}
+    	\For{$i\in {i_{+}}$}
+			\State{$\text{push}(\text{up}, \exp(\mu[i]\cdot{\Delta{t}})))$}\Comment{Push the \texttt{positive} return $\mu\cdot\Delta{t}$ onto $\text{up}$-array}
+    	\EndFor
+		\State{$u\leftarrow\text{\texttt{mean}}(\texttt{up})$}\Comment{mean is our estimate of the \texttt{up} factor $u$}
+    	
+		\Statex
+		\State \textit{Compute $d$:}
+   	 	\State{$i_{-}\leftarrow \text{find}(\mu<0)$}\Comment{Find the indices of all \texttt{negative} growth rates}
+    	\For{$i\in {i_{-}}$}
+			\State{$\text{push}(\text{down}, \exp(\mu[i]\cdot{\Delta{t}}))$}\Comment{Push the \texttt{negative} return $\mu\cdot\Delta{t}$ onto $\text{down}$-array}
+    	\EndFor
+		\State{$d\leftarrow\text{\texttt{mean}}(\texttt{down})$}\Comment{mean is our estimate of the \texttt{down} factor $d$}
+
+
+
+		\Statex
+		\State{$N_{+} \leftarrow\text{length}(i_{+})$}\Comment{Number of \texttt{positive} growth rates}
+		\State{$p\leftarrow N_{+}/N$}\Comment{Estimate of the probability $p$}
+		\Statex
+
+		\State
+		\Return{$u$, $d$ and $p$}
+		\Statex
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
 
 \clearpage
 \bibliography{References_v1}

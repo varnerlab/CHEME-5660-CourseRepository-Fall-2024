@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  31 AUG 2024 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  31 AUG 2024 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -750,7 +750,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [9]
-<./figs/Fig-Govt-Debt-Schematic.pdf, id=240, 1079.03125pt x 497.86pt>
+<./figs/Fig-Govt-Debt-Schematic.pdf, id=251, 1079.03125pt x 497.86pt>
 File: ./figs/Fig-Govt-Debt-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Govt-Debt-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-Govt-Debt-Schematic.pdf  used on input line
@@ -776,7 +776,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 442.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/b/sl' tried instead on input line 453.
-<./figs/Fig-Bill-Asset-Timeline-Schematic.pdf, id=323, 719.68875pt x 310.15875p
+<./figs/Fig-Bill-Asset-Timeline-Schematic.pdf, id=334, 719.68875pt x 310.15875p
 t>
 File: ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf>
@@ -808,7 +808,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [12 <./figs/Fig-Bill-Asset-Timeline-Schematic.pdf>]
-<./figs/Fig-Bond-Asset-Timeline-Schematic.pdf, id=362, 719.68875pt x 314.17375p
+<./figs/Fig-Bond-Asset-Timeline-Schematic.pdf, id=373, 719.68875pt x 314.17375p
 t>
 File: ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf>
@@ -846,7 +846,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [15]
-<./figs/Fig-STRIPS-Schematic.pdf, id=401, 890.32625pt x 472.76625pt>
+<./figs/Fig-STRIPS-Schematic.pdf, id=412, 890.32625pt x 472.76625pt>
 File: ./figs/Fig-STRIPS-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-STRIPS-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-STRIPS-Schematic.pdf  used on input line 61
@@ -873,7 +873,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [17]
-<./figs/Fig-YieldCurve-Schematic.pdf, id=439, 2660.94125pt x 660.4675pt>
+<./figs/Fig-YieldCurve-Schematic.pdf, id=450, 2660.94125pt x 660.4675pt>
 File: ./figs/Fig-YieldCurve-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-YieldCurve-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-YieldCurve-Schematic.pdf  used on input lin
@@ -907,6 +907,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [20]
+<./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf, id=485, 219.82124pt x 280.0
+4625pt>
+File: ./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf Graphic file (type pdf)
+
+<use ./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf>
+Package pdftex.def Info: ./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf  use
+d on input line 751.
+(pdftex.def)             Requested size: 140.92793pt x 179.54091pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -917,7 +926,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [21
 
-] (./Notes.bbl)
+ <./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 775.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 779.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -926,9 +945,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[22
+[22]
 
-] (./Notes.ind [23
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[23] (./Notes.bbl)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[24
+
+] (./Notes.ind [25
 
 
 
@@ -938,14 +975,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 8566AC455C9AE03C032065FFFC8DD9BD;4362.
+(rerunfilecheck)             Checksum: 3CF55D984CC6F59D6B5C5A3FD836D6FD;4566.
  ) 
 Here is how much of TeX's memory you used:
- 14061 strings out of 474116
- 226188 string characters out of 5743682
- 1945187 words of memory out of 5000000
- 36082 multiletter control sequences out of 15000+600000
- 584861 words of font info for 90 fonts, out of 8000000 for 9000
+ 14108 strings out of 474116
+ 227212 string characters out of 5743682
+ 1946187 words of memory out of 5000000
+ 36115 multiletter control sequences out of 15000+600000
+ 588106 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,12n,93p,769b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -965,10 +1002,10 @@ live/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2024/tex
 mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist
 /fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (23 pages, 347919 bytes).
+Output written on Notes.pdf (25 pages, 379248 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 458 compressed objects within 5 object streams
- 105 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 215 words of extra memory for PDF output out of 10000 (max. 10000000)
 

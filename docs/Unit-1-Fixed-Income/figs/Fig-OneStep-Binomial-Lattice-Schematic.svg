@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="219px" height="279px" viewBox="0 0 219 279" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <line x1="76.5" y1="53.5" x2="75.5" y2="248.5" id="Line-2" stroke="#89CCE1" stroke-linecap="square" stroke-dasharray="5"></line>
+        <line x1="154.5" y1="53.5" x2="154.5" y2="248.5" id="Line-2" stroke="#EF4034" stroke-linecap="square" stroke-dasharray="5"></line>
+        <line x1="73.1909689" y1="146.680903" x2="155.642218" y2="98.5930873" id="Line" stroke="#545558" stroke-width="2" stroke-linecap="square" transform="translate(114.691, 122.7112) rotate(-3.701) translate(-114.691, -122.7112)"></line>
+        <line x1="73.3533856" y1="195.231433" x2="154.483972" y2="152.06864" id="Line" stroke="#545558" stroke-width="2" stroke-linecap="square" transform="translate(114.3534, 173.7617) scale(1, -1) rotate(-3.701) translate(-114.3534, -173.7617)"></line>
+        <circle id="Oval" stroke="#89CCE1" stroke-width="2" fill="#FFFFFF" cx="75" cy="150" r="11"></circle>
+        <circle id="Oval" stroke="#EF4034" stroke-width="2" fill="#FFFCFC" cx="153" cy="198" r="11"></circle>
+        <circle id="Oval" stroke="#EF4034" stroke-width="2" fill="#FFFCFC" cx="153" cy="96" r="11"></circle>
+        <text id="t-=-0-(now)" font-family="ArialMT, Arial" font-size="18" font-weight="normal" fill="#000000">
+            <tspan x="31" y="268">t = 0 (now)</tspan>
+        </text>
+        <text id="t-=-1" font-family="ArialMT, Arial" font-size="18" font-weight="normal" fill="#000000">
+            <tspan x="140" y="268">t = 1</tspan>
+        </text>
+        <text id="future" font-family="Helvetica-Light, Helvetica" font-size="20" font-weight="300" fill="#DB4D2A">
+            <tspan x="88.61" y="25">future</tspan>
+        </text>
+        <path id="Line-3" d="M142.368686,33.8881632 L143.240261,34.3784245 L155.240261,41.1284245 L156.789729,42 L155.240261,42.8715755 L143.240261,49.6215755 L142.368686,50.1118368 L141.388163,48.3686857 L142.259739,47.8784245 L150.932,43 L74,43 L74,41 L150.932,41 L142.259739,36.1215755 L141.388163,35.6313143 L142.368686,33.8881632 Z" fill="#F0463B" fill-rule="nonzero"></path>
+        <text id="today" transform="translate(57.5, 76) rotate(-90) translate(-57.5, -76)" font-family="ArialMT, Arial" font-size="18" font-weight="normal" fill="#89CCE1">
+            <tspan x="35" y="82">today</tspan>
+        </text>
+        <text id="(p,u)" transform="translate(107, 107) rotate(-32) translate(-107, -107)" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" fill="#000000">
+            <tspan x="91" y="113">(p,u)</tspan>
+        </text>
+        <text id="(1---p,-d)" transform="translate(107.1201, 183.3248) rotate(31) translate(-107.1201, -183.3248)" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" fill="#000000">
+            <tspan x="76.6201202" y="189.324798">(1 - p, d)</tspan>
+        </text>
+        <text id="up" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" fill="#000000">
+            <tspan x="171" y="102">up</tspan>
+        </text>
+        <text id="down" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" fill="#000000">
+            <tspan x="171" y="204">down</tspan>
+        </text>
+        <text id="current" font-family="HelveticaNeue, Helvetica Neue" font-size="16" font-weight="normal" fill="#000000">
+            <tspan x="6" y="155">current</tspan>
+        </text>
+    </g>
+</svg>
