@@ -462,15 +462,15 @@ and when the borrower (United States Treasury) pays the lender (you) the face (p
 The price of a zero-coupon Treasury bill $V_{B}$ with an effective (constant) interest (discount) rate of $\bar{r}$ and a maturity of \texttt{T}-years at auction 
 is the discounted face (par) value $V_{P}$ such that the net present value (NPV) of the bill is zero:
 \begin{equation}    
-\text{NPV}(T,\bar{r}) = -V_{B} + \mathcal{D}_{T,0}^{-1}(\bar{r})\cdot{V_{P}} = 0
+\text{NPV}(T,\bar{r}) = -V_{B} + \mathcal{D}_{nT,0}^{-1}(\bar{r})\cdot{V_{P}} = 0
 \end{equation}
 or equivalently:
 \begin{equation}\label{eq:zero-coupon-treasury-bill-price}
-    V_{B} = \mathcal{D}_{T,0}^{-1}(\bar{r})\cdot{V_{P}}
+    V_{B} = \mathcal{D}_{nT,0}^{-1}(\bar{r})\cdot{V_{P}}
 \end{equation}
 The quantity \texttt{T} denotes the duration of the bill (in years), 
-$\bar{r}$ is the effective annualized interest rate,  and $\mathcal{D}_{T,0}^{-1}(\bar{r})$ is the inverse multistep discount factor
-for period $0\rightarrow{T}$. 
+$\bar{r}$ is the effective annualized interest rate,  and $\mathcal{D}_{nT,0}(\bar{r})$ is the multistep discrete discount factor
+for period $0\rightarrow{nT}$. 
 Theoretically, the discount factor $\mathcal{D}_{T,0}^{-1}(\bar{r})$ can be computed on either a discrete or continuous basis. 
 However, in the case of treasury securities, the discount factor is computed discretely, assuming $\lambda$ compounding events per year, 
 where typically $\lambda = 2$, i.e., semi-annual compounding.
