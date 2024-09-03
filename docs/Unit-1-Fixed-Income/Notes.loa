@@ -1,3 +1,4 @@
 \contentsline {algorithm}{\numberline {1}{\ignorespaces Compute price of zero-coupon Treasury bill}}{12}{algorithm.1}%
 \contentsline {algorithm}{\numberline {2}{\ignorespaces Zero-coupon Treasury bill price continuous discounting}}{12}{algorithm.2}%
-\contentsline {algorithm}{\numberline {3}{\ignorespaces Estimating $u$, $d$ and $p$ from the $\mu $-array}}{23}{algorithm.3}%
+\contentsline {algorithm}{\numberline {3}{\ignorespaces Logarithmic Growth Rate T-bill Yield}}{24}{algorithm.3}%
+\contentsline {algorithm}{\numberline {4}{\ignorespaces Estimating $u$, $d$ and $p$ from the $\mu $-array}}{25}{algorithm.4}%

@@ -7,7 +7,7 @@
 %\usepackage{palatino,lettrine}
 \usepackage{fancyhdr}
 \usepackage{epsfig}
-\usepackage[round,comma,sort]{natbib}
+\usepackage[square,sort,comma,numbers]{natbib}
 \usepackage{simplemargins}
 \usepackage{setspace}
 \usepackage{wrapfig}
@@ -132,8 +132,8 @@
 \clearpage
 
 \section{Preliminaries}
-Throughout all the courses, we'll use concepts and approaches from finance, mathematics, statistics, and computer science.
-Let's begin this module by reviewing some of these concepts, in particular the idea of an abstract asset and the time value of money.
+We'll use concepts and approaches from finance, mathematics, statistics, and computer science throughout all the courses.
+Let's begin this module by reviewing some of these concepts, particularly the idea of an abstract asset and the time value of money.
 These two foundational concepts are essential for understanding the pricing of zero-coupon Treasury securities (and other financial instruments).
 They also provide a useful framework for financial decision-making.
 
@@ -265,7 +265,7 @@ Let's continue with this idea and introduce the concept of interest and interest
 There are two types of interest: simple and compound. The distinction between simple and compound interest is crucial in finance and investing.
 These concepts significantly impact investment growth and borrowing costs, making them fundamental to consider when making financial decisions. 
 Simple interest is paid only on the initial principle. 
-For example, if amount $A(0)$ is invested in an account at $t=0$ which pays a simple interest rate of $r$ per period, 
+For example, if the amount $A(0)$ is invested in an account at $t=0$ which pays a simple interest rate of $r$ per period, 
 then after $k$ periods the account will hold amount $A(k)$ (assuming no withdrawals, etc):
 \begin{equation}\label{eq:simple-interest}
 A(k) = A(0)\cdot\left(1+rk\right)
@@ -311,9 +311,9 @@ Then, the discount factor $\mathcal{D}_{k,0}(\bar{r})$ becomes the \textit{conti
 \begin{itemize}[leftmargin=*]
 \item{For $k=0$: The continuous discount factor, consistent with its discrete analog, is given by $\mathcal{D}_{0,0}(\bar{r}) = 1$.}
 \item{For $k>0$: The continuous discount factor, consistent with its discrete analog, is given by $\mathcal{D}_{k,0}(\bar{r}) > 1$.}
-\item{Continuous discount factors are used for equity and derivatives, while discrete discounting is used for Treasury securities.}
 \end{itemize}
 \end{definition}
+Continuous discount factors are used for equity and derivatives, while discrete discounting is used for Treasury securities.
 
 \subsection{Net Present Value (NPV)}
 Now that we have tools to account for the time value of money, we can return to the question of how to value an asset. 
@@ -324,15 +324,14 @@ Then, the net cash flow at node $t=k$ is given by:
 \bar{c}_{k} = \sum_{s\in\mathcal{S}^{t=k}}\nu_{s}\dot{c}_{s}
 \end{equation}
 where $\nu_{s}$ is a direction parameter; $\nu_{s}=+1$ if stream $s$ enters node $t=k$, $\nu_{s}=-1$ if stream $s$ exists node $t=k$. 
-Finally, we sum all the current and future cash flows, converted to some shared basis, e.g., current dollars. 
-This sum is called the Net Present Value (NPV); NPV is a widespread method for asset valuation and financial decision-making 
-(Defn. \ref{defn:net-present-value}): 
+Finally, we sum all the current and future cash flows, converted to a shared basis, such as current dollars. 
+This sum is called the Net Present Value (NPV) (Defn. \ref{defn:net-present-value}): 
 \begin{definition}[Net Present Value (NPV)]\label{defn:net-present-value}
 The Net Present Value (\texttt{NPV}) of an abstract asset is the sum of current and future discounted \textit{net cash flows} over a time horizon $T$, 
 assuming a constant discount rate $\bar{r}$:
-\begin{equation*}    
+\begin{equation}    
 \text{NPV}(T, \bar{r}) = \sum_{i=0}^{T}{\mathcal{D}_{i,0}^{-1}}(\bar{r})\cdot\bar{c}_{i} = \left<\mathcal{D}^{-1}(\bar{r}),\,\bar{c}\right>
-\end{equation*}
+\end{equation}
 where the $\bar{c}_{i}$ denotes the \textit{net cash flow} in period $i$, 
 $\mathcal{D}_{i,0}(\bar{r})$ is the multistep discount factor (either discrete or continuous) between periods $0\rightarrow{i}$, and
 $\left<\cdot,\cdot\right>$ denotes the scalar (dot) product.
@@ -374,21 +373,34 @@ and discount rate. Thus, a rational investor would be indifferent between invest
 \subsection{Internal Rate of Return (IRR)}
 The NPV decision rule above relies on computing the sum of discounted future cash flows. 
 However, in these calculations, what discount rate should we use? This question is difficult; the correct discount rate varies between applications and industries.  
-The special discount rate where the net present value is zero is called the Internal Rate of Return (Defn. \ref{defn:internal-rate-of-return}):
+The special discount rate where the net present value is zero is called the Internal Rate of Return (IRR) (Defn. \ref{defn:internal-rate-of-return}):
 
 \begin{definition}[Internal Rate of Return (IRR)]\label{defn:internal-rate-of-return}
-Assume the discount rate is constant between periods. Then, the internal rate of return (IRR) is the discount rate that makes the net present value equal to zero:
-\begin{equation}\label{eq:internal-rate-of-return}
-\sum_{t=0}^{T}{\mathcal{D}_{t,0}^{-1}}\cdot\bar{c}_{t} = 0
+The Internal Rate of Return (\texttt{IRR}) is the effective (constant) discount rate $\bar{r}^{\star}\geq{0}$
+that makes the net present value of an abstract asset equal to zero over a $T$-period time horizon:
+\begin{equation}
+\sum_{i=0}^{T}{\mathcal{D}_{i,0}^{-1}}(\bar{r}^{\star})\cdot\bar{c}_{i} = \left<\mathcal{D}^{-1}(\bar{r}^{\star}),\,\bar{c}\right> = 0
 \end{equation}
-The discount factor $\mathcal{D}_{t,0}$ can be modeled as either a discrete or a continuous discount factor. Discount rates greater than the IRR favor the alternative investment.
+where the $\bar{c}_{i}$ denotes the \textit{net cash flow} in period $i$, 
+$\mathcal{D}_{i,0}(\bar{r})$ is the multistep discount factor (either discrete or continuous) between periods $0\rightarrow{i}$, and
+$\left<\cdot,\cdot\right>$ denotes the scalar (dot) product.
+
+% Assume the discount rate is constant between periods. Then, the internal rate of return (IRR) is the discount rate that makes the net present value equal to zero:
+% \begin{equation}\label{eq:internal-rate-of-return}
+% \sum_{t=0}^{T}{\mathcal{D}_{t,0}^{-1}}\cdot\bar{c}_{t} = 0
+% \end{equation}
+% The discount factor $\mathcal{D}_{t,0}$ can be modeled as either a discrete or a continuous discount factor. 
 \end{definition}
 Thus, the IRR is a decision boundary of sorts; the IRR is the discount rate at which the project manager or investor is indifferent to the project.
+Discount rates greater than the IRR favor the alternative investment, while discount rates less than the IRR
+favor the project.
 
 \subsection{Summary}
 In this section, we introduced the concept of an abstract asset, the time value of money, different discounting models, the net present value (NPV), and the internal rate of return (IRR).
 We'll use these ideas throughout the course. However, in this unit, we'll use these concepts to develop a framework for pricing zero-coupon and multiple-coupon Treasury securities 
 and to understand the risks associated with these securities.
+
+\clearpage
 
 \section{United States Treasury Securities}
 \href{https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities}{United States Marketable Treasury Securities}, 
@@ -416,7 +428,8 @@ The price of coupon-bearing Treasury securities is a function of the face (par) 
 Thus, as these parameters change, e.g., the yield (discount rate), you would expect the price of the Treasury security to change (Concept \ref{concept:malkiel-theorems}):
 
 \begin{concept}[Malkiel's Theorems]\label{concept:malkiel-theorems}
-	Malkiel explored the question of bond pricing and proposed five theorems that relate the price of a coupon-bearing Treasury security to changes in these parameters \citep{Malkiel-Bonds-1962}:
+	Malkiel explored the question of bond pricing and proposed five theorems that relate the price of a coupon-bearing Treasury security to 
+	changes in these parameters \citep{Malkiel-Bonds-1962}:
 \begin{itemize}[leftmargin=*]
 \item{\textbf{Theorem 1}: Bond prices move inversely to bond yields.}
 \item{\textbf{Theorem 2}: For a given change in yield from the nominal yield, changes in bond prices are greater the longer the term to maturity. }
@@ -436,7 +449,7 @@ of T = 4, 8, 13, 26, and 52 weeks and zero coupon payments, i.e., no separate se
 Perfectly priced T-bills are sold at a discount to their face value, and the difference between the purchase price and the face value is the return to the lender (you).
 Treasury bills have a Net Present Value (NPV) of zero, i.e., the price of the T-bill is equal to its face value at maturity, escalated by the risk-free for the duration of the T-bill.
 
-\subsubsection*{Pricing.}
+\subsubsection{Pricing of zero-coupon T-bills.}
 In the context of the abstract asset framework, T-bills have two cashflow events, namely when the lender (you) buys the T-bill at auction 
 and when the borrower (United States Treasury) pays the lender (you) the face (par) value of the T-bill at maturity (Fig. \ref{fig:t-bill-schematic}).
 \begin{figure}[h]
@@ -478,6 +491,7 @@ Then, we compute the price of the zero-coupon Treasury bill $V_{B}$ using Eqn. \
 \end{algorithm}
 
 \subsubsection*{Continuous discounting model.}
+Although it is not typically used for Treasury securities, we could assume continuous compounding. 
 If we assume a continuous discounting model, then the price of a zero-coupon Treasury bill can be computed using Algorithm \ref{algo:zero-coupon-treasury-bill-price-continout-discounting}:
 \begin{algorithm}[h]
     \caption{Zero-coupon Treasury bill price continuous discounting}\label{algo:zero-coupon-treasury-bill-price-continout-discounting}
@@ -491,8 +505,39 @@ If we assume a continuous discounting model, then the price of a zero-coupon Tre
 \end{algorithm}
 This is the same procedure as Algorithm \ref{algo:zero-coupon-treasury-bill-price}, except we use the continuous discount factor.
 
-\subsection{Sensitivity and Risk on Treasury Bills}
-Fill me in
+\subsubsection{Sensitivity and risks of T-bills}
+Let's exclude the risk of default, as it is considered negligible for U.S. Treasury securities, and assume that Malkiel's Theorems apply to Treasury bills.
+Then, we can explore the sensitivity of the price of a zero-coupon Treasury bill to changes in the effective interest (discount) rate $\bar{r}$.
+Treasury bills (T-bills) are considered one of the safest investments due to their short maturity and backing by the U.S. government. 
+However, they still carry some risks:
+\begin{itemize}[leftmargin=*]
+	\item{\textbf{Interest rate risk}: As with all fixed-income investments, T-bill prices fall when interest (discount) rates rise (Theorem 1). 
+	However, T-bills have lower interest rate risk compared to longer-maturity Treasury bonds and notes due to their shorter maturities (Theorem 2).}
+	\item{\textbf{Reinvestment risk}: When a T-bill matures, the proceeds may be reinvested. If yields have fallen, the reinvested funds will earn lower returns. Laddering T-bills with different maturity dates can help mitigate reinvestment risk.}
+	\item{\textbf{Inflation risk}: T-bills pay a fixed interest (discount) rate, so their real returns may not keep up with inflation. When the inflation rate is higher than T-bill yields, investors may sell T-bills to seek higher returns, causing their prices to fall.}
+\end{itemize}
+Despite these risks, T-bills remain a popular safe haven investment, especially when economic conditions are uncertain. 
+Their low risk and reasonably high liquidity, i.e., it's easy to sell these instruments into the secondary market, make them suitable for preserving capital and maintaining short-term cash reserves.
+We’ll numerically explore these ideas, particularly interest rate risks, in this module’s worked example and project.
+However, we can also perform an analytical sensitivity analysis on the price of a zero-coupon Treasury bill to changes in the effective interest (discount) rate $\bar{r}$ and the maturity $T$.
+
+\subsubsection*{Analytical analysis of T-bill price sensitivity.}
+Let's compute the total differential of the price of a zero-coupon Treasury bill with respect to the changes in the effective interest rate $\bar{r}$ and the maturity $T$.
+To make the math a little easier, assume continuous compounding. The total differential (including only linear terms) of the price of a zero-coupon Treasury bill with respect to the changes in the effective interest rate $\bar{r}$ and the maturity $T$ is given by:
+\begin{equation}\label{eq:zero-coupon-treasury-bill-price-differential}
+	dV_{B} = -\left(T\cdot{d\bar{r}}+\bar{r}\cdot{dT}\right)\cdot\exp(-\bar{r}\cdot{T})\cdot{V_{P}}
+\end{equation}
+Let $\bar{r}$, $T$, and $V_{P}$ be given by the values of the effective interest rate, the maturity, and the face value of a benchmark Treasury bill.
+Then, how the price of that benchmark Treasury bill changes with respect to changes in the T-bill parameters is governed by the sign of the total differential $dV_{B}$, 
+particularly the sign of the term in parentheses in Eqn. \eqref{eq:zero-coupon-treasury-bill-price-differential}. If $dV_{B}>0$, then the price of the Treasury bill increases with changes in the effective interest rate $\bar{r}$ and the maturity $T$, 
+if $dV_{B}<0$, then the price of the Treasury bill decreases with changes in the effective interest rate $\bar{r}$ and the maturity $T$.
+If $dV_{B}=0$, then the price of the Treasury bill is insensitive to changes in the effective interest rate $\bar{r}$ and the maturity $T$. 
+
+The total differential of the price of a zero-coupon Treasury bill is consistent with Malkiel's Theorem(s) 1, 2, and 3. For the $d\bar{r}>0$ and $dT=0$ case: The price of the Treasury bill decreases $dV_{B}\downarrow$ with increases $d\bar{r}\uparrow$ in the effective interest rate $\bar{r}$ at a constant maturity (Theorem 1). 
+This change is more pronounced for longer maturity Treasury bills, i.e., as the constant factor $T\cdot\exp(-\bar{r}\cdot{T})\cdot{V}_{P}$ multiplying the $d\bar{r}$ term increases with increasing $T\uparrow$ (Theorem 2).
+Furthermore, the percentage price changes described in Theorem 2 increase at a diminishing rate as $T$ increases because of the nonlinearity of the $\exp(-\bar{r}\cdot{T})$ component of the constant term (Theorem 3).
+However, the total differential does not capture the asymmetric change in the price of the Treasury bill, i.e., decreasing yields raise T-bill prices more than the same increase in yields lowers prices (Theorem 4).
+Thus, we expect the asymetry follows from the non-linear terms in an expansion (which are not included in the total differential).
 
 \subsection{Coupon-Bearing Treasury Notes and Bonds}
 Previously, we introduced the concept of the time value of money and developed the abstract asset framework to compute the present value of future cash flows.
@@ -526,7 +571,7 @@ The coupon rate (interest rate) and the yield (discount factor) for these securi
 At maturity, the lender receives the bond's par value (or note) and a final coupon payment. 
 Like Treasury bills, the pricing of notes and bonds is based on the present value of the future cash flows. 
 
-\subsubsection*{Pricing.}
+\subsubsection{Pricing of T-notes and T-bonds.}
 We will use the abstract asset framework to develop a mathematical model for the price of coupon-bearing Treasury securities.
 A \texttt{T}-year Treasury note (bond) with face value $V_{P}$, an effective annual discount rate $\bar{r}$, and $\lambda$ coupon payments per year, costs $V_{B}$ at auction.
 The note (bond) price is the sum of discounted future coupon payments and face value, making the net present value (NPV) equal to zero:
@@ -547,37 +592,30 @@ Finally, the discounting for Treasury instruments uses a discrete compounding mo
 \end{equation}
 where $j$ denotes the period number, and $\bar{r}$ is the effective yield (constant).
 
-\subsection{Yield to Maturity}
-The Yield to Maturity (YTM) of a treasury note or bond is the internal rate of return (IRR) associated with buying and holding the security until its maturity date. 
-Thus, the YTM and the effective market interest rate are initially the same when the note or bond is auctioned in the primary market. 
-However, treasury securities can be resold on the secondary treasury market, even after some coupon payments have been paid out. 
-In such cases, the YTM may not equal the initial market interest rate at auction. Let's examine the yield to maturity of a 5-year treasury note. Assuming a discrete discounting model, 
-let's consider a scenario where we bought a 5-year treasury note with a face value of $V_{P}$ = 100 USD at auction for $V_{B}$ = 96.82 USD. 
-The note has an annual coupon rate of 6\%, with semi-annual coupons. We then sell the T-note on the secondary market for the same price we purchased it after holding it for $T^{\prime}$ years and receiving some coupon payments.
+% \subsection{Yield to Maturity}
+% The Yield to Maturity (YTM) of a treasury note or bond is the internal rate of return (IRR) associated with buying and holding the security until its maturity date. 
+% Thus, the YTM and the effective market interest rate are initially the same when the note or bond is auctioned in the primary market. 
+% However, treasury securities can be resold on the secondary treasury market, even after some coupon payments have been made. 
+% In such cases, the YTM may not equal the initial market interest rate at auction. Let's examine the yield to maturity of a 5-year treasury note. Assuming a discrete discounting model, 
+% let's consider a scenario where we bought a 5-year treasury note with a face value of $V_{P}$ = 100 USD at auction for $V_{B}$ = 96.82 USD. 
+% The note has an annual coupon rate of 6\%, with semi-annual coupons. We then sell the T-note on the secondary market for the same price we purchased it after holding it for $T^{\prime}$ years and receiving some coupon payments.
 
-\subsection{Sensitivities and Risks of Notes and Bonds}
+\subsubsection{Sensitivities and risks of T-notes and T-bonds}
 In many ways, the price of a coupon-bearing Treasury security behaves similarly to a T-bill.
-Previously, we explored the relationship between the yield (discount rate) and the price of a zero-coupon Treasury bill. 
-Theorem 1 tells us that the relationship between the yield and price of a coupon-bearing Treasury security is similar to that of a T-bill; that is, the cost of the security is inversely related to the yield.
-Further, Theorem 2 tells us that the longer the term to maturity, the greater the price change for a given change in yield, which we also saw previously for T-bills.
-However, the relationship between the yield and price of a coupon-bearing Treasury security may be more complex than that of a T-bill. For example, Theorem 4 tells us that the cost of a coupon-bearing Treasury security is more sensitive to a decrease than an increase in yield. Moreover, Theorem 5 suggests the coupon rate (interest rate) may act as a buffer to changes in the price resulting from changes in the yield. We'll explore these ideas in this module's worked example and project.
+Previously, we explored the relationship between the yield (discount rate) and the price of a zero-coupon Treasury bill. Theorem 1 tells us that the relationship between the yield and price of a coupon-bearing Treasury security is similar to that of a T-bill; that is, the cost of the security is inversely related to the yield.
+Further, Theorem 2 tells us that the longer the term to maturity, the greater the price change for a given change in yield, which we also saw previously for T-bills. However, the relationship between the yield and price of a coupon-bearing Treasury security may be more complex than that of a T-bill. For example, Theorem 4 tells us that the cost of a coupon-bearing Treasury security is more sensitive to a decrease than an increase in yield. Moreover, Theorem 5 suggests the coupon rate (interest rate) may act as a buffer to changes in the price resulting from changes in the yield. We'll explore these ideas in this module's worked example and project.
 
 \subsection{Summary}
 In this module, we explored the pricing of coupon-bearing Treasury securities.
 In particular, we used the abstract asset framework to develop a mathematical model for the price of coupon-bearing United States Treasury notes and bonds.
 Notes and bonds are long-term debt instruments that provide a stable interest payment, called a coupon payment, every six months until maturity, and the face (par) value of the note (or bond) at maturity.
-These instruments are priced based on the present value of future cash flows. The yield (discount factor) and coupon rate for these securities are fixed when they are issued, i.e., at auction, and remain constant over the security's lifetime.
+These instruments are priced based on the present value of future cash flows. The yield (discount factor) and coupon rate for these securities are fixed when they are issued, i.e., at auction, and remain constant over the security's lifetime. Conversely, Treasury bills are short-term securities with a maturity of less than or equal to a year and zero coupon payments. Treasury bills are sold at auction, and the bill's price is the discounted face (par) value, such that the bill's net present value (NPV) is zero.
 
-Treasury bills are short-term Treasury securities with a maturity of less than or equal to a year and zero coupon payments.
-Treasury bills are sold at auction, and the bill's price is the discounted face (par) value, such that the bill's net present value (NPV) is zero.
-In the next module, we will extend this framework to price other Treasury securities, e.g., Treasury notes and bonds.
+\clearpage
 
 \section{Interest Rates, STRIPS and the Yield Curve}
-\href{https://en.wikipedia.org/wiki/United_States_Treasury_security#STRIPS}{Registered Interest and Principal of Securities (STRIPS) bonds} are a 
-unique type of fixed-income investment instrument that provides investors with an alternative way to access the coupon payments of 
-Treasury securities. STRIPS bonds are created by separating a Treasury securities coupon and principal components and trading them as individual 
-zero-coupon securities. This process allows investors to purchase and trade the coupon or principal components separately, 
-providing greater flexibility in managing their investment portfolios.
+\href{https://en.wikipedia.org/wiki/United_States_Treasury_security#STRIPS}{Registered Interest and Principal of Securities (STRIPS) bonds} are a unique type of fixed-income investment instrument that provides investors with an alternative way to access the coupon payments of Treasury securities. STRIPS bonds are created by separating a Treasury securities coupon and principal components and trading them as individual 
+zero-coupon securities. This process allows investors to purchase and trade the coupon or principal components separately, providing greater flexibility in managing their investment portfolios.
 
 \begin{figure}[h]
     \centering
@@ -593,9 +631,14 @@ In the general case, a treasury note or bond with $N=\lambda{T}$ coupon payments
 the number of coupon payments per year can be stripped into $N+1$ separate zero-coupon securities.
 Beyond their immediate value as investment tools, STRIPS are interesting as they provide a look at the 
 \href{https://www.federalreserve.gov/data/yield-curve-models.htm}{term structure of interest rates}, i.e., the relationship between the remaining time-to-maturity of debt securities 
-and the yield on those securities.
+and the yield on those securities. In this module, we'll explore the mathematics of STRIPS bonds and how they can be used to understand the term structure of interest rates, 
+i.e., how we can use STRIPS to compute the short rates and the yield curve.
 
-In this module, we'll explore the mathematics of STRIPS bonds and how they can be used to understand the term structure of interest rates, i.e., how we can use STRIPS to compute the short rates and the yield curve.
+\subsubsection*{Aside: Why do we care about yield curves?}
+Beyond their direct value in understanding the pricing of Treasury securities, 
+yield curves have been used as a recession indicator, a theory postulated in the PhD thesis of \href{https://people.duke.edu/~charvey/}{Prof. Campbell Harvey at Duke} \citep{Harvery-Thesis-1986}.
+In particular, the yield curve has been used to predict economic recessions, with an inverted yield curve (short-term interest rates higher than long-term rates) being a reliable indicator of an impending recession.
+The inverted yield curve has predicted every recession in the United States since 1955, with only one false positive in the mid-1960s.
 
 \subsection{Spot, Short, and Forward Rates}
 A spot rate is the annual interest rate used to discount the cash flows that occur on that date, i.e., now. Alternatively, the spot rate is the rate of return on a zero coupon bond purchased today and maturing at some future date. Suppose a bond with a face value of $V_{P}$ (future USD) and a maturity of $T$ years is purchased today for $V_{B}$ (USD). The spot rate, $\bar{r}$, is the interest rate that makes the future face value of the bond equal to the purchase price, i.e.,
@@ -651,7 +694,7 @@ To better understand this, let's propose three hypothetical pricing schemes that
 \item{\textbf{Scheme 3 increasing yield}: In this approach, the brokerage prices the zero-coupon instruments to have an increasing yield as a function of maturity, i.e., the ratio of the price to the face value decreases with the time to maturity of the instrument.}
 \end{enumerate}
 
-\subsubsection*{Scheme 1: Constant Yield}
+\subsubsection{Scheme 1: Constant Yield}
 In this case, the price of the zero-coupon bond is given by $V_{B, i} = \left(\alpha\right)^{T_{i}}\cdot{V}_{P, i}$, where $\alpha\leq{1}$, and $T_{i}$ represent the time to maturity of the $ith$ generated zero coupon bond. However, this pricing expression can be rewritten as:
 \begin{equation}
 \left(\alpha\right)^{T_{i}} = \frac{V_{B,i}}{V_{P,i}} = \frac{1}{\left(1+\bar{r}\right)^{T_{i}}}
@@ -663,7 +706,7 @@ where we can use to solve for the spot rate in terms of the escalating factor $\
 Thus, the spot rate is a function of the escalating factor $\alpha$, but under this pricing scheme, 
 the spot rate is constant for all maturities. Thus, the yield curve is flat for this pricing scheme.
 
-\subsubsection*{Scheme 2: Constant Discount}
+\subsubsection{Scheme 2: Constant Discount}
 In this case, the ratio of the price to the face value is constant across all instruments, i.e., $V_{B, i} = \left(\alpha\right)\cdot{V}_{P, i}$, where $\alpha\leq{1}$. However, this pricing expression can be rewritten as:
 \begin{equation}
 \alpha = \frac{V_{B,i}}{V_{P,i}} = \frac{1}{\left(1+\bar{r}\right)^{T_{i}}}
@@ -675,7 +718,7 @@ where we can use to solve for the spot rate for STRIP $i$ in terms of the escala
 In this case, the spot rate $\bar{r}_{i}$ is a function of the escalating factor $\alpha$ and the maturity $T_{i}$. 
 However, under this pricing scheme, the spot rate is not constant for all maturities; it decreases as the time to maturity increases. Thus, the yield curve is downward-sloping (inverted).
 
-\subsubsection*{Scheme 3: Increasing Yield}
+\subsubsection{Scheme 3: Increasing Yield}
 Suppose we are the brokerage, and the yield we are willing to sell each STRIPS bond is given by:
 \begin{equation}
 \bar{r}_{i} = \theta_{1}+\theta_{2}\cdot\left(i-1\right)^{\beta}
@@ -683,7 +726,7 @@ Suppose we are the brokerage, and the yield we are willing to sell each STRIPS b
 where $i$ denotes the STRIPS index (which is a proxy for maturity), 
 $\theta_{1}>0$ denotes the interest rate for the shortest term bond in the collection, i.e., the zero-coupon bond with maturity of six months that is generated from the first coupon payment, $\theta_{2}\geq{0}$ governs how fast the rate escalates for each new STRIPS product, i.e., for each bond of longer maturity that we sell, and $\beta$ is a sensitivity parameter. Because $\theta_{1}>{0}$ and $\theta_{2}\geq{0}$, this scheme will give an expected yield curve $\bar{r}_{i}\leq\bar{r}_{i+1}$, i.e., longer maturity instruments will have a higher-yield compared to shorter-term bonds.
 
-\subsection{Estimating the Spot and Short Rates from STRIPS prices}
+\subsection{Estimating the spot and short rates from STRIPS prices}
 For the moment, let's assume that we have a set of STRIPS zero-coupon bonds with maturities $T_{1}, T_{2},\ldots, T_{N}$ years, 
 and have the priced these STRIPS, denoted as $V_{B, i}$, using one of the three pricing schemes described above.
 We can estimate the short rates, which represent the market rate of interest between periods $j-1\rightarrow{j}$, denoted as $r_{j+1,j}$, by analyzing the prices of the various STRIPS zero coupon products based on their maturity. Using a discrete discounting model, the short rates are calculated according to the following relationship:
@@ -704,9 +747,130 @@ and then transform these back to linear coordinates for each period: $r_{i,i-1} 
 In this module, we've explored the mathematics of STRIPS bonds and how they can be used to understand the term structure of interest rates, i.e., how we can use STRIPS to compute the spot rates, short rates, and the yield curve for zero-coupon instruments of increasing maturity. 
 We've also explored three hypothetical pricing schemes that a brokerage might employ to price the zero-coupon instruments and how these pricing schemes affect the spot rate. These schemes replicate the observed yield curve shapes: normal, inverted, and flat. 
 
-\section{Lattice Models of Interest Rates}
-Fill me in
+\clearpage
 
+\section{Lattice Models of Interest Rates}
+Lattice-based models, often referred to as lattice models, are mathematical models used to evaluate and predict the behavior of complex systems over time. 
+These models are widely applied in various fields, including finance, physics, and computer science. 
+At their core, lattice models represent the underlying system as a discrete set of states or nodes connected by branches. In finance, binomial trees are commonly employed as the lattice structure to model asset prices and other financial variables. Here, we'll explore applying lattice models to simulate interest rate dynamics. 
+
+\subsection{Single-period binomial model}
+Consider a single-period binomial model which goes from an initial time $0$ to a final time $1$ (Fig. \ref{fig:example-oneste-binomial-lattice-schematic}).
+The current rate at time $0$ is the tree's root, with a value of $r_{0}$.
+During the transition from time 0 $\rightarrow$ 1, the world moves 
+from the current state to either an \texttt{up} state with probability $p$ or a \texttt{down} state with probability $(1-p)$.
+In the \texttt{up} state, the interest rate is $r_{1}^{u} = u\cdot{r_{0}}$, 
+and in the \texttt{down} state, the interest rate is $r_{1}^{d} = d\cdot{r_{0}}$.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.30\textwidth]{./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf}
+    \caption{Schematic of a single-period binomial lattice model. 
+	In the future, the world can probabilistically move to the \texttt{up} state with probability $p$ or to the \texttt{down} state with probability $(1-p)$. 
+	}\label{fig:example-oneste-binomial-lattice-schematic}
+\end{figure}
+The \texttt{up} and \texttt{down} factors $u$ and $d$, and the probability $p$ can be defined in various ways.  
+Let's consider two approaches for computing the tuple $(u,d,p)$: real-world probabilities, which can be estimated from historical data, and risk-neutral probabilities, 
+which are hypothetical probabilities that allow us to price assets as if investors are risk-neutral. 
+
+\subsubsection{Estimating real-world probabilities}
+We'll estimate values for $(u,d,p)$ lattice parameters by analyzing the reported interest rate data. 
+Suppose the interest rates were continuously compounded such that:
+\begin{equation}
+r_{j} = r_{i-1}\cdot\exp\left(\mu_{j,j-1}\cdot\Delta{t}\right)
+\end{equation}
+where $r_{\star}$ denotes the rate at time index $\star$, $\mu_{j,j-1}$ denotes the annual growth rate of $r$ between time index 
+$j-1\rightarrow{j}$, and $\Delta{t}$ denotes the time difference between time index $j - 1\rightarrow{j}$ (units: years). 
+We can rearrange and estimate the growth rate values from the reported interest rate values:
+\begin{equation}
+\mu_{j,j-1} = \left(\frac{1}{\Delta{t}}\right)\cdot\log\left(\frac{r_{j}}{r_{i-1}}\right)
+\end{equation}
+for each time interval $j - 1\rightarrow{j}$ in the data. Assuming we have $N$ observations, we can estimate $N-1$ values for the 
+growth rate $\mu$, from which we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ using something like Algorithm \ref{algo-log-return-change-interest-rates}.
+
+\begin{algorithm}[h]
+    \caption{Logarithmic Growth Rate T-bill Yield}\label{algo-log-return-change-interest-rates}
+    \begin{algorithmic}[1]
+
+        \Statex
+        \Require data set $\mathcal{D}_{i} = \left\{r_{i,t}\right\}_{t=1}^{N}\in\mathcal{D}$ where $r_{i,t}$ denotes the yield of T-bill with maturity $i$ at time $t$, 
+		and $\mathcal{D}$ denotes the data set of all T-bills.
+        \Require The time interval $\Delta{t}$ between $t$ and $t-1$ (units: years) and a list of maturities $\mathcal{L} = \left\{i\right\}_{i=1}^{M}$ for the T-bills in $\mathcal{D}$ where $M = \dim\mathcal{L}$.
+		\Require All T-bills have the same number of trading days $N$.
+     
+        \Statex
+		\Procedure{log growth rate}{$\mathcal{D}$, $\mathcal{L}$, $\Delta{t}$}
+		\State{$N\leftarrow\text{length}(\mathcal{D})$}\Comment{Number of trading days for $i\in\mathcal{L}$}
+        \For{$i\in\mathcal{L}$}
+			\State{$\mathcal{D}_{i} \gets \mathcal{D}[i]$}\Comment{Select the data for maturity $i$ from the dataset $\mathcal{D}$}
+            \For{$t=2\rightarrow{N}$}
+                \State{$r_{i,t-1} \gets \mathcal{D}_{i}[t-1]$}\Comment{Select the price of stock $i$ at time $t-1$}
+                \State{$r_{i,t} \gets \mathcal{D}_{i}[t]$}\Comment{Select the price of stock $i$ at time $t$}
+                \State{$\mu^{(i)}_{t,t-1} \gets \left(1/\Delta{t}\right)\cdot\ln\left(r_{i,t}/{r_{i,t-1}}\right)$}
+            \EndFor
+        \EndFor
+        \Statex
+        \Return{$\mu^{(1)},\dots,\mu^{(\dim\mathcal{L})}$}\Comment{Return the logarithmic growth rate array for each T-bill $i\in\mathcal{L}$}
+		\EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{concept}[Real-world Rate probabilities]\label{concept:real-world-interest-rate-probabilities}
+We can estimate the real world probability $p$ by counting the number of times $\mu_{j,j-1}>0$ and 
+dividing by the total number of observations. Similarly, we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ 
+by computing the average $\mu_{j,j-1}\cdot{\Delta{t}}$ when the rate increases or decreases, respectively.
+\end{concept}
+Then we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ from the growth rate array 
+generated using something like Algorithm \ref{algo-ud-estimation-rates}. 
+\begin{algorithm}[h]
+	\caption{Estimating $u$, $d$ and $p$ from the $\mu$-array}\label{algo-ud-estimation-rates}
+	\begin{algorithmic}[1]
+
+		\Require Growth-rate $\mu$-array from Algorithm \ref{algo-log-return-change-interest-rates}.
+		\Require Effective risk-free rate $\bar{r}$ (units: inverse years).
+		\Require time step size $\Delta{t}$ between $t$ and $t-1$ (units: years) of the price data
+		\Require \texttt{mean} function, \texttt{find} function, \texttt{length} function, and \texttt{push} function.
+
+		\Statex
+		\Procedure{real world probability}{$\mu$, $\bar{r}$, $\Delta{t}$}
+		\State
+		\State{\textit{Initialize}:}
+		\State{$N\leftarrow\text{length}(\mu)$}\Comment{Number of growth rates}
+		\State{$\text{up}\leftarrow\text{Array}()$}\Comment{Initialize empty array of \texttt{up} factors}
+		\State{$\text{down}\leftarrow\text{Array}()$}\Comment{Initialize empty array of \texttt{down} factors}
+		
+		\Statex
+		\State \textit{Compute $u$:}
+   	 	\State{$i_{+}\leftarrow \text{find}(\mu>0)$}\Comment{Find the indices of all \texttt{positive} growth rates}
+    	\For{$i\in {i_{+}}$}
+			\State{$\text{push}(\text{up}, \exp(\mu[i]\cdot{\Delta{t}})))$}\Comment{Push the \texttt{positive} return $\mu\cdot\Delta{t}$ onto $\text{up}$-array}
+    	\EndFor
+		\State{$u\leftarrow\text{\texttt{mean}}(\texttt{up})$}\Comment{mean is our estimate of the \texttt{up} factor $u$}
+    	
+		\Statex
+		\State \textit{Compute $d$:}
+   	 	\State{$i_{-}\leftarrow \text{find}(\mu<0)$}\Comment{Find the indices of all \texttt{negative} growth rates}
+    	\For{$i\in {i_{-}}$}
+			\State{$\text{push}(\text{down}, \exp(\mu[i]\cdot{\Delta{t}}))$}\Comment{Push the \texttt{negative} return $\mu\cdot\Delta{t}$ onto $\text{down}$-array}
+    	\EndFor
+		\State{$d\leftarrow\text{\texttt{mean}}(\texttt{down})$}\Comment{mean is our estimate of the \texttt{down} factor $d$}
+
+
+
+		\Statex
+		\State{$N_{+} \leftarrow\text{length}(i_{+})$}\Comment{Number of \texttt{positive} growth rates}
+		\State{$p\leftarrow N_{+}/N$}\Comment{Estimate of the probability $p$}
+		\Statex
+
+		\State
+		\Return{$u$, $d$ and $p$}
+		\Statex
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
+\clearpage
+\bibliography{References_v1}
 
 \clearpage
 \printindex

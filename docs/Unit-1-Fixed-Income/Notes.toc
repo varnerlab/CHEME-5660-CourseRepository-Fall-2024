@@ -9,15 +9,22 @@
 \contentsline {section}{\numberline {2}United States Treasury Securities}{10}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Risks of U.S. Treasury Securities}{10}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Zero-Coupon Treasury Bills}{11}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Sensitivity and Risk on Treasury Bills}{13}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Coupon-Bearing Treasury Notes and Bonds}{13}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Sensitivities and Risks of Notes and Bonds}{15}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Summary}{15}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Interest Rates, STRIPS and the Yield Curve}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Spot, Short, and Forward Rates}{16}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}STRIPS and the Yield Curve}{17}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}STRIPS pricing}{18}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Estimating the Spot and Short Rates from STRIPS prices}{19}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Summary}{20}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Lattice Models of Interest Rates}{21}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Single-period binomial model}{21}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Pricing of zero-coupon T-bills.}{11}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Sensitivity and risks of T-bills}{13}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Coupon-Bearing Treasury Notes and Bonds}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Pricing of T-notes and T-bonds.}{14}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Sensitivities and risks of T-notes and T-bonds}{15}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Summary}{16}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Interest Rates, STRIPS and the Yield Curve}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Spot, Short, and Forward Rates}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}STRIPS and the Yield Curve}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}STRIPS pricing}{19}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Scheme 1: Constant Yield}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Scheme 2: Constant Discount}{20}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Scheme 3: Increasing Yield}{20}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Estimating the spot and short rates from STRIPS prices}{21}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Summary}{21}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Lattice Models of Interest Rates}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Single-period binomial model}{22}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Estimating real-world probabilities}{23}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Multiple-period binomial model}{24}{subsection.4.2}%
