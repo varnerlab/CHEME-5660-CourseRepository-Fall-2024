@@ -4,6 +4,8 @@ This course is for engineers and scientists interested in quantitative finance a
 For more information on the course content, policies, procedures, and schedule, see the [2024-2025 Courses of Study](https://classes.cornell.edu/browse/roster/FA24/class/CHEME/5660).
 
 ## Requirements
+All of these items need to be installed on your machine to complete the assignments and projects in this course.
+
 This course uses [the Julia programming language](https://julialang.org/downloads/) to introduce fundamental concepts of technical computing, data science, machine learning, and artificial intelligence. 
 In addition, we use other tools and languages, such as [Python via the Anaconda distribution](https://www.anaconda.com) and [Jupyter Notebooks](https://jupyter.org), [GitHub Desktop](https://desktop.github.com/) for repository management, [GitHub classroom](https://classroom.github.com) for assignments. Finally, we use [Visual Studio Code (VSCode)](https://code.visualstudio.com/download) for development. 
 
