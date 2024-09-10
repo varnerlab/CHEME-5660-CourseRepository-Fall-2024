@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  3 SEP 2024 09:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.15)  10 SEP 2024 05:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -750,7 +750,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [9]
-<./figs/Fig-Govt-Debt-Schematic.pdf, id=288, 1079.03125pt x 497.86pt>
+<./figs/Fig-Govt-Debt-Schematic.pdf, id=293, 1079.03125pt x 497.86pt>
 File: ./figs/Fig-Govt-Debt-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Govt-Debt-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-Govt-Debt-Schematic.pdf  used on input line
@@ -776,7 +776,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 442.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/b/sl' tried instead on input line 453.
-<./figs/Fig-Bill-Asset-Timeline-Schematic.pdf, id=371, 719.68875pt x 310.15875p
+<./figs/Fig-Bill-Asset-Timeline-Schematic.pdf, id=376, 719.68875pt x 310.15875p
 t>
 File: ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Bill-Asset-Timeline-Schematic.pdf>
@@ -817,7 +817,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [13]
-<./figs/Fig-Bond-Asset-Timeline-Schematic.pdf, id=417, 719.68875pt x 314.17375p
+<./figs/Fig-Bond-Asset-Timeline-Schematic.pdf, id=422, 719.68875pt x 314.17375p
 t>
 File: ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-Bond-Asset-Timeline-Schematic.pdf>
@@ -855,7 +855,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [16]
-<./figs/Fig-STRIPS-Schematic.pdf, id=455, 890.32625pt x 472.76625pt>
+<./figs/Fig-STRIPS-Schematic.pdf, id=460, 890.32625pt x 472.76625pt>
 File: ./figs/Fig-STRIPS-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-STRIPS-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-STRIPS-Schematic.pdf  used on input line 62
@@ -882,7 +882,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [18]
-<./figs/Fig-YieldCurve-Schematic.pdf, id=496, 2660.94125pt x 660.4675pt>
+<./figs/Fig-YieldCurve-Schematic.pdf, id=501, 2660.94125pt x 660.4675pt>
 File: ./figs/Fig-YieldCurve-Schematic.pdf Graphic file (type pdf)
 <use ./figs/Fig-YieldCurve-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-YieldCurve-Schematic.pdf  used on input lin
@@ -916,20 +916,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [21]
-<./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf, id=528, 219.82124pt x 280.0
+<./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf, id=533, 219.82124pt x 280.0
 4625pt>
 File: ./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf Graphic file (type pdf)
 
 <use ./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf>
 Package pdftex.def Info: ./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf  use
-d on input line 766.
+d on input line 774.
 (pdftex.def)             Requested size: 140.92793pt x 179.54091pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 776.
+(mdframed)              on input line 784.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 797.
+(mdframed)              on input line 805.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -942,18 +942,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [22
 
  <./figs/Fig-OneStep-Binomial-Lattice-Schematic.pdf>]
+Overfull \hbox (6.17319pt too wide) in paragraph at lines 812--816
+ \OT1/phv/b/sl/10.95 4.1.1 Es-ti-mat-ing real-world prob-a-bil-i-ties for a sin
+gle-period bi-no-mial model[][] \OT1/phv/m/n/10.95 Ul-ti-mately, there
+ []
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 846.
+(mdframed)              on input line 855.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 850.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+(mdframed)              on input line 859.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -963,6 +965,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [23]
+Package mdframed Info: Not enough space on this page on input line 859.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -980,7 +987,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25] (./Notes.bbl)
+[25]
+<./figs/Fig-ThreeStep-Binomial-Lattice-Schematic.pdf, id=587, 351.3125pt x 492.
+84125pt>
+File: ./figs/Fig-ThreeStep-Binomial-Lattice-Schematic.pdf Graphic file (type pd
+f)
+<use ./figs/Fig-ThreeStep-Binomial-Lattice-Schematic.pdf>
+Package pdftex.def Info: ./figs/Fig-ThreeStep-Binomial-Lattice-Schematic.pdf  u
+sed on input line 916.
+(pdftex.def)             Requested size: 187.89914pt x 263.60353pt.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 922.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 938.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -991,7 +1013,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [26
 
-] (./Notes.ind [27
+ <./figs/Fig-ThreeStep-Binomial-Lattice-Schematic.pdf>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27] (./Notes.bbl)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[28
+
+] (./Notes.ind [29
 
 
 
@@ -1001,13 +1043,13 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: B0B13D291EFAD04DC3610114C07847B9;6119.
+(rerunfilecheck)             Checksum: 915AB7763B84BC502EBBABEEF3F9A050;6309.
  ) 
 Here is how much of TeX's memory you used:
- 14139 strings out of 474116
- 227883 string characters out of 5743682
- 1954187 words of memory out of 5000000
- 36134 multiletter control sequences out of 15000+600000
+ 14154 strings out of 474116
+ 228494 string characters out of 5743682
+ 1948187 words of memory out of 5000000
+ 36145 multiletter control sequences out of 15000+600000
  588106 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,12n,93p,769b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1028,10 +1070,10 @@ live/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
 24/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2024/tex
 mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2024/texmf-dist
 /fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Notes.pdf (27 pages, 393871 bytes).
+Output written on Notes.pdf (29 pages, 422460 bytes).
 PDF statistics:
- 693 PDF objects out of 1000 (max. 8388607)
- 550 compressed objects within 6 object streams
- 126 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 585 compressed objects within 6 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

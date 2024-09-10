@@ -750,9 +750,17 @@ We've also explored three hypothetical pricing schemes that a brokerage might em
 \clearpage
 
 \section{Lattice Models of Interest Rates}
-Lattice-based models, often referred to as lattice models, are mathematical models used to evaluate and predict the behavior of complex systems over time. 
+Lattice models are mathematical models used to simulate the behavior of stochacstic systems over time. 
 These models are widely applied in various fields, including finance, physics, and computer science. 
-At their core, lattice models represent the underlying system as a discrete set of states or nodes connected by branches. In finance, binomial trees are commonly employed as the lattice structure to model asset prices and other financial variables. Here, we'll explore applying lattice models to simulate interest rate dynamics. 
+At their core, lattice models represent the underlying system as a discrete set 
+of states (called nodes or verticies) connected by branches. 
+In finance, binomial trees are commonly employed as the lattice structure to model asset prices and other financial variables. 
+In binomial models, the future can exist in one of two states: \texttt{up} or \texttt{down}.
+There are also trinomial models, where the future can exist in one of three states: \texttt{up}, \texttt{down}, or \texttt{neutral}, 
+or more advanced models, which can have multiple future states.
+Here, we'll use binomial lattice models to simulate future interest rate dynamics, starting first with a single-period binomial 
+model and then extending to multi-period models. 
+In subsequent modules, we'll explore how lattice models can be used to simulate equity prices, derivatives prices, and other financial variables.
 
 \subsection{Single-period binomial model}
 Consider a single-period binomial model which goes from an initial time $0$ to a final time $1$ (Fig. \ref{fig:example-oneste-binomial-lattice-schematic}).
@@ -768,19 +776,19 @@ and in the \texttt{down} state, the interest rate is $r_{1}^{d} = d\cdot{r_{0}}$
 	In the future, the world can probabilistically move to the \texttt{up} state with probability $p$ or to the \texttt{down} state with probability $(1-p)$. 
 	}\label{fig:example-oneste-binomial-lattice-schematic}
 \end{figure}
-The \texttt{up} and \texttt{down} factors $u$ and $d$, and the probability $p$ can be defined in various ways.  
+The \texttt{up} and \texttt{down} factors $u$ and $d$, and the probability $p$ can be defined in various ways. 
+First, let's think about the parameter $p$.
 
-The key idea of a binomial lattice model is to treat each discrete time step, where the quantity that we are 
-exploring, in this case interest rates, but later we'll look at equity prices, derivatives prices, etc 
-as a Bernoulli random variable (Defn. \ref{def:bernoulli-distribution}):
+The key idea of a binomial lattice model is to treat the outcome of each discrete time step as a Bernoulli random variable, 
+where a \texttt{true} outcome corresponds to the \texttt{up} state and a \texttt{false} outcome corresponds to the \texttt{down} state (Defn. \ref{def:bernoulli-distribution}).
 \begin{definition}[Bernoulli distribution]\label{def:bernoulli-distribution}
-A Bernoulli random variable $X$ models a binary outcome: either \texttt{1} or \texttt{0}, 
-where \texttt{1} occurs with probability $p$ and \texttt{0} occurs with probability $1-p$. 
+A Bernoulli random variable $X$ models a binary outcome: either \texttt{true} or \texttt{false}, 
+where \texttt{true} occurs with probability $p$ and \texttt{false} occurs with probability $1-p$. 
 The probability mass function of the Bernoulli random variable $X$ is:	
 \begin{equation}
 p_{X}(x) = \begin{cases}
-	p & \text{if } x = 1 \\
-	1 - p & \text{if } x = 0
+	p & \text{if } x = 1\,(\text{true}) \\
+	1 - p & \text{if } x = 0\,(\text{false})
 	\end{cases}
 \end{equation}
 where $0<p<1$ is called the Bernoulli parameter. The expectation a Bernoulli random variable is given by:
@@ -795,12 +803,15 @@ Bernoulli random variables model many binary events: coin flips (\texttt{H} or \
 binary bits (\texttt{1} or \texttt{0}), \texttt{true} or \texttt{false}, \texttt{yes} or \texttt{no}, \texttt{present} or \texttt{absent}, 
 or in our case \texttt{up} or \texttt{down} interest rate moves.
 \end{definition}
+This formulation leaves several questions unanswered: for example, how do we estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ and the probability $p$?
+We could develop model to calculate these values based upon some understanding or belief about the underlying financial dyanmics, 
+which is what we'll do in the case of derivatives, or we could estimate these values from historical data, which is what we'll do here.
+Extracting the $(u,d,p)$ tuple from historical data is a common approach in finance, and we'll explore this in the next section. 
 
-\subsubsection{Estimating real-world probabilities}
+\subsubsection{Estimating real-world probabilities for a single-period binomial model}
 Ultimately, there are two approaches for computing the tuple $(u,d,p)$: real-world probabilities, which can be estimated from historical data, and risk-neutral probabilities, 
 which are hypothetical probabilities that allow us to price assets as if investors are risk-neutral (this convention will be important later when we explore derivatives). 
-Here we'll focus on estimating the real-world probabilities $(u,d,p)$ from historical data.
-We'll estimate values for $(u,d,p)$ lattice parameters by analyzing the reported interest rate data. 
+Here we'll focus on estimating the real-world probabilities $(u,d,p)$ from historical data, in particular, interest rate data that is reported and published daily.
 Suppose the interest rates were continuously compounded such that:
 \begin{equation}
 r_{j} = r_{i-1}\cdot\exp\left(\mu_{j,j-1}\cdot\Delta{t}\right)
@@ -813,7 +824,6 @@ We can rearrange and estimate the growth rate values from the reported interest 
 \end{equation}
 for each time interval $j - 1\rightarrow{j}$ in the data. Assuming we have $N$ observations, we can estimate $N-1$ values for the 
 growth rate $\mu$, from which we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ using something like Algorithm \ref{algo-log-return-change-interest-rates}.
-
 \begin{algorithm}[h]
     \caption{Logarithmic Growth Rate T-bill Yield}\label{algo-log-return-change-interest-rates}
     \begin{algorithmic}[1]
@@ -840,9 +850,8 @@ growth rate $\mu$, from which we can estimate the \texttt{up} and \texttt{down} 
 		\EndProcedure
     \end{algorithmic}
 \end{algorithm}
-
 The growth rate array $\mu$ can be used to estimate the \texttt{up}, \texttt{down} and probability $p$ factors by counting the up and down moves, 
-and the magnitide of these moves (Concept \ref{concept:real-world-interest-rate-probabilities}).
+and the magnitide of these moves (Concept \ref{concept:real-world-interest-rate-probabilities} and Algorithm \ref{algo-ud-estimation-rates}).
 \begin{concept}[Real-world Rate probabilities]\label{concept:real-world-interest-rate-probabilities}
 We can estimate the real world probability $p$ by counting the number of times $\mu_{j,j-1}\leq{0}$ and 
 dividing by the total number of observations. Similarly, we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ 
@@ -883,8 +892,6 @@ using Algorithm \ref{algo-ud-estimation-rates}.
     	\EndFor
 		\State{$d\leftarrow\text{\texttt{mean}}(\texttt{down})$}\Comment{mean is our estimate of the \texttt{down} factor $d$}
 
-
-
 		\Statex
 		\State{$N_{+} \leftarrow\text{length}(i_{+})$}\Comment{Number of \texttt{positive} growth rates}
 		\State{$p\leftarrow N_{+}/N$}\Comment{Estimate of the probability $p$}
@@ -897,8 +904,41 @@ using Algorithm \ref{algo-ud-estimation-rates}.
 	\end{algorithmic}
 \end{algorithm}
 
+\clearpage
+
 \subsection{Multiple-period binomial model}
-Fill me in
+The single-period binomial model can be extended to a multi-period model by adding additional time steps to the lattice (Fig. \ref{fig:example-multistep-binomial-lattice-schematic}).
+The central assumption in this procedure is that the lattice parameters $(u,d,p)$ remain constant over time. 
+Thus, we can use the same $(u,d,p)$ tuple to model the interest rate dynamics (or other quantities) at each time step.
+This assumption also implies that we can model the probability of being in any given state at time $t$ as a binomial random variable, i.e., as the outcome of a series of repeated Bernoulli trials (Defn. \ref{def:binomial-distribution}).
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.40\textwidth]{./figs/Fig-ThreeStep-Binomial-Lattice-Schematic.pdf}
+    \caption{Schematic of a three-period binomial lattice model. 
+	At each step, the world can probabilistically move to the \texttt{up} state with probability $p$ or to the \texttt{down} state with probability $(1-p)$. 
+	Then, from the \texttt{up} state we can move to the \texttt{up} state with probability $p$ or to the \texttt{down} state with probability $(1-p)$, and so on. 
+	}\label{fig:example-multistep-binomial-lattice-schematic}
+\end{figure}
+\begin{definition}[Binomial Distribution]\label{def:binomial-distribution}
+	The binomial distribution, the probability of $k$ successes in $n$ independent Bernoulli trials, has the 
+probability mass function:
+\begin{equation*}
+p_{X}(k) = \binom{n}{k}\cdot{p^{k}}\cdot\left(1-p\right)^{n-k}\qquad{k=0,1,\dots,n}
+\end{equation*}
+where $k$ denotes the number of successes in $n$ independent experiments, the binomial parameter $0<p<1$ is the probability 
+of a successful trial and:
+\begin{equation*}
+\binom{n}{k} = \frac{n!}{k!\left(n-k\right)!}
+\end{equation*}
+is the binomial coefficient. The expectation and variance of a binomial random variable is given by:
+\begin{eqnarray*}
+\mathbb{E}\left[X\right] &=& np\\
+\text{Var}\left[X\right] &=& np(1-p)
+\end{eqnarray*}
+\end{definition}
+The binomial distribution models many events in finance, including the number of successful trades in a series of trades. 
+However, in our case we can use it to develop an analytical model that we'll observe any given state at time $t$ in the future.
+
 
 \clearpage
 \bibliography{References_v1}
