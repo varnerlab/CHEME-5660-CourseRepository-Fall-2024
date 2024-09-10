@@ -286,18 +286,6 @@ Furthermore, Eqn. \eqref{eq:compound-interest-multiple} is equivalent to Defn. \
 when the interest rate $r$ is the effective discount rate $\bar{r}$, and the number of compounding periods per year $n$ is the number of discounting events per period.
 Finally, consider the case when the number of compounding periods per year $n\rightarrow\infty$, i.e., we have continuous compounding (Defn. \ref{defn:continuous-compounding}):
 \begin{definition}[Continuous compounding]\label{defn:continuous-compounding}
-% Let there be n-compounding periods per period, e.g., year, and an annualized interest rate of $r$.  
-% Then an initial investment $A(0)$ will be worth:
-% \begin{equation}\label{eqn-compound-interest-model-discrete}
-% A(m) = A(0)\cdot\left(1+r/n\right)^{mn}
-% \end{equation}
-% after m-periods, e.g., m-years. As the number of compounding periods $n\rightarrow\infty$, 
-% the investment $A(m)$ approaches the continuous compounding limit:
-% \begin{equation}\label{eqn-compound-interest-model-cont}    
-% \lim_{n\rightarrow\infty}A(m) = A(0)\cdot\exp\left(rm\right)
-% \end{equation}
-% The quantity $\exp\left(rm\right)$ is the \textit{continuous compounding (discount) factor}, 
-% which we also represent (with a slight abuse of notation) as $\mathcal{D}_{m,0}(r)$.
 Suppose we have a constant annualized discount rate $\bar{r}\geq{0}$ and $n$ compounding events yearly. Then, the discrete 
 multistep discount factor for $k\geq{0}$ periods is given by:
 \begin{equation*}
@@ -719,7 +707,7 @@ In this case, the spot rate $\bar{r}_{i}$ is a function of the escalating factor
 However, under this pricing scheme, the spot rate is not constant for all maturities; it decreases as the time to maturity increases. Thus, the yield curve is downward-sloping (inverted).
 
 \subsubsection{Scheme 3: Increasing Yield}
-Suppose we are the brokerage, and the yield we are willing to sell each STRIPS bond is given by:
+Suppose we are the brokerage and the yield we are willing to sell each STRIPS bond is given by:
 \begin{equation}
 \bar{r}_{i} = \theta_{1}+\theta_{2}\cdot\left(i-1\right)^{\beta}
 \end{equation}
@@ -750,17 +738,17 @@ We've also explored three hypothetical pricing schemes that a brokerage might em
 \clearpage
 
 \section{Lattice Models of Interest Rates}
-Lattice models are mathematical models used to simulate the behavior of stochacstic systems over time. 
+Lattice models are mathematical models used to simulate the behavior of stochastic systems over time. 
 These models are widely applied in various fields, including finance, physics, and computer science. 
 At their core, lattice models represent the underlying system as a discrete set 
-of states (called nodes or verticies) connected by branches. 
+of states (called nodes or vertices) connected by branches. 
 In finance, binomial trees are commonly employed as the lattice structure to model asset prices and other financial variables. 
 In binomial models, the future can exist in one of two states: \texttt{up} or \texttt{down}.
 There are also trinomial models, where the future can exist in one of three states: \texttt{up}, \texttt{down}, or \texttt{neutral}, 
 or more advanced models, which can have multiple future states.
 Here, we'll use binomial lattice models to simulate future interest rate dynamics, starting first with a single-period binomial 
-model and then extending to multi-period models. 
-In subsequent modules, we'll explore how lattice models can be used to simulate equity prices, derivatives prices, and other financial variables.
+model and then extend to multi-period models. 
+In subsequent modules, we'll explore how lattice models can simulate equity prices, derivatives prices, and other financial variables.
 
 \subsection{Single-period binomial model}
 Consider a single-period binomial model which goes from an initial time $0$ to a final time $1$ (Fig. \ref{fig:example-oneste-binomial-lattice-schematic}).
@@ -777,8 +765,6 @@ and in the \texttt{down} state, the interest rate is $r_{1}^{d} = d\cdot{r_{0}}$
 	}\label{fig:example-oneste-binomial-lattice-schematic}
 \end{figure}
 The \texttt{up} and \texttt{down} factors $u$ and $d$, and the probability $p$ can be defined in various ways. 
-First, let's think about the parameter $p$.
-
 The key idea of a binomial lattice model is to treat the outcome of each discrete time step as a Bernoulli random variable, 
 where a \texttt{true} outcome corresponds to the \texttt{up} state and a \texttt{false} outcome corresponds to the \texttt{down} state (Defn. \ref{def:bernoulli-distribution}).
 \begin{definition}[Bernoulli distribution]\label{def:bernoulli-distribution}
@@ -791,7 +777,7 @@ p_{X}(x) = \begin{cases}
 	1 - p & \text{if } x = 0\,(\text{false})
 	\end{cases}
 \end{equation}
-where $0<p<1$ is called the Bernoulli parameter. The expectation a Bernoulli random variable is given by:
+where $0<p<1$ is called the Bernoulli parameter. The expectation of a Bernoulli random variable is given by:
 \begin{equation}
 	\mathbb{E}\left[X\right] = p
 \end{equation}
@@ -804,14 +790,13 @@ binary bits (\texttt{1} or \texttt{0}), \texttt{true} or \texttt{false}, \texttt
 or in our case \texttt{up} or \texttt{down} interest rate moves.
 \end{definition}
 This formulation leaves several questions unanswered: for example, how do we estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ and the probability $p$?
-We could develop model to calculate these values based upon some understanding or belief about the underlying financial dyanmics, 
-which is what we'll do in the case of derivatives, or we could estimate these values from historical data, which is what we'll do here.
+We could develop a model to calculate these values based on some understanding or belief about the underlying financial dynamics, which is what we'll do in the case of derivatives. Alternatively, we could estimate these values from historical data, which we'll do here.
 Extracting the $(u,d,p)$ tuple from historical data is a common approach in finance, and we'll explore this in the next section. 
 
 \subsubsection{Estimating real-world probabilities for a single-period binomial model}
-Ultimately, there are two approaches for computing the tuple $(u,d,p)$: real-world probabilities, which can be estimated from historical data, and risk-neutral probabilities, 
+There are two approaches for computing the tuple $(u,d,p)$: real-world probabilities, which can be estimated from historical data, and risk-neutral probabilities, 
 which are hypothetical probabilities that allow us to price assets as if investors are risk-neutral (this convention will be important later when we explore derivatives). 
-Here we'll focus on estimating the real-world probabilities $(u,d,p)$ from historical data, in particular, interest rate data that is reported and published daily.
+Here, we'll focus on estimating the real-world probabilities $(u,d,p)$ from historical data, particularly interest rate data reported and published daily.
 Suppose the interest rates were continuously compounded such that:
 \begin{equation}
 r_{j} = r_{i-1}\cdot\exp\left(\mu_{j,j-1}\cdot\Delta{t}\right)
@@ -830,32 +815,32 @@ growth rate $\mu$, from which we can estimate the \texttt{up} and \texttt{down} 
 
         \Statex
         \Require data set $\mathcal{D}_{i} = \left\{r_{i,t}\right\}_{t=1}^{N}\in\mathcal{D}$ where $r_{i,t}$ denotes the yield of T-bill with maturity $i$ at time $t$, 
-		and $\mathcal{D}$ denotes the data set of all T-bills.
-        \Require The time interval $\Delta{t}$ between $t$ and $t-1$ (units: years) and a list of maturities $\mathcal{L} = \left\{i\right\}_{i=1}^{M}$ for the T-bills in $\mathcal{D}$ where $M = \dim\mathcal{L}$.
-		\Require All T-bills have the same number of trading days $N$.
+		and $\mathcal{D}$ denotes the data set of all T-bills. There are $N$ observations in the dataset.
+        \Require The time interval $\Delta{t}$ between $(t-1)\rightarrow{t}$ (units: years) and a list of maturities $\mathcal{L} = \left\{i\right\}_{i=1}^{M}$ for the T-bills in $\mathcal{D}$.
+		There are $M$ maturities in the dataset.
+		\Require All T-bills have the same number of observations $N$.
      
         \Statex
 		\Procedure{log growth rate}{$\mathcal{D}$, $\mathcal{L}$, $\Delta{t}$}
-		\State{$N\leftarrow\text{length}(\mathcal{D})$}\Comment{Number of trading days for $i\in\mathcal{L}$}
+		\State{$N\leftarrow\text{length}(\mathcal{D})$}\Comment{Number of observations for $i\in\mathcal{L}$}
         \For{$i\in\mathcal{L}$}
 			\State{$\mathcal{D}_{i} \gets \mathcal{D}[i]$}\Comment{Select the data for maturity $i$ from the dataset $\mathcal{D}$}
             \For{$t=2\rightarrow{N}$}
-                \State{$r_{i,t-1} \gets \mathcal{D}_{i}[t-1]$}\Comment{Select the price of stock $i$ at time $t-1$}
-                \State{$r_{i,t} \gets \mathcal{D}_{i}[t]$}\Comment{Select the price of stock $i$ at time $t$}
+                \State{$r_{i,t}, r_{i,t-1} \gets \mathcal{D}_{i}[t], \mathcal{D}_{i}[t-1]$}\Comment{Select the rate $i$ at times $t$ and $t-1$}
                 \State{$\mu^{(i)}_{t,t-1} \gets \left(1/\Delta{t}\right)\cdot\ln\left(r_{i,t}/{r_{i,t-1}}\right)$}
             \EndFor
         \EndFor
         \Statex
-        \Return{$\mu^{(1)},\dots,\mu^{(\dim\mathcal{L})}$}\Comment{Return the logarithmic growth rate array for each T-bill $i\in\mathcal{L}$}
+        \Return{$\mu^{(1)},\dots,\mu^{(M)}$}\Comment{Return the logarithmic growth rate array for each T-bill $i\in\mathcal{L}$}
 		\EndProcedure
     \end{algorithmic}
 \end{algorithm}
 The growth rate array $\mu$ can be used to estimate the \texttt{up}, \texttt{down} and probability $p$ factors by counting the up and down moves, 
 and the magnitide of these moves (Concept \ref{concept:real-world-interest-rate-probabilities} and Algorithm \ref{algo-ud-estimation-rates}).
-\begin{concept}[Real-world Rate probabilities]\label{concept:real-world-interest-rate-probabilities}
-We can estimate the real world probability $p$ by counting the number of times $\mu_{j,j-1}\leq{0}$ and 
-dividing by the total number of observations. Similarly, we can estimate the \texttt{up} and \texttt{down} factors $u$ and $d$ 
-by computing the average $exp(\mu_{j,j-1}\cdot{\Delta{t}})$ when the rate increases or decreases, respectively.
+\begin{concept}[Estimating real-world probabilities]\label{concept:real-world-interest-rate-probabilities}
+We can estimate the real-world probability $p$ by counting the number of times $\mu_{j,j-1}\leq{0}$ and 
+dividing by the total number of observations. Similarly, we can estimate values for the \texttt{up} and \texttt{down} factors $u$ and $d$ 
+by computing the average of $exp(\mu_{j,j-1}\cdot{\Delta{t}})$ when the rate increases or decreases, respectively.
 \end{concept}
 We can estimate the \texttt{up}, \texttt{down} and probability $p$ factors from the growth rate array data 
 using Algorithm \ref{algo-ud-estimation-rates}. 
@@ -864,42 +849,39 @@ using Algorithm \ref{algo-ud-estimation-rates}.
 	\begin{algorithmic}[1]
 
 		\Require Growth-rate $\mu$-array from Algorithm \ref{algo-log-return-change-interest-rates}.
-		\Require Effective risk-free rate $\bar{r}$ (units: inverse years).
-		\Require time step size $\Delta{t}$ between $t$ and $t-1$ (units: years) of the price data
+		\Require The time interval $\Delta{t}$ between $(t-1)\rightarrow{t}$ (units: years)
 		\Require \texttt{mean} function, \texttt{find} function, \texttt{length} function, and \texttt{push} function.
 
 		\Statex
-		\Procedure{real world probability}{$\mu$, $\bar{r}$, $\Delta{t}$}
-		\State
-		\State{\textit{Initialize}:}
+		\Procedure{real world probability}{$\mu$, $\Delta{t}$}
+		% \State
+		% \State{\textit{Initialize}:}
 		\State{$N\leftarrow\text{length}(\mu)$}\Comment{Number of growth rates}
 		\State{$\text{up}\leftarrow\text{Array}()$}\Comment{Initialize empty array of \texttt{up} factors}
 		\State{$\text{down}\leftarrow\text{Array}()$}\Comment{Initialize empty array of \texttt{down} factors}
 		
 		\Statex
-		\State \textit{Compute $u$:}
-   	 	\State{$i_{+}\leftarrow \text{find}(\mu>0)$}\Comment{Find the indices of all \texttt{positive} growth rates}
+		% \State \textit{Compute $u$:}
+   	 	\State{$i_{+}\leftarrow \text{find}(\mu\geq{0})$}\Comment{Find the indices of all \texttt{non-negative} growth rates}
     	\For{$i\in {i_{+}}$}
-			\State{$\text{push}(\text{up}, \exp(\mu[i]\cdot{\Delta{t}})))$}\Comment{Push the \texttt{positive} return $\mu\cdot\Delta{t}$ onto $\text{up}$-array}
+			\State{$\text{push}(\text{up}, \exp(\mu[i]\cdot{\Delta{t}})))$}\Comment{Push the \texttt{non-negative} values into $\text{up}$-array}
     	\EndFor
 		\State{$u\leftarrow\text{\texttt{mean}}(\texttt{up})$}\Comment{mean is our estimate of the \texttt{up} factor $u$}
     	
 		\Statex
-		\State \textit{Compute $d$:}
+		% \State \textit{Compute $d$:}
    	 	\State{$i_{-}\leftarrow \text{find}(\mu<0)$}\Comment{Find the indices of all \texttt{negative} growth rates}
     	\For{$i\in {i_{-}}$}
-			\State{$\text{push}(\text{down}, \exp(\mu[i]\cdot{\Delta{t}}))$}\Comment{Push the \texttt{negative} return $\mu\cdot\Delta{t}$ onto $\text{down}$-array}
+			\State{$\text{push}(\text{down}, \exp(\mu[i]\cdot{\Delta{t}}))$}\Comment{Push the \texttt{negative} values into $\text{down}$-array}
     	\EndFor
 		\State{$d\leftarrow\text{\texttt{mean}}(\texttt{down})$}\Comment{mean is our estimate of the \texttt{down} factor $d$}
 
 		\Statex
-		\State{$N_{+} \leftarrow\text{length}(i_{+})$}\Comment{Number of \texttt{positive} growth rates}
-		\State{$p\leftarrow N_{+}/N$}\Comment{Estimate of the probability $p$}
+		\State{$N_{+} \leftarrow\text{length}(i_{+})$}\Comment{Number of \texttt{non-negative} growth rates}
+		\State{$p\leftarrow N_{+}/N$}\Comment{Estimate of the probability of an up move $p$}
 		\Statex
 
-		\State
-		\Return{$u$, $d$ and $p$}
-		\Statex
+		\Return{$u$, $d$ and $p$}\Comment{Return the estimated \texttt{up}, \texttt{down} and probability $p$ factors}
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
@@ -909,38 +891,37 @@ using Algorithm \ref{algo-ud-estimation-rates}.
 \subsection{Multiple-period binomial model}
 The single-period binomial model can be extended to a multi-period model by adding additional time steps to the lattice (Fig. \ref{fig:example-multistep-binomial-lattice-schematic}).
 The central assumption in this procedure is that the lattice parameters $(u,d,p)$ remain constant over time. 
-Thus, we can use the same $(u,d,p)$ tuple to model the interest rate dynamics (or other quantities) at each time step.
-This assumption also implies that we can model the probability of being in any given state at time $t$ as a binomial random variable, i.e., as the outcome of a series of repeated Bernoulli trials (Defn. \ref{def:binomial-distribution}).
+Thus, we use the same $(u,d,p)$ tuple to model the interest rate dynamics (or other quantities) at each time step.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.40\textwidth]{./figs/Fig-ThreeStep-Binomial-Lattice-Schematic.pdf}
     \caption{Schematic of a three-period binomial lattice model. 
 	At each step, the world can probabilistically move to the \texttt{up} state with probability $p$ or to the \texttt{down} state with probability $(1-p)$. 
-	Then, from the \texttt{up} state we can move to the \texttt{up} state with probability $p$ or to the \texttt{down} state with probability $(1-p)$, and so on. 
+	Then, from the \texttt{up} state, we can move to the \texttt{up} state with probability $p$ or the \texttt{down} state with probability $(1-p)$, and so on. 
 	}\label{fig:example-multistep-binomial-lattice-schematic}
 \end{figure}
-\begin{definition}[Binomial Distribution]\label{def:binomial-distribution}
-	The binomial distribution, the probability of $k$ successes in $n$ independent Bernoulli trials, has the 
-probability mass function:
-\begin{equation*}
-p_{X}(k) = \binom{n}{k}\cdot{p^{k}}\cdot\left(1-p\right)^{n-k}\qquad{k=0,1,\dots,n}
-\end{equation*}
-where $k$ denotes the number of successes in $n$ independent experiments, the binomial parameter $0<p<1$ is the probability 
-of a successful trial and:
-\begin{equation*}
-\binom{n}{k} = \frac{n!}{k!\left(n-k\right)!}
-\end{equation*}
-is the binomial coefficient. The expectation and variance of a binomial random variable is given by:
-\begin{eqnarray*}
-\mathbb{E}\left[X\right] &=& np\\
-\text{Var}\left[X\right] &=& np(1-p)
-\end{eqnarray*}
-\end{definition}
-The binomial distribution models many events in finance, including the number of successful trades in a series of trades. 
-However, in our case we can use it to develop an analytical model that we'll observe any given state at time $t$ in the future.
+% \begin{definition}[Binomial Distribution]\label{def:binomial-distribution}
+% 	The binomial distribution, the probability of $k$ successes in $n$ independent Bernoulli trials, has the 
+% probability mass function:
+% \begin{equation*}
+% p_{X}(k) = \binom{n}{k}\cdot{p^{k}}\cdot\left(1-p\right)^{n-k}\qquad{k=0,1,\dots,n}
+% \end{equation*}
+% where $k$ denotes the number of successes in $n$ independent experiments, the binomial parameter $0<p<1$ is the probability 
+% of a successful trial and:
+% \begin{equation*}
+% \binom{n}{k} = \frac{n!}{k!\left(n-k\right)!}
+% \end{equation*}
+% is the binomial coefficient. The expectation and variance of a binomial random variable is given by:
+% \begin{eqnarray*}
+% \mathbb{E}\left[X\right] &=& np\\
+% \text{Var}\left[X\right] &=& np(1-p)
+% \end{eqnarray*}
+% \end{definition}
 
-\subsubsection{Multipe-period analytical solution}
-Let's consider a binomial lattice model with $n$ time-steps. At each time step, the interest rate can either go \texttt{up} by a factor of $u$ or \texttt{down} by a factor of $d$.
+\subsubsection{Multiple-period binomial lattice analytical solution}
+The simplifying assumption of a constant $(u,d,p)$ tuple allows us to develop an analytical solution for the interest rate at time $t$ in the future.
+Consider a binomial lattice model with $n$ time-steps. 
+During each time step, the interest rate can either go \texttt{up} by a factor of $u$ or \texttt{down} by a factor of $d$.
 Then, at time \texttt{n}, the interest rate can take on $n+1$ possible values: 
 \begin{equation}
 	r_{n} = r_{\circ}\times{D_{1}}\times{D_{2}}\times{D_{3}}\times\cdots\times{D_{n}}
@@ -949,16 +930,14 @@ where $D_{i}$ is a random variable that can take on one of two values: $u$ or $d
 with probabilities $p$ and $(1-p)$ respectively. 
 Thus, at each time-step, the world flips a coin and lands in either the \texttt{up} state with probability $p$ or the \texttt{down} state with probability $(1-p)$.
 For a single time step, we model this random process as a Bernoulli trial, where the probability of success is $p$ and the likelihood of failure is $(1-p)$.
-As the number of time steps increases, we have a series of Bernoulli trials, which is a binomial distribution (Defn: \ref{defn-binomial-distribution}):
-
-\begin{definition}[Binomial Lattice Rate and Probability]\label{defn-binomial-distribution-rate}
-	Let $r_{\circ}$ denote the current rate at t = \texttt{0}, $u$ and $d$ denote the \texttt{up} and \texttt{down} factors, 
-	and $p$ denote the probability of going \texttt{up}.
+As the number of time steps increases, we have a series of Bernoulli trials, which leads to a binomial distribution (Defn: \ref{defn-binomial-distribution-rate}):
+\begin{definition}[Binomial Lattice Analytical Solution]\label{defn-binomial-distribution-rate}
+	Let $r_{\circ}$ denote the current rate at t = \texttt{0}, $u$ and $d$ denote the \texttt{up} and \texttt{down} factors, and $p$ denote the probability of going \texttt{up}.
 	At time $t$, the binomial lattice model predicts the rate $r_{t}$ is given by:
 	\begin{equation*}
 	r_{t} = r_{\circ}\cdot{u}^{t-k}\cdot{d}^{k}\qquad\text{for}\quad{k=0,1,\dots,t}
 	\end{equation*}
-	The probability that the share price takes on a particular value at time $t$ is given by:
+	Further, the probability that rate takes on a particular value at time $t$ is given by:
 	\begin{equation*}
 	P(r_{t} = r_{\circ}\cdot{u}^{t-k}\cdot{d}^{k}) = \binom{t}{k}\cdot{(1-p)}^{k}\cdot{p}^{t-k}\qquad\text{for}\quad{k=0,1,\dots,t}
 	\end{equation*}
