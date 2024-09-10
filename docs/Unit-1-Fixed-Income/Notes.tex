@@ -939,6 +939,31 @@ is the binomial coefficient. The expectation and variance of a binomial random v
 The binomial distribution models many events in finance, including the number of successful trades in a series of trades. 
 However, in our case we can use it to develop an analytical model that we'll observe any given state at time $t$ in the future.
 
+\subsubsection{Multipe-period analytical solution}
+Let's consider a binomial lattice model with $n$ time-steps. At each time step, the interest rate can either go \texttt{up} by a factor of $u$ or \texttt{down} by a factor of $d$.
+Then, at time \texttt{n}, the interest rate can take on $n+1$ possible values: 
+\begin{equation}
+	r_{n} = r_{\circ}\times{D_{1}}\times{D_{2}}\times{D_{3}}\times\cdots\times{D_{n}}
+\end{equation}
+where $D_{i}$ is a random variable that can take on one of two values: $u$ or $d$, 
+with probabilities $p$ and $(1-p)$ respectively. 
+Thus, at each time-step, the world flips a coin and lands in either the \texttt{up} state with probability $p$ or the \texttt{down} state with probability $(1-p)$.
+For a single time step, we model this random process as a Bernoulli trial, where the probability of success is $p$ and the likelihood of failure is $(1-p)$.
+As the number of time steps increases, we have a series of Bernoulli trials, which is a binomial distribution (Defn: \ref{defn-binomial-distribution}):
+
+\begin{definition}[Binomial Lattice Rate and Probability]\label{defn-binomial-distribution-rate}
+	Let $r_{\circ}$ denote the current rate at t = \texttt{0}, $u$ and $d$ denote the \texttt{up} and \texttt{down} factors, 
+	and $p$ denote the probability of going \texttt{up}.
+	At time $t$, the binomial lattice model predicts the rate $r_{t}$ is given by:
+	\begin{equation*}
+	r_{t} = r_{\circ}\cdot{u}^{t-k}\cdot{d}^{k}\qquad\text{for}\quad{k=0,1,\dots,t}
+	\end{equation*}
+	The probability that the share price takes on a particular value at time $t$ is given by:
+	\begin{equation*}
+	P(r_{t} = r_{\circ}\cdot{u}^{t-k}\cdot{d}^{k}) = \binom{t}{k}\cdot{(1-p)}^{k}\cdot{p}^{t-k}\qquad\text{for}\quad{k=0,1,\dots,t}
+	\end{equation*}
+	where $\binom{t}{k}$ denotes the binomial coefficient.
+\end{definition}
 
 \clearpage
 \bibliography{References_v1}
