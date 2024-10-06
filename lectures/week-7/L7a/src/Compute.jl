@@ -10,15 +10,12 @@ function _sample_sim_model(model::MySingleIndexModel, Rₘ::Array{Float64,1};
     # how many time samples do we have?
     N = length(Rₘ)
 
-    # generate noise array -
-    W = rand(ϵ, N, number_of_paths);
-
     # initialize some storage -
     X = Array{Float64,2}(undef, N, number_of_paths);
 
     for t ∈ 1:N
         for p ∈ 1:number_of_paths
-            X[t,p] = α + β*Rₘ[t] + W[t,p]
+            X[t,p] = α + β*Rₘ[t] + rand(ϵ)
         end
     end
 
