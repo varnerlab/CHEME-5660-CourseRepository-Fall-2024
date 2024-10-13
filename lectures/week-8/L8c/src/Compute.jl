@@ -101,3 +101,18 @@ function log_return_matrix(dataset::Dict{String, DataFrame},
     # return -
     return return_matrix;
 end
+
+function market(data::Dict{String, DataFrame}, tickers::Array{String,1}, index::Int64; key::Symbol = :close)::Array{Float64,1}
+    
+    # initialize -
+    number_of_firms = length(tickers);
+    close_prices = Array{Float64,1}(undef, number_of_firms);
+
+    # main loop -
+    for i ∈ eachindex(tickers)
+        close_prices[i] = data[tickers[i]][index, key];
+    end
+
+    # return -
+    return close_prices;
+end
