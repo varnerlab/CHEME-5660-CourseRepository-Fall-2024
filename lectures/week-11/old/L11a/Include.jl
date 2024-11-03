@@ -6,7 +6,7 @@ const _PATH_TO_DATA = joinpath(_ROOT, "data");
 # download external packages
 import Pkg; 
 Pkg.add(path="https://github.com/varnerlab/VLQuantitativeFinancePackage.jl.git");
-Pkg.activate("."); Pkg.resolve(); Pkg.instantiate(); Pkg.update();
+Pkg.activate("."); Pkg.instantiate(); Pkg.update()
 
 # load packages -
 using VLQuantitativeFinancePackage
@@ -19,7 +19,7 @@ using FileIO
 using Statistics
 using Dates
 using LinearAlgebra
-using StatsPlots
-using Distributions
-using HypothesisTests
-using PrettyTables
+
+# load my codes -
+include(joinpath(_PATH_TO_SRC, "Files.jl"))
+include(joinpath(_PATH_TO_SRC, "Search.jl"))
