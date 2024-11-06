@@ -1,0 +1,229 @@
+\documentclass[11pt]{article}
+
+% load some asm stuff -
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{palatino,lettrine}
+\usepackage{fancyhdr}
+\usepackage{epsfig}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage{simplemargins}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+%\usepackage{boiboites}
+\usepackage[margin=0pt,font=small,labelfont=bf]{caption}
+\newcommand{\boldindex}[1]{\textbf{\hyperpage{#1}}}
+\usepackage{makeidx}\makeindex
+\bibliographystyle{plos2015}
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+
+% Set the size
+%\textwidth = 6.75 in
+%\textheight = 9.75 in
+%\oddsidemargin = 0.0 in
+%\evensidemargin = 0.0 in
+%\topmargin = 0.01 in
+%\headheight = 0.0 in
+%\headsep = 0.25 in
+%\parskip = 0.15in
+% \doublespace
+\setallmargins{1in}
+
+\newtheorem{example}{Example}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{property}{Property}[section]
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\makeatletter
+% \renewcommand\subsection{\@startsection
+% 	{subsection}{2}{0mm}
+% 	{-0.05in}
+% 	{0.05\baselineskip}
+% 	{\normalfont\normalsize\bfseries}}
+\renewcommand\subsubsection{\@startsection
+	{subsubsection}{2}{0mm}
+	{-0.05in}
+	{-0.5\baselineskip}
+	{\normalfont\normalsize\itshape\bfseries}}
+\renewcommand\paragraph{\@startsection
+	{paragraph}{2}{0mm}
+	{-0.05in}
+	{-0.5\baselineskip}
+	{\normalfont\normalsize\itshape}}
+\makeatother
+\linespread{1.1}
+
+\fancypagestyle{proposal}{\fancyhf{}%
+	\fancyhead[RO,LE]{\thepage}%
+	\fancyhead[LO,RE]{CHEME 134 Module 1 American Contract Dynamics}%
+	\renewcommand\headrulewidth{1pt}}
+\pagestyle{proposal}
+
+\usepackage{mdframed}
+\definecolor{lgray}{rgb}{0.92,0.92,0.92}
+\definecolor{antiquewhite}{rgb}{0.98,0.92,0.84}
+\definecolor{lightskyblue}{rgb}{0.93,0.95,0.99}
+
+% defn environment
+\mdfdefinestyle{theoremstyle}{% 
+    linecolor=black,linewidth=1pt,% 
+    frametitlerule=true,% 
+    frametitlebackgroundcolor=lgray, 
+    innertopmargin=\topskip,} 
+\mdtheorem[style=theoremstyle]{definition}{Definition}
+
+% concept environment
+\mdfdefinestyle{conceptstyle}{% 
+    linecolor=black,linewidth=1pt,% 
+    frametitlerule=true,% 
+    frametitlebackgroundcolor=lightskyblue, 
+    innertopmargin=\topskip,} 
+\mdtheorem[style=conceptstyle]{concept}{Concept}
+\newcommand{\newterm}[1]{{\it #1}}
+
+% Single space'd bib -
+\setlength\bibsep{0pt}
+
+\renewcommand{\rmdefault}{phv}\renewcommand{\sfdefault}{phv}
+%\newboxedtheorem[boxcolor=black, background=gray!5,titlebackground=orange!20,titleboxcolor = black]{color_box_example}{Example}{test}
+
+% Change the number format in the ref list -
+\renewcommand{\bibnumfmt}[1]{#1.}
+
+% Change Figure to Fig.
+\renewcommand{\figurename}{Fig.}
+\usepackage{enumitem}
+\setlist{noitemsep} % or \setlist{noitemsep} to leave space around whole list
+
+%Joycelyn Chan, Joshua Lequieu, Michael Paull, Chidanand Balaji, Ryan Tasseff
+%Our derivation follows closely the earlier development of Fredrickson \citep{Fredrickson:1976fk}.
+
+% Begin ...
+\begin{document}
+
+%\begin{titlepage}
+{\par\centering\textbf{\Large CHEME 134 Module 1: American Options Contract Pricing}}
+\vspace{0.2in}
+{\par \centering \large{Jeffrey D. Varner}}
+\vspace{0.05in}
+{\par \centering \large{Smith School of Chemical and Biomolecular Engineering}}
+{\par \centering \large{Cornell University, Ithaca NY 14853}}
+% \vspace{0.1in}
+% {\par \centering \small{Copyright \copyright\ Jeffrey Varner 2018. All Rights Reserved.}}\\
+
+%\end{titlepage}
+\date{}
+\thispagestyle{empty}
+
+\setcounter{page}{1}
+
+\section*{Introduction}
+American options contracts are financial instruments that give the holder the right, but not the obligation, 
+to buy or sell an underlying asset at a specified price on or before a specified date. 
+The price of the underlying asset is called the \newterm{spot price}, 
+and the specified price where a transaction could occur is called the \newterm{strike price}. 
+The date on which the option expires is called the \newterm{expiration date}. 
+Finally, the price of the option itself is called the \newterm{premium}. American options contracts are similar to European options contracts, 
+but with one key difference: American options contracts can be exercised at any time before the expiration date, 
+while European options contracts can only be exercised on the expiration date. 
+This difference makes American options contracts more complex to price than European options contracts
+and leads to a rich set of dynamics in the contract pricing problem.
+
+In this module, we will use the the \href{https://en.wikipedia.org/wiki/Binomial_options_pricing_model}{Cox-Ross-Rubinstein (CRR)} 
+lattice model to simulate how different factors affect the price of American options contracts, e.g., the 
+spot price of the underlying asset, the strike price, the expiration date, and the risk-free rate.
+In addition, we will introduce the concepts of intrinsic and extrinsic value, which are key to understanding
+the dynamics of American options contracts. 
+
+\subsection*{The Cox-Ross-Rubinstein (CRR) Model}
+The Cox-Ross-Rubinstein (CRR) model is a discrete-time model that simulates the price of an underlying asset over time
+using a binomial lattice, while the price of the option contract is computed over the lattice using a backward induction algorithm \cite{COX1979229}.
+During each time period, the price of the underlying asset can either go up by a factor $u$ or down by a factor $d$ 
+with probabilities $p$ and $1-p$, respectively. The probability of an up move $p$ is a risk-neutral probability, 
+which means that the expected return on the underlying asset is equal to the risk-free rate:
+\begin{equation*}
+p = \frac{\mathcal{D}_{1,0}(\bar{r}) - d}{u - d}
+\end{equation*}
+where $u$ and $d$ are the up and down factors, $\bar{r}$ denotes the risk-free rate, and $\mathcal{D}_{1,0}(\bar{r})$ 
+is the continuous discount factor for one time step. 
+The up factor $u$ in the CRR model is given by:
+\begin{equation*}
+    u = \exp(\sigma\cdot\sqrt{\Delta{t}})
+\end{equation*}
+where $\sigma$ is the \newterm{implied volatility} of the return of the underlying asset, and $\Delta{t}$ is the time step. 
+Finally, in the CRR approach, the up and down factors are symmetric, i.e., $ud=1$.
+
+
+
+
+\subsubsection*{What is the Implied Volatility?}
+One of the initially confusing aspects of options pricing is the concept of \newterm{implied volatility}.
+Implied volatility is the market's estimate of the future price volatility of the underlying asset.
+It is \textit{implied} (as opposed to historical volatility) because it is estimated from the market price of the option contract itself.
+Thus, the price action of the option contract reflects the market's expectation of the future volatility of the underlying asset.
+
+The implied volatility represents one annualized standard deviation of the future spot price of the underlying asset over the next year.
+We often express the implied volatility of an option contract as a percentage of the future spot price of the underlying asset, 
+thus we typically write the implied volatility as a percentage, e.g., IV = 20\%. 
+We use the implied volatility to compute the up factor $u$ in the CRR model, 
+but we can also the IV to compute the market's expectation of the future share price of the underlying asset. 
+If $\Delta{t}$ is a number of trading days in the future, then the market expects the share price of the underlying asset to be within the interval:
+\begin{equation*}
+S(\Delta{t}) = S_{0}\cdot\left(1\pm\frac{\text{IV}}{100}\cdot\sqrt{\frac{\Delta{t}}{252}}\right)
+\end{equation*}
+with a probability of 68\%, where $S_{0}$ is the current spot price of the underlying asset, 
+and $\text{IV}$ is the implied volatility of the option contract expressed as a percentage.
+
+\subsubsection*{Derivation of the $p$, $u$, and $d$ factors}
+To better understand the CRR model, let's look at how the $p$, $u$, and $d$ factors are derived. The probability
+of an up move $p$ is calculated by computing the expectation of the price of the underlying asset at the next time step.
+One time step in the future, the price of the underlying asset can either go up by a factor $u$, which probability $p$ or down by a factor $d$
+with probability $1-p$. Thus, the expectation of the share price of the underlying asset at the next time step $S_{j+1}$ is given by:
+\begin{equation*}
+	\mathbb{E}[S_{j+1}] = p\cdot{u}\cdot{S}_{j} + (1-p)\cdot{d}\cdot{S_{j}}
+\end{equation*}
+where $S_{j}$ is the price of the underlying asset at the current time step. 
+The risk-neutral probability $p$ is then calculated by setting the expectation of the share price of the underlying asset at the next time step equal to: 
+\begin{equation*}
+	\mathbb{E}[S_{j+1}] = \mathcal{D}_{1,0}(\bar{r})\cdot{S}_{j}
+\end{equation*}
+where $\mathcal{D}_{1,0}(\bar{r})$ is the continuous discount factor for one time step, where we assume the discount rate is given by the risk-free rate $\bar{r}$.
+Putting these two equations together, we can solve for the risk-neutral probability $p$:
+\begin{equation*}
+	p = \frac{\mathcal{D}_{1,0}(\bar{r}) - d}{u - d}
+\end{equation*}
+Thus, the probability of an up move $p$ is determined by the risk-free rate $\bar{r}$, the up factor $u$, and the down factor $d$, 
+but not the implied volatility of the return of the underlying asset $\sigma$.  
+Instead, the implied volatility of the return is critical in determining the up factor $u$.
+The up factor $u$ is constructed so that the CRR model matches the variance of the return $\text{Var}(S_{j}/S_{j-1})=\sigma^{2}\Delta{t}$.
+We know that the variance of the return is given by:
+\begin{equation}
+\mathbb{E}\left[(S_{j}/S_{j-1})^2\right] - \mathbb{E}\left[S_{j}/S_{j-1}\right]^{2} = \sigma^{2}\Delta{t}
+\end{equation}
+
+
+
+
+% \begin{equation*}
+% 	p(u-1)^{2} + (1-p)(d-1)^{2} + \left[p(u-1)+(1-p)(d-1)\right]^{2} = \sigma^{2}\Delta{t}
+
+
+% \begin{equation*}
+% %     p(u-1)^{2} + (1-p)(d-1)^{2} + \left[p(u-1)+(1-p)(d-1)\right]^{2} = \sigma^{2}\Delta{t}
+% \end{equation*}
+% % which can be solved for $u$ (assuming $\Delta{t}^{2}$ terms and above are ignored):
+
+\clearpage
+\bibliography{References_v1}
+
+\clearpage
+\printindex
+
+\end{document}
