@@ -26,6 +26,7 @@ using LinearAlgebra
 using StatsPlots
 using Distributions
 using HypothesisTests
+using PrettyTables
 
 # load my codes -
 include(joinpath(_PATH_TO_SRC, "Files.jl"))
